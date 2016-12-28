@@ -1,0 +1,25 @@
+<!-- link rel="stylesheet" href="/resources/pages/mobDetailsPage/mobDetailsPage.css"-->
+
+<div class="row">
+    <div class="mob-slider-container">
+        <div class="slider" materialize-Slider ng-model="initSlider">
+            <ul class="slides no-background">
+                <li ng-repeat="image in images">
+                    <img class="fancy-image-show" fancy-Box ng-click="openFancybox(fancyBoxArray, $index)" ng-src="{{image}}" alt="Mobilier de baie">
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="mob-collection-name">Colectia {{collectionName}}</div>
+    <div style="width: 100%; text-align: center;">
+	    <div class="mob-item" ng-repeat="item in items">
+	    	<div class="mob-image-container">
+	    		<img ng-src="{{item.url}}" class="mob-item-image">
+    		</div>
+    		<span class="abs mob-price">Pret: {{item.price}} lei</span>
+    		<span class="abs mob-title">{{item.details}}, {{item.code}}</span>
+    		<span class="abs mob-size">Dimensiune: {{item.size}}</span>
+
+	    </div>
+	</div>
+</div>

@@ -1,0 +1,38 @@
+<div class="row">
+    <div class="slider-container">
+        <div class="slider" materialize-Slider ng-model="initSlider">
+            <ul class="slides no-background">
+                <li ng-repeat="prester in presentationSlides">
+                    <img class="fancy-image-show" fancy-Box ng-click="openFancybox(fancyBoxSliderArray, $index)" ng-src="{{prester}}" alt="Gresie si Faianta">
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="details-container">
+        <div class="row">
+            <div class="collection-name">Colectia {{name}}</div>
+            <div class="col s12 m6 l2 set-padding" ng-repeat="thumbneil in thumbneilsList">
+                <div class="row">
+                    <div class="padding-item">
+                        <div class="presentation-item" set-Height>
+                            <a href="javascript:void(0)" class="image-container-before">
+                                <div class="transform">
+                                    <img class="image-presented" ng-src="{{thumbneil.smallImgSrc}}" alt="Faianta" />
+                                </div>
+                            </a>
+                            <a fancy-Box ng-click="_gaq.push(['_trackEvent', 'Gresie si Fianata - Item', 'click','{{thumbneil.id}}']); openFancybox(fancyBoxArray, $index);" class="image-container-after">
+                                <div class="transform">
+                                    <img class="image-presented" ng-src="{{thumbneil.smallImgSrc}}" alt="Gresie" />
+                                </div>
+                            </a>
+                        </div>
+                        <div class="presentation-description">
+                            <span>{{thumbneil.description}}</span><br>
+                            <span>{{thumbneil.size}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

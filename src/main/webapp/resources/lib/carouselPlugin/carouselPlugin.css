@@ -1,0 +1,274 @@
+
+.modal {
+    width: 95%;
+    max-height: 95%;
+    overflow: hidden !important;
+    top: 0 !important;
+    bottom: 0;
+}
+
+    .modal .modal-content {
+        padding: 10px;
+    }
+
+        .modal .modal-content .row .right .modal-action.modal-close {
+            color: black;
+        }
+
+.position-relative {
+    position: relative;
+}
+
+.slider-content > .row {
+    max-height: 80vh;
+}
+
+    .slider-content > .row > .col.s12.m2.l3 {
+        cursor: pointer;
+        float: right;
+        position: relative;
+        max-height: 85vh;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        padding-right: 10px;
+    }
+
+        .slider-content > .row > .col.s12.m2.l3 > .unselectable {
+            text-align: center;
+        }
+
+    .slider-content > .row > .col.s12.m10.l9 {
+        position: relative;
+        max-height: 80vh;
+    }
+
+        .slider-content > .row > .col.s12.m10.l9 > .slider-image-container {
+            opacity: 0;
+            display: none;
+            width: 100%;
+            text-align: center;
+            height: auto;
+            max-height: 100%;
+            max-width: 100%;
+            -webkit-transition: opacity 1s ease-in-out;
+            -moz-transition: opacity 1s ease-in-out;
+            -ms-transition: opacity 1s ease-in-out;
+            -o-transition: opacity 1s ease-in-out;
+            transition: opacity 1s ease-in-out;
+        }
+
+            .slider-content > .row > .col.s12.m10.l9 > .slider-image-container.slider-current-image {
+                display: block;
+            }
+
+        .slider-content > .row > .col.s12.m10.l9 > .hover-left-efect {
+            width: 50%;
+            height: 100%;
+            position: absolute;
+            -webkit-transition: opacity .2s fade-in;
+            -moz-transition: opacity .2s d-in-out;
+            -ms-transition: opacity .2s ease-in-out;
+            -o-transition: opacity .2s ease-in-out;
+            transition: opacity .2s ease-in-out;
+            cursor: pointer;
+            background-color: lightgray;
+            opacity: 0;
+        }
+
+        .slider-content > .row > .col.s12.m10.l9 > .hover-right-efect {
+            width: 50%;
+            height: 100%;
+            right: 0;
+            cursor: pointer;
+            position: absolute;
+            -webkit-transition: opacity .2s fade-in;
+            -moz-transition: opacity .2s d-in-out;
+            -ms-transition: opacity .2s ease-in-out;
+            -o-transition: opacity .2s ease-in-out;
+            transition: opacity .2s ease-in-out;
+            background-color: lightgray;
+            opacity: 0;
+        }
+
+        .slider-content > .row > .col.s12.m10.l9 > .hover-left-efect:hover {
+            opacity: 0.5;
+        }
+
+        .slider-content > .row > .col.s12.m10.l9 > .hover-right-efect:hover {
+            opacity: 0.5;
+        }
+
+        .slider-content > .row > .col.s12.m10.l9 > .go-to-left-btn-container {
+            min-height: 100% !important;
+            display: inline;
+            position: absolute;
+            width: 50%;
+            height: 100%;
+        }
+
+            .slider-content > .row > .col.s12.m10.l9 > .go-to-left-btn-container:hover .hover-left-efect {
+                opacity: 0.5;
+            }
+
+            .slider-content > .row > .col.s12.m10.l9 > .go-to-left-btn-container > .btn-inner-relative-container {
+                position: relative;
+                display: block;
+                width: 100%;
+                height: 100%;
+                min-width: 100%;
+                min-height: 100%;
+            }
+
+                .slider-content > .row > .col.s12.m10.l9 > .go-to-left-btn-container > .btn-inner-relative-container > .vertical-middle-inner {
+                    padding-left: 5%;
+                    position: absolute;
+                    width: 100%;
+                    display: table;
+                    height: 100%;
+                    min-width: 100%;
+                    min-height: 100%;
+                }
+
+
+                    .slider-content > .row > .col.s12.m10.l9 > .go-to-left-btn-container > .btn-inner-relative-container > .vertical-middle-inner > .vertical-table-cell {
+                        display: table-cell;
+                        vertical-align: middle;
+                    }
+
+@media (max-width: 1024px) {
+    .slider-content > .row > .col.s12.m10.l9 > .go-to-left-btn-container > .btn-inner-relative-container > .vertical-middle-inner > .vertical-table-cell > a {
+        width: 32px !important;
+        height: 32px !important;
+        line-height: 48px !important;
+    }
+
+        .slider-content > .row > .col.s12.m10.l9 > .go-to-left-btn-container > .btn-inner-relative-container > .vertical-middle-inner > .vertical-table-cell > a > i {
+            line-height: 30px !important;
+        }
+}
+
+.slider-content > .row > .col.s12.m10.l9 > .go-to-left-btn-container > .btn-inner-relative-container > .vertical-middle-inner > .vertical-table-cell > a:hover .hover-left-efect {
+    opacity: 0.5;
+}
+
+.slider-content > .row > .col.s12.m10.l9 > .go-to-right-btn-container {
+    min-height: 100% !important;
+    display: inline;
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    right: 0;
+}
+
+    .slider-content > .row > .col.s12.m10.l9 > .go-to-right-btn-container:hover .hover-right-efect {
+        opacity: 0.5;
+    }
+
+    .slider-content > .row > .col.s12.m10.l9 > .go-to-right-btn-container > .btn-inner-relative-container {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 100%;
+        min-width: 100%;
+        min-height: 100%;
+        padding-right: 1%;
+    }
+
+        .slider-content > .row > .col.s12.m10.l9 > .go-to-right-btn-container > .btn-inner-relative-container > .vertical-middle-inner {
+            position: absolute;
+            width: 100%;
+            display: table;
+            min-width: 100%;
+            min-height: 100%;
+            height: 100%;
+            padding-right: 5%;
+        }
+
+            .slider-content > .row > .col.s12.m10.l9 > .go-to-right-btn-container > .btn-inner-relative-container > .vertical-middle-inner > .vertical-table-cell {
+                display: table-cell;
+                vertical-align: middle;
+            }
+
+                .slider-content > .row > .col.s12.m10.l9 > .go-to-right-btn-container > .btn-inner-relative-container > .vertical-middle-inner > .vertical-table-cell > a {
+                    float: right;
+                }
+
+@media (max-width: 1024px) {
+    .slider-content > .row > .col.s12.m10.l9 > .go-to-right-btn-container > .btn-inner-relative-container > .vertical-middle-inner > .vertical-table-cell > a {
+        float: right;
+        width: 32px !important;
+        height: 32px !important;
+        line-height: 48px !important;
+    }
+
+        .slider-content > .row > .col.s12.m10.l9 > .go-to-right-btn-container > .btn-inner-relative-container > .vertical-middle-inner > .vertical-table-cell > a > i {
+            line-height: 30px !important;
+        }
+}
+
+.slider-content > .row > .col.s12.m10.l9 > .go-to-right-btn-container > .btn-inner-relative-container > .vertical-middle-inner > .vertical-table-cell > a:hover .hover-right-efect {
+    opacity: 0.5;
+}
+
+.slider-content > .row > .col.s12.m2.l3 > .top-container-hover-efect {
+    position: absolute;
+    width: 100%;
+    height: 20%;
+    z-index: 1;
+    -webkit-transition: opacity .2s fade-in;
+    -moz-transition: opacity .2s d-in-out;
+    -ms-transition: opacity .2s ease-in-out;
+    -o-transition: opacity .2s ease-in-out;
+    transition: opacity .2s ease-in-out;
+    cursor: pointer;
+    background-color: lightgray;
+    opacity: 0;
+}
+
+.slider-content > .row > .col.s12.m2.l3 > .bottom-container-hover-efect {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 20%;
+    z-index: 1;
+    -webkit-transition: opacity .2s fade-in;
+    -moz-transition: opacity .2s d-in-out;
+    -ms-transition: opacity .2s ease-in-out;
+    -o-transition: opacity .2s ease-in-out;
+    transition: opacity .2s ease-in-out;
+    cursor: pointer;
+    background-color: lightgray;
+    opacity: 0;
+}
+
+.slider-content > .row > .col.s12.m2.l3 > .top-btn-absolute-container {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    height: 20%;
+    padding-top: 4%;
+}
+
+    .slider-content > .row > .col.s12.m2.l3 > .top-btn-absolute-container > a:hover .top-container-hover-efect {
+        opacity: 0.5;
+    }
+
+.slider-content > .row > .col.s12.m2.l3 > .bottom-btn-absolute-container {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 20%;
+    text-align: center;
+    padding-top: 16%;
+}
+
+    .slider-content > .row > .col.s12.m2.l3 > .bottom-btn-absolute-container > a:hover .bottom-container-hover-efect {
+        opacity: 0.5;
+    }
+
+.slider-image {
+    width: auto;
+    height: auto;
+    max-width: 100% !important;
+    max-height: 100% !important;
+}

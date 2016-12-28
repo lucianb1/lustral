@@ -1,0 +1,128 @@
+.row .col.s12.l4.push-l1 {
+    margin-bottom: 10px;
+}
+
+.contact-page-icon-container {
+    float: right;
+    margin-bottom: 0px;
+}
+
+.shop-location {
+    display: block;
+    width: 100%;
+    height: 450px;
+}
+
+.contact-image-location {
+    width: 40%;
+    position: absolute;
+    z-index: 1;
+    right: 0px;
+}
+
+    .contact-image-location img {
+        width: 100%;
+        height: auto;
+    }
+
+.work-hours {
+    padding-bottom: 8px;
+}
+
+.input-style-group input[type=email] {
+    border: none;
+    height: 35px;
+    height: 100%;
+    width: 100%;
+    font-size: 1rem;
+    margin: 0;
+    padding: 0;
+    transition: all .3s !important;
+}
+
+    .input-style-group input[type=email]:focus:not([readonly]) {
+        border: none;
+        box-shadow: none;
+    }
+
+
+
+.input-style-group {
+    height: 37px;
+    border: 1px solid #bbbbbb;
+    border-radius: 3px !important;
+    position: relative;
+    margin-bottom: 10px;
+    -webkit-transition: border .2s ease-in-out;
+    -moz-transition: border .2s ease-in-out;
+    -o-transition: border .2s ease-in-out;
+    transition: border .2s ease-in-out;
+}
+
+
+    .input-style-group .col.s1.m1.l1 {
+        min-width: 41.1222px;
+        max-width: 41.1222px;
+        height: 100%;
+        padding: 0 0 0 0.5rem;
+        background-color: #bbbbbb;
+    }
+
+.inner-icon > .material-icons {
+    color: white;
+}
+
+.input-style-group .col.s11.m11.l11 {
+    width: 82.666667% !important;
+    padding: 0 0 0 0.5rem;
+    height: 100%;
+}
+
+.inner-icon {
+    margin-top: 6px;
+}
+
+.textareaFocus {
+    margin-bottom: 10px;
+    height: 96px;
+}
+
+    .textareaFocus textarea {
+        width: 100%;
+        height: 100%;
+        border-radius: 2px;
+        border: 1px solid #bbbbbb;
+    }
+    
+
+.style-message {
+    border: none;
+}
+
+textarea:focus {
+    outline: none;
+}
+
+.contact-outer-container {
+    width: 100%;
+    position: relative;
+    /*padding-left: 10%;*/
+}
+
+/*only for safari*/
+.form-contact .right .btn.waves-effect.waves-light {
+    min-width: 155px;
+}
+
+.body #toast-container {
+    top: 7% !important;
+    left: 7% !important;
+}
+
+@media only screen and (min-width: 993px) {
+    #toast-container {
+        top: 7% !important;
+        right: auto !important;
+        left: 7% !important;
+    }
+}

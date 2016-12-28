@@ -1,0 +1,117 @@
+<link rel="stylesheet" href="/resources/pages/bathtubsPage/bathtubsPage.css">
+<div open-Modal open-Custom-Modal="openCustomModal" class="modal custom-modal-widht">
+    <div class="modal-content">
+        <div class="modal-header">
+            <span class="modal-header">Sisteme de Hidro-Aeromasaj</span>
+            <div class="right">
+                <a class="modal-action modal-close" data-trigger-close="close" href="javascript:void(0)">
+                    <i class="material-icons">close</i>
+                </a>
+            </div>
+        </div>       
+        <table class="hidro">
+            <tr>
+                <th>Denumire</th>
+                <th>Descriere</th>
+                <th>Pret (TVA inclus)</th>
+            </tr>
+            <tr>
+                <td>Sistem hidro 1</td>
+                <td>
+                    <div>- comanda pneumatica</div>
+                    <div>- 6 jeturi apa, pompa</div>
+                    <div>- sistem ameste apa-aer</div>
+                    <div>- sifon automat</div>
+                </td>
+                <td>1248 lei</td>
+            </tr>
+            <tr>
+                <td>Sistem hidro 2</td>
+                <td>
+                    <div>- comanda pneumatica</div>
+                    <div>- 4 jeturi apa, pompa</div>
+                    <div>- 2 minijeturi spate</div>
+                    <div>- 2 minijeturi talpi</div>
+                    <div>- sistem amestec apa-aer</div>
+                </td>
+                <td>1400 lei</td>
+            </tr>
+            <tr>
+                <td>Sistem hidro 3</td>
+                <td>
+                    <div>- comanda pneumatica</div>
+                    <div>- 4 jeturi apa, pompa</div>
+                    <div>- 4 minijeturi spate</div>
+                    <div>- 4 minijeturi talpi</div>
+                    <div>- sistem amestec apa-aer</div>
+                </td>
+                <td>2000 lei</td>
+            </tr>
+            <tr>
+                <td>Sistem hidro 4</td>
+                <td>
+                    <div>- comanda pneumatica</div>
+                    <div>- 6 jeturi apa, pompa</div>
+                    <div>- 10 jeturi aer cald</div>
+                    <div>- 4 minijeturi talpi</div>
+                    <div>- sistem amestec apa-aer</div>
+                </td>
+                <td>2175 lei</td>
+            </tr>
+            <tr>
+                <td>Sistem hidro 5</td>
+                <td>
+                    <div>- comanda pneumatica</div>
+                    <div>- 4 jeturi apa, pompa</div>
+                    <div>- 4 minijeturi spate</div>
+                    <div>- 2 minijeturi talpi</div>
+                    <div>- 10 jeturi aer cald</div>
+                    <div>- sistem amestec apa-aer</div>
+                </td>
+                <td>3120 lei</td>
+            </tr>
+            <tr>
+                <td>Sistem hidro 6</td>
+                <td>
+                    <div>- comanda digitala</div>
+                    <div>- 4 jeturi apa, pompa</div>
+                    <div>- 4 minijeturi spate</div>
+                    <div>- 4 minijeturi talpi</div>
+                    <div>- 10 jeturi aer cald</div>
+                    <div>- sistem amestec apa-aer</div>
+                    <div>- cromoterapie</div>
+                </td>
+                <td>4200 lei</td>
+            </tr>
+            <tr>
+                <td>Sistem aero-masaj</td>
+                <td>
+                    <div>- 10 jeturi aer cald</div>
+                    <div>- sifon automat</div>
+                </td>
+                <td>2175 lei</td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div detail-view open-Detail-View="openDetailView"></div>
+<div class="row row-container">
+    <div class="col s12 m6 l4" ng-repeat="card in cardsList">
+        <div class="card" ng-attr-id="{{card.id}}">
+            <div class="card-image" set-Bathtubt-Height>
+                <loading-spinner loading="loading"></loading-spinner>
+                <img class="bath-image" ng-click="_gaq.push(['_trackEvent', 'Cazi de baie', 'click', '{{card.name}}']); showDetailView(card.id);" ng-src="{{card.smallImageSrc}}" alt="Cazi-de-baie-Lustral">
+            </div>
+            <div class="card-custom-action">
+                <span class="bath-card-dimension">Dimensiuni: {{card.size}}</span> <span class="card-name-b brown-text">{{card.name}}</span>
+                
+                <span class="card-price-old-b" ng-if="card.hasDiscount">{{card.oldPrice}} lei</span>  <span class="card-price-b"
+                                                                                                           ng-class="{'red-text' : card.hasDiscount}"><span ng-if="card.multipleSizes" style="font-size: 13px;margin-right: 3px;">de la </span>{{card.newPrice}} lei</span>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="bath-info">
+    Nota: Pretul este cu TVA si include cada, suportul si masca frontala. Nu contine sifonul si sistemul hidro. Pentru a
+    vedea lista de preturi pentru sistemele hidro click <a href="javascript:void(0)" ng-click="openCustomModal(); _gaq.push(['_trackEvent', 'Cazi de baie', 'click', 'Hidro prices']); ">aici</a>.
+</div>

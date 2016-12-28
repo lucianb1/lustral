@@ -1,0 +1,151 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link href="/resources/images/favicon.png" type="image/x-icon" rel="icon" />
+
+    <!-- css -->
+    <!-- link rel="stylesheet" href="/resources/lib/materialize/font/material-design-icons/material-icons.css}" />
+    <link rel="stylesheet" href="/resources/lib/materialize/css/materialize.min.css}" />
+    <link rel="stylesheet" type="text/css" href="/resources/lib/fancyBox/source/jquery.fancybox.css?v=2.1.5}" media="screen" />
+    <link rel="stylesheet" href="/resources/lib/carouselPlugin/carouselPlugin.css}" />
+    <link rel="stylesheet" type="text/css" href="/resources/pages/main.css}" />
+    <link rel="stylesheet" type="text/css" href="/resources/pages/gresieSiFaiantaPage/gresieSiFaianta.css}"/>
+    <link rel="stylesheet" type="text/css" href="/resources/components/loading-template.css}" /-->
+    <link rel="stylesheet" href="/resources/all/all.css" />
+
+    <!--script type="text/javascript" src="/resources/lib/jQuery/jQuery.js}"></script-->
+    <script type="text/javascript" src="/resources/lib/jQuery/jQuery.min.js"></script>
+    <script type="text/javascript" src="/resources/lib/imagesLoaded/imagesLoaded.js"></script>
+    <script type="text/javascript" src="/resources/lib/angular/angular.min.js"></script>
+    <script type="text/javascript" src="/resources/lib/angular/angular-animate.min.js"></script>
+    <script type="text/javascript" src="/resources/lib/angular/angular-resource.min.js"></script>
+    <script type="text/javascript" src="/resources/lib/angular/angular-route.min.js"></script>
+    <script type="text/javascript" src="/resources/lib/fancyBox/source/jquery.fancybox.js?v=2.1.5"></script>
+    <script type="text/javascript" src="/resources/lib/materialize/js/materialize.js"></script>
+    
+    <!-- <script src="https://maps.googleapis.com/maps/api/js" async="async" defer="defer"></script>-->
+	 <script async="async" defer="defer" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDEpkzvDIiU7aC4uLx0xH_7I70I1VTyg54" type="text/javascript"></script>
+    <!-- My custom plugins -->
+    <script type="text/javascript" src="/resources/lib/carouselPlugin/carouselPlugin.js"></script>
+
+    <!-- My scripts -->
+    <script type="text/javascript" src="/resources/pages/jQueryUiFixes.js"></script>
+
+    <script type="text/javascript" src="/resources/pages/gresieSiFaiantaPage/gresieSiFaiantaModule.js"></script>
+    <script type="text/javascript" src="/resources/pages/gresieSiFaiantaDetailPage/gresieSiFaiantaDetailPage.js"></script>
+    <script type="text/javascript" src="/resources/pages/contactPage/contactModule.js"></script>
+    <script type="text/javascript" src="/resources/pages/parquetPage/parquetPageModule.js"></script>
+    <script type="text/javascript" src="/resources/pages/bathtubsPage/bathtubsPageModule.js"></script>
+    <script type="text/javascript" src="/resources/pages/mobPage/mobPageModule.js"></script>
+    <script type="text/javascript" src="/resources/pages/mobDetailsPage/mobDetailsPage.js"></script>
+
+    <script type="text/javascript" src="/resources/pages/main.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Lustral - Gresie si Faianta</title>
+    
+    
+
+	
+	<script type="text/javascript">
+
+ 		 var _gaq = _gaq || [];
+  		_gaq.push(['_setAccount', 'UA-58670251-1']);
+ 		 _gaq.push(['_trackPageview']);
+
+ 		 (function() {
+ 		   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ 		   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+ 		   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		  })();
+
+</script>
+     
+</head>
+
+<body ng-app="lustralWebSite" resize="resize" class="body">
+
+<div class="header">
+    <ul id="desktop-drop-down" class="dropdown-content">
+        <li><a ng-href ="{{'#/gresie-faianta'}}" onClick="_gaq.push(['_trackEvent', 'Menu navigation', 'click', 'Gresie si faianta interior']);">Gresie si faianta interior</a></li>
+        <li><a ng-href="{{'#/gresie-faianta/living'}}" onClick="_gaq.push(['_trackEvent', 'Menu navigation', 'click', 'Gresie living / hol']);">Gresie living / hol</a></li>
+        <li><a ng-href="{{'#/gresie-faianta/bucatarie'}}" onClick="_gaq.push(['_trackEvent', 'Menu navigation', 'click', 'Faianta de bucatarie']);">Faianță de bucătărie</a></li>
+        <li><a ng-href="{{'#/gresie-faianta/exterior'}}" onClick="_gaq.push(['_trackEvent', 'Menu navigation', 'click', 'Gresie de exterior']);">Gresie de exterior</a></li>
+    </ul>
+    <div class="navbar-fixed">
+        <nav id="navigation-Menu">
+            <div class="nav-wrapper">
+                <a ng-href="#/" class="lustral-logo">
+                    <img src="/resources/images/logo_black.png" class="nav-logo"/>
+                </a>
+                <a onClick="_gaq.push(['_trackEvent', 'Menu navigation', 'click', 'Mobile menu']);" href="javascript:void(0)" id="btn-collapse" side-menu-btn="side-menu-btn" data-activates="show-Mobile-View" class="button-collapse fix-line-height">
+                    <i class="material-icons mdi-menu" style="color: #555; position: absolute;">menu</i>
+                </a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a ng-href="{{'#/gresie-faianta'}}" onClick="_gaq.push(['_trackEvent', 'Menu navigation', 'click', 'Gresie si faianta']);" class="dropdown-button-hover" data-activates="desktop-drop-down">Gresie si faianta</a></li>
+                    <li><a ng-href="{{'#/parchet'}}" onClick="_gaq.push(['_trackEvent', 'Menu navigation', 'click', 'Parchet laminat']);">Parchet</a></li>
+                    <li><a ng-href="{{'#/cazi-baie'}}" onClick="_gaq.push(['_trackEvent', 'Menu navigation', 'click', 'Cazi de baie']);">Cazi de baie</a></li>
+                    <li><a ng-href="{{'#/mobilier'}}" onClick="_gaq.push(['_trackEvent', 'Menu navigation', 'click', 'Mobilier']);">Mobilier de baie</a></li>
+                    <li><a ng-href="{{'#/contact'}}" onClick="_gaq.push(['_trackEvent', 'Menu navigation', 'click', 'Contact']);">Contact</a></li>
+                </ul>
+
+            </div>
+        </nav>
+    </div>
+</div>
+    <ul class="side-nav" id="show-Mobile-View">
+        <li>
+            <ul href="#!" data-activates="mobile-drop-down" class="collapsible collapsible-accordion" data-collapsible="accordion">
+                <li>
+                    <div class="collapsible-header single-item" onClick="_gaq.push(['_trackEvent', 'Menu navigation', 'click', 'Mobile - Gresie si faianta']);">
+                        Gresie si faianta
+                    </div>
+                    <div class="collapsible-body">
+                        <a ng-href="{{'#/gresie-faianta'}}" onClick="_gaq.push(['_trackEvent', 'Menu navigation', 'click', 'Mobile - Gresie si faianta interior']);" class="collection-item">
+                            <span>Gresie si faianta interior</span>
+                        </a>
+                        <a ng-href="{{'#/gresie-faianta/living'}}" onClick="_gaq.push(['_trackEvent', 'Menu navigation', 'click', 'Mobile - Gresie de living / hol']);" class="collection-item">
+                            <span>Gresie living / hol</span>
+                        </a>
+                        <a ng-href="{{'#/gresie-faianta/bucatarie'}}" onClick="_gaq.push(['_trackEvent', 'Menu navigation', 'click', 'Mobile - Faianta de bucatarie']);" class="collection-item">
+                            <span>Faianță de bucătărie</span>
+                        </a>
+                        <a ng-href="{{'#/gresie-faianta/exterior'}}" onClick="_gaq.push(['_trackEvent', 'Menu navigation', 'click', 'Mobile - Gresie de exterior']);" class="collection-item">
+                            <span>Gresie de exterior</span>
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </li>
+        <li><a ng-href="{{'#/parchet'}}" onClick="_gaq.push(['_trackEvent', 'Menu navigation', 'click', 'Mobile - Parchet']);">Parchet</a></li>
+        <li><a ng-href="{{'#/cazi-baie'}}" onClick="_gaq.push(['_trackEvent', 'Menu navigation', 'click', 'Mobile - Cazi de baie']);">Cazi de baie</a></li>
+        <li><a ng-href="{{'#/mobilier'}}" onClick="_gaq.push(['_trackEvent', 'Menu navigation', 'click', 'Mobile - Mobilier']);">Mobilier de baie</a></li>
+        <li><a ng-href="{{'#/contact'}}" onClick="_gaq.push(['_trackEvent', 'Menu navigation', 'click', 'Mobile - Contact']);">Contact</a></li>
+    	
+    </ul>
+    <div class="main">
+        <div class="layout">
+            <div class="main-View-Container">
+                <div ng-view="mainView" id="mainView"></div>
+            </div>
+        </div>
+    </div>
+    <div class="cover-Padding-Top">
+        <div class="page-footer">
+            <div class="container center-align">
+                <div class="row">
+                    <h5 class="footer-row">Tel: 0728.134.436</h5>
+                    <p class="footer-row">e-mail: office@lustral.ro</p>
+                    <p class="footer-row">adresa: Strada Plevnei nr. 97, Cluj-Napoca</p>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <div class="copyright">
+                    © 2016 Lustral. Toate drepturile rezervate
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

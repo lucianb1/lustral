@@ -1,0 +1,62 @@
+<!-- Contact -->
+<div ng-if="page='contact'">
+	<div class="contact-outer-container">
+	    <div class="row">
+	        <div class="col s12 l4 push-l1">
+	            <div class="contact-form">
+	                <div style="font-size: 30px;margin-top: -6px; padding-bottom: 8px;">
+	                    Contact
+	                </div>
+	                <div class="contact-data">
+	                    <span class="icon-text"><strong>Adresa:</strong> Strada Plevnei nr. 97, Cluj-Napoca, jud. Cluj</span>
+	                    <br />
+	                    <span class="icon-text"><strong>Telefon:</strong> 0728.134.436</span>
+	                    <br />
+	                    <span class="icon-text"><strong>Email:</strong> office@lustral.ro, lustral97@yahoo.com</span>
+	                    <br />
+	                </div>
+	                <div class="work-hours">
+	                    <ul>
+	                        <li>Luni-Vineri:&nbsp;&nbsp;&nbsp;<strong>9:00-18:00</strong></li>
+	                        <li>Sambata:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>9:00-13:00</strong></li>
+	                        <li>Duminica:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Inchis</strong></li>
+	                    </ul>
+	                </div>
+	                <div class="form-contact">
+	                	<div style="font-size: 20px; padding-bottom: 10px;">Trimite-ne un mesaj</div>
+	                    <div class="input-style-group">
+	                        <div class="col s1 m1 l1 ">
+	                            <div class="inner-icon">
+	                                <i class="material-icons">email</i>
+	                            </div>
+	                        </div>
+	                        <div class="col s11 m11 l11 ">
+	                            <input placeholder="Email-ul tau" type="email" required="required" focus-effect ng-model="email">
+	                        </div>
+	                    </div>
+	                    <div class="textareaFocus">
+	                        <textarea class="style-message" textarea-Focus required="required" placeholder="Mesaj" ng-model="message"></textarea>
+	                    </div>
+	                    <div class="right">
+	                        <button onClick="_gaq.push(['_trackEvent', 'Contact', 'click', 'Message sent']);" class="btn waves-effect waves-light" ng-click="sendMessage()" type="submit" name="action">
+	                            Trimite
+	                            <i class="material-icons right">send</i>
+	                        </button>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	        <div class="col s12 l6 push-l1">
+	            <div class="position-relative">
+	                <div class="contact-image-location">
+	                    <img src="/resources/images/contact.jpg" alt="Contact Lustral - Gresie si Faianta" />
+	                </div>
+	                <google-Map class="shop-location" ></google-Map>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+	<div style="position: fixed; top:10%; left:7%">
+		<notification  notification="showNotification"></notification>
+	</div>
+</div>

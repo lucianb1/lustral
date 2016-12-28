@@ -1,0 +1,17 @@
+<!-- link rel="stylesheet" href="/resources/pages/mobPage/mobPage.css"-->
+
+<div class="row row-container">
+    <div class="col s12 m6 l4" ng-repeat="card in cardsList">
+        <div class="card"  ng-attr-id="{{card.id}}">
+            <div fancy-Box set-Mob-Height-Dimension class="card-image" ng-click="_gaq.push(['_trackEvent', 'Gresie si faianta', 'click', '{{card.id}}']); openFancybox(fancyBoxArray, $index);">
+                <loading-spinner loading="loading"></loading-spinner>
+                <img class="image" ng-src="{{card.url}}" alt="Mobilier de baie">
+            </div>
+            <div class="mob-card-actions">
+            	<div class="mob-card-name">Mobilier colectia {{card.name}}<br/> Disponibil intr-o gama larga de dimenisuni si culori</div>
+            	
+                <a class="mob-card-price" ng-href="{{'#/mobilier/detalii/' + card.collectionId}}" ng-click="_gaq.push(['_trackEvent', 'Mobilier detalii', 'click', '{{card.id}}']);">Vezi preturi</a>
+            </div>
+        </div>
+    </div>
+</div>

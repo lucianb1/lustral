@@ -1,0 +1,543 @@
+@import url('http://fonts.googleapis.com/css?family=Open+Sans');
+
+.vertical-center-in-display-table {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.preloader-wrapper-container {
+    display: table;
+    background-color: lightgrey;
+    position: absolute;
+    z-index: 100;
+    opacity: 0.7;
+    width: 100%;
+    text-align: center;
+    min-height: 100%;
+}
+
+    .preloader-wrapper-container .preloader-wrapper {
+        z-index: 2;
+    }
+
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px; /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+    /* Support for IE. */
+    font-feature-settings: 'liga';
+}
+
+.small i {
+    font-size: 0.8rem;
+}
+
+.medium i {
+    font-size: 1rem;
+}
+
+.large i {
+    font-size: 1.2rem;
+}
+
+html * {
+    font-family: 'Open Sans', sans-serif;;
+}
+
+/*make footer stick to bottom*/
+.body {
+    overflow-y: scroll;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    background-color: white;
+}
+
+.main {
+    flex: 1 0 auto;
+    background-color: white;
+}
+
+.page-footer {
+    /*missing space color*/
+    padding-top: 5px;
+    background-color: #f1f1f1;
+}
+
+.nav-small {
+    height: 38px;
+    line-height: 37px;
+}
+
+.nav-logo {
+    width: 160px;
+    vertical-align: middle;
+    transition: all 0.3s;
+}
+.lustral-logo {
+    height: 100%;
+    display: inline-block;
+}
+
+.nav-small .nav-wrapper .lustral-logo {
+    height: 37px;
+    line-height: 37px;
+}
+
+.nav-small .nav-wrapper .fix-line-height {
+    height: 50px;
+    line-height: 50px;
+}
+
+.nav-small .nav-wrapper .lustral-logo img {
+    width: 120px;
+}
+
+nav.nav-small {
+    background-color: #fafafa;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+.side-nav a:hover {
+
+}
+
+.side-nav > li {
+    border-bottom: 1px solid #dcdcdc;
+}
+
+.nav-wrapper {
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.nav-up {
+    top: -40px;
+}
+
+@media (max-width: 993px) {
+    .lustral-logo {
+        height: 100%;
+        display: inline-block;
+    }
+    .nav-wrapper {
+        text-align: center;
+    }
+    .nav-logo {
+    	transition: none;
+    }
+    
+}
+@media (max-width: 600px) {
+    .nav-wrapper {
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+    }
+}
+
+.collapsible-header.single-item {
+    padding-left: 0px;
+    color: black;
+}
+
+.slide-In-Item {
+    opacity: 0;
+}
+
+.button-collapse {
+    transition: all 0.3s;
+}
+
+.nowrap {
+    white-space: nowrap;
+}
+/*navigation bar settings*/
+
+/*application layout*/
+
+
+
+.main-View-Container {
+    text-align: left;
+    width: 90%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+.layout {
+    padding-top: 3%;
+    padding-bottom: 2%;
+    text-align: center;
+}
+
+/*epilepsis trick*/
+.ellipsis p {
+    margin: 0;
+    padding: 0;
+}
+
+.ellipsis {
+    overflow: hidden;
+    height: 80px;
+    line-height: 25px;
+    margin: 0px 10px 5px 10px;
+}
+
+    .ellipsis:before {
+        content: "";
+        float: left;
+        width: 5px;
+        height: 80px;
+    }
+
+    .ellipsis > *:first-child {
+        float: right;
+        width: 100%;
+        margin-left: -5px;
+    }
+
+    .ellipsis:after {
+        content: "\02026";
+        box-sizing: content-box;
+        -webkit-box-sizing: content-box;
+        -moz-box-sizing: content-box;
+        float: right;
+        position: relative;
+        top: -30px;
+        left: 95%;
+        width: 3em;
+        margin-left: -3em;
+        padding-right: 5px;
+        text-align: right;
+        background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0)), to(white), color-stop(50%, white));
+        background: -moz-linear-gradient(to right, rgba(255, 255, 255, 0), white 50%, white);
+        background: -o-linear-gradient(to right, rgba(255, 255, 255, 0), white 50%, white);
+        background: -ms-linear-gradient(to right, rgba(255, 255, 255, 0), white 50%, white);
+        background: linear-gradient(to right, rgba(255, 255, 255, 0), white 50%, white);
+    }
+
+
+
+.red-text {
+    color: red;
+}
+
+.btn-collapse-small {
+    margin-top: -10px;
+    transition: all 0.3s;
+}
+
+.nav-contach-icon {
+    line-height: 38px;
+    height: 40px;
+}
+
+/*helpers showin various things*/
+.image {
+    display: block;
+    margin: auto;
+    width: auto;
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.fancybox-skin {
+    max-height: 95vh;
+    max-width: 95vw;
+}
+
+.fancybox-title.fancybox-title-inside-wrap {
+    line-height: inherit;
+    width: 100%;
+    border: none;
+    position: relative;
+    margin-top: 5px;
+}
+
+.fancybox-btn-details {
+    text-transform: none;
+    background-color: #66BB6A;
+    border-radius: 2px;
+    color: white;
+    font-size: 17px;
+    padding: 6px 50px;
+}
+
+    .fancybox-btn-details:hover {
+        background-color: #81c784;
+    }
+
+.fancybox-inner {
+    max-height: 87vh;
+    max-width: 93.4vw;
+}
+
+@media (max-width: 900px) {
+    .fancybox-skin {
+        max-width: 90vw;
+    }
+
+    .fancybox-inner {
+        max-width: 82.4vw;
+    }
+}
+
+.contact-btn-size {
+    width: 40px;
+    height: 40px;
+}
+
+.position-relative {
+    position: relative;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.vertical-center {
+    min-height: 100%; /* Fallback for browsers do NOT support vh unit */
+    min-height: 100vh; /* These two lines are counted as one :-)       */
+    display: flex;
+    align-items: center;
+}
+
+
+.clearfix:after {
+    clear: both;
+}
+
+.row-container {
+    position: relative;
+}
+
+
+.height-100-percent {
+    height: 100%;
+}
+
+.copyright {
+    margin: auto;
+    color: #ffffff;
+    background-color: #cccccc;
+    text-align: center;
+    font-size: 13px;
+}
+
+.footer-row {
+    color: gray;
+}
+.details-container {
+    padding: 0 9% 0 9%;
+}
+
+.slider-container {
+    margin-bottom: 20px;
+    width: 100%;
+    position: relative;
+    height: 450px;
+}
+
+@media (max-width: 800px) {
+    .slider-container {
+        margin-bottom: 20px;
+        width: 100%;
+        position: relative;
+        height: 263px;
+    }
+
+    .slider {
+        position: relative;
+        height: 240px !important;
+        width: 100%;
+    }
+
+        .slider .slides {
+            height: 203px !important;
+        }
+
+            .slider .slides li {
+                display: -webkit-box;
+                display: -webkit-flex;
+                display: -moz-box;
+                display: -ms-flexbox;
+                display: flex;
+                -webkit-flex-align: center;
+                -ms-flex-align: center;
+                -webkit-align-items: center;
+                align-items: center;
+            }
+
+                .slider .slides li img {
+                    display: block;
+                    height: auto;
+                    width: 100%;
+                    background-size: cover;
+                    background-position: center;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+}
+
+.slider .slides.no-background {
+    background-color: transparent !important;
+}
+
+.collection-name {
+    margin-top: -44px;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.slider .slides li img {
+    display: block;
+    height: 100%;
+    width: auto !important;
+    background-size: cover;
+    background-position: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*bottom part of thead page*/
+
+.row .col.s12.m6.l2.set-padding {
+    padding: 0 0 0 0;
+}
+
+    .row .col.s12.m6.l2.set-padding .row .padding-item {
+        padding: 0 3% 0 3%;
+    }
+
+.presentation-item {
+    position: relative;
+    width: 100%;
+    background-color: white;
+    margin-bottom: 5.5px;
+}
+
+.presentation-description {
+    text-align: left;
+    font-size: 12px;
+    line-height: 115%;
+    margin-left: 5px;
+}
+
+.presentation-image {
+    width: 100%;
+    height: 100%;
+}
+
+.image-container-before {
+    position: absolute;
+    display: block;
+    padding: 10px;
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+    background-image: url(/resources/images/item_background.jpg);
+}
+
+    .image-container-before:hover ~ .image-container-after {
+        visibility: visible;
+    }
+
+.image-container-after {
+    position: absolute;
+    visibility: hidden;
+    background-image: url(/resources/images/item_background_hover.jpg);
+    background-repeat: no-repeat !important;
+    background-size: 100% 100% !important;
+    opacity: 0;
+    display: block;
+    padding: 10px;
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+    cursor: zoom-in;
+    -webkit-transition: visibility .4s, opacity .4s ease-in-out;
+    -moz-transition: visibility .4s, opacity .4s ease-in-out;
+    -o-transition: visibility .4s, opacity .4s ease-in-out;
+    transition: visibility .4s, opacity .4s ease-in-out;
+}
+
+    .image-container-after:hover {
+        visibility: visible;
+        opacity: 1;
+    }
+
+        .image-container-after:hover img {
+            box-shadow: 0px 2px 5px #3e3d3a;
+        }
+
+.image-presented {
+    position: absolute;
+    display: block;
+    margin: auto;
+    max-height: 100% !important;
+    max-width: 100% !important;
+    /* width: auto; */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    /* height: auto; */
+}
+
+.fancy-image-show {
+    cursor: zoom-in;
+}
+
+.transform {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.modal.custom-modal-widht {
+    width: 35%;
+    padding: 0 10px;
+    overflow-y: auto !important;
+}
+
+@media (max-width: 1024px) {
+    .modal.custom-modal-widht {
+        width: 95% !important;
+    }
+}
+
+.modal.custom-modal-widht .modal-content .modal-header {
+    text-align: center;
+    margin-top: 5px
+}
+
+    .modal.custom-modal-widht .modal-content .modal-header .modal-title {
+        margin-top: 5px;
+        font-size: 20px;
+    }
+
+.modal.custom-modal-widht .modal-content .hidro th, td {
+    border: 1px solid black;
+    font-size: 12px;
+    text-align: center;
+    padding: 0;
+}

@@ -1,0 +1,25 @@
+params:
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    jdbcUrl: jdbc:mysql://localhost:3306/lustral_new?zeroDateTimeBehavior=convertToNull
+    connectionTimeout: 600000
+    username: root
+    password: pastrav97
+    maximumPoolSize: 15
+    initialize: true
+
+spring:
+  jmx:
+    enabled: false
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: fmarketapp@gmail.com
+    password: FmarketApp123
+    properties.mail.smtp:
+      socketFactory.port: 465
+      socketFactory.class: javax.net.ssl.SSLSocketFactory
+      socketFactory.fallback: false
+      auth: true
+      ssl.enable: true
+      starttls.enable: true

@@ -1,0 +1,66 @@
+<!-- link rel="stylesheet" href="/resources/pages/parquetPage/parquetPage.css"-->
+<div class="row row-container">
+	<div class="col s12 m6 l4" ng-repeat="card in cardsList">
+		<div class="card" ng-attr-id="{{card.id}}">
+			<div fancy-Box set-Parquet-Height class="card-image"
+				ng-click="_gaq.push(['_trackEvent', 'Parchet', 'click', '{{card.name}}']); openFancybox(fancyBoxArray, $index);">
+
+				<loading-spinner loading="loading"></loading-spinner>
+				<img class="image" ng-src="{{card.bigImageUrl}}" alt="Parchet - Lustral"> <span class="card-price-old-p" ng-if="card.hasDiscount">{{card.oldPrice}}
+					lei/mp</span>
+			</div>
+			<div class="card-p-custom-action">
+				<div>{{card.description}}</div>
+				<div>Grosime: {{card.width}} mm, clasa {{card.clazz}}</div>
+				<div>
+					Cod parchet: {{card.name}}, detalii <a href="javascript:void(0)" open-modal
+						ng-click="openCustomModal(); _gaq.push(['_trackEvent', 'Parchet', 'click', 'Detalii']); ">aici</a>
+				</div>
+				<span class="p-price">{{card.newPrice}} lei/mp</span>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal custom-modal-widht" open-Modal open-Custom-Modal="openCustomModal">
+	<div class="modal-content">
+		<div class="modal-header">
+            <h5 class="modal-header" style="display: inline">Caracteristici parchet</h5>
+            <div class="right">
+                <a class="modal-action modal-close" data-trigger-close="close" href="javascript:void(0)">
+                    <i class="material-icons">close</i>
+                </a>
+            </div>
+        </div>
+        </br>
+        <div style="font-size: 20px;">Kaindl - Parchet laminat premium</div>
+        
+        
+        <ul>
+        <li>Caracteristici:</li>
+        <li>- Ecologic</li>
+        <li>- Antistatic</li>
+        <li>- Potrivit pentru scaun cu role (role tip W)</li>
+        <li>- Usor de montat fara adeziv datorita sistemului ecologic Kaindl Loc</li>
+        <li>- Poate fi folosit in proiecte rezidentiale si spatii comerciale</li>
+        <li>- Certificat "Greenguard"</li>
+        <li>- Rezistent la lumina si decolorare </li>
+        <li>- Rezistenta inalta la utilizare si lovire </li>
+        <li>- Tara de origina Austria</li>
+        <li>- Material suport: HDF
+        </ul>
+         
+       	<div>Website-ul producatorului: <a href="https://www.kaindl.com/en/">www.kaindl.com</a></div>   
+       	</br>
+       	<div>Tipul de imbinare: Sistem Fold Down / Kaindl Loc</div>
+       	</br>
+       	<div>
+       		<img style="width: 48%; height: auto;" src="/resources/images/imbinare1.jpg">
+       		<img style="width: 49%; height: auto;" src="/resources/images/imbinare2.jpg">
+
+       	</div>   
+	</div>
+
+	</br>
+	
+</div>

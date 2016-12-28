@@ -1,0 +1,167 @@
+{
+  "groups": [{
+    "name": "params.datasource",
+    "type": "ro.lustral.config.DatabaseConfig",
+    "sourceType": "ro.lustral.config.DatabaseConfig"
+  }],
+  "properties": [
+    {
+      "name": "params.datasource.allow-pool-suspension",
+      "type": "java.lang.Boolean",
+      "sourceType": "ro.lustral.config.DatabaseConfig"
+    },
+    {
+      "name": "params.datasource.auto-commit",
+      "type": "java.lang.Boolean",
+      "sourceType": "ro.lustral.config.DatabaseConfig"
+    },
+    {
+      "name": "params.datasource.catalog",
+      "type": "java.lang.String",
+      "sourceType": "ro.lustral.config.DatabaseConfig"
+    },
+    {
+      "name": "params.datasource.connection-init-sql",
+      "type": "java.lang.String",
+      "sourceType": "ro.lustral.config.DatabaseConfig"
+    },
+    {
+      "name": "params.datasource.connection-test-query",
+      "type": "java.lang.String",
+      "sourceType": "ro.lustral.config.DatabaseConfig"
+    },
+    {
+      "name": "params.datasource.connection-timeout",
+      "type": "java.lang.Long",
+      "sourceType": "ro.lustral.config.DatabaseConfig"
+    },
+    {
+      "name": "params.datasource.data-source-class-name",
+      "type": "java.lang.String",
+      "sourceType": "ro.lustral.config.DatabaseConfig"
+    },
+    {
+      "name": "params.datasource.data-source-jndi",
+      "type": "java.lang.String",
+      "sourceType": "ro.lustral.config.DatabaseConfig"
+    },
+    {
+      "name": "params.datasource.data-source-properties",
+      "type": "java.util.Properties",
+      "sourceType": "ro.lustral.config.DatabaseConfig"
+    },
+    {
+      "name": "params.datasource.driver-class-name",
+      "type": "java.lang.String",
+      "sourceType": "ro.lustral.config.DatabaseConfig"
+    },
+    {
+      "name": "params.datasource.health-check-properties",
+      "type": "java.util.Properties",
+      "sourceType": "ro.lustral.config.DatabaseConfig"
+    },
+    {
+      "name": "params.datasource.health-check-registry",
+      "type": "java.lang.Object",
+      "sourceType": "ro.lustral.config.DatabaseConfig"
+    },
+    {
+      "name": "params.datasource.idle-timeout",
+      "type": "java.lang.Long",
+      "sourceType": "ro.lustral.config.DatabaseConfig"
+    },
+    {
+      "name": "params.datasource.initialization-fail-fast",
+      "type": "java.lang.Boolean",
+      "sourceType": "ro.lustral.config.DatabaseConfig"
+    },
+    {
+      "name": "params.datasource.isolate-internal-queries",
+      "type": "java.lang.Boolean",
+      "sourceType": "ro.lustral.config.DatabaseConfig"
+    },
+    {
+      "name": "params.datasource.jdbc-url",
+      "type": "java.lang.String",
+      "sourceType": "ro.lustral.config.DatabaseConfig"
+    },
+    {
+      "name": "params.datasource.jdbc4-connection-test",
+      "type": "java.lang.Boolean",
+      "sourceType": "ro.lustral.config.DatabaseConfig",
+      "deprecated": true,
+      "deprecation": {}
+    },
+    {
+      "name": "params.datasource.leak-detection-threshold",
+      "type": "java.lang.Long",
+      "sourceType": "ro.lustral.config.DatabaseConfig"
+    },
+    {
+      "name": "params.datasource.max-lifetime",
+      "type": "java.lang.Long",
+      "sourceType": "ro.lustral.config.DatabaseConfig"
+    },
+    {
+      "name": "params.datasource.maximum-pool-size",
+      "type": "java.lang.Integer",
+      "sourceType": "ro.lustral.config.DatabaseConfig"
+    },
+    {
+      "name": "params.datasource.metric-registry",
+      "type": "java.lang.Object",
+      "sourceType": "ro.lustral.config.DatabaseConfig"
+    },
+    {
+      "name": "params.datasource.metrics-tracker-factory",
+      "type": "com.zaxxer.hikari.metrics.MetricsTrackerFactory",
+      "sourceType": "ro.lustral.config.DatabaseConfig"
+    },
+    {
+      "name": "params.datasource.minimum-idle",
+      "type": "java.lang.Integer",
+      "sourceType": "ro.lustral.config.DatabaseConfig"
+    },
+    {
+      "name": "params.datasource.password",
+      "type": "java.lang.String",
+      "sourceType": "ro.lustral.config.DatabaseConfig"
+    },
+    {
+      "name": "params.datasource.pool-name",
+      "type": "java.lang.String",
+      "sourceType": "ro.lustral.config.DatabaseConfig"
+    },
+    {
+      "name": "params.datasource.read-only",
+      "type": "java.lang.Boolean",
+      "sourceType": "ro.lustral.config.DatabaseConfig"
+    },
+    {
+      "name": "params.datasource.register-mbeans",
+      "type": "java.lang.Boolean",
+      "sourceType": "ro.lustral.config.DatabaseConfig"
+    },
+    {
+      "name": "params.datasource.scheduled-executor-service",
+      "type": "java.util.concurrent.ScheduledThreadPoolExecutor",
+      "sourceType": "ro.lustral.config.DatabaseConfig"
+    },
+    {
+      "name": "params.datasource.transaction-isolation",
+      "type": "java.lang.String",
+      "sourceType": "ro.lustral.config.DatabaseConfig"
+    },
+    {
+      "name": "params.datasource.username",
+      "type": "java.lang.String",
+      "sourceType": "ro.lustral.config.DatabaseConfig"
+    },
+    {
+      "name": "params.datasource.validation-timeout",
+      "type": "java.lang.Long",
+      "sourceType": "ro.lustral.config.DatabaseConfig"
+    }
+  ],
+  "hints": []
+}
