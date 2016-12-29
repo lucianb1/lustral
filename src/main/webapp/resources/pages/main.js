@@ -4,6 +4,7 @@ var baseTemplateUrl = '/resources/pages/';
 var honeAndFaienceModule = angular.module('honeAndFaienceModule')
 var honeAndFaienceDetailModule = angular.module('honeAndFaienceDetailModule');
 var parquetModule = angular.module('parquetModule');
+var parchetDetailsModule = angular.module('parchetDetailsModule');
 var bathtubsModule = angular.module('bathtubsModule');
 var mobilierModule = angular.module('mobilierModule');
 
@@ -15,6 +16,7 @@ var mainApp = angular.module('lustralWebSite',
         'honeAndFaienceModule',
         'honeAndFaienceDetailModule',
         'parquetModule',
+        'parchetDetailsModule',
         'bathtubsModule',
         'mobilierModule',
         'mobDetailsModule',
@@ -203,6 +205,11 @@ mainApp.config(['$httpProvider', '$routeProvider', function ($httpProvider, $rou
         .when('/parchet', {
             templateUrl: baseTemplateUrl + 'parquetPage/parquetPage.html',
             controller: 'parquetController',
+            animation: 'slide'
+        })
+        .when('/parchet/detalii/:id', {
+            templateUrl: baseTemplateUrl + 'parquetPage/detail/parchetDetailsPage.html',
+            controller: 'parchetDetailsController',
             animation: 'slide'
         })
         .when('/cazi-baie', {

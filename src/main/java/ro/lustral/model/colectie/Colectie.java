@@ -151,4 +151,8 @@ public class Colectie extends OrderedEntity {
     public String getBigImageUrl() {
         return bigImageUrl;
     }
+
+    public String getSmallImageUrl() {
+        return smallImageUrl;
+    }
 }

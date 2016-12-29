@@ -62,7 +62,7 @@ honeAndFaienceModule.controller('honeAndFaienceController', [
         honeAndFaienceService.getHoneAndFaience($routeParams.collection).then(function (response) {
             $scope.cardsList = response.data;
             angular.forEach($scope.cardsList, function (value, key) {
-                $scope.fancyBoxArray.push({ href: value.bigImageSrc, title: getTitleContent(value.id, value.name) });
+                $scope.fancyBoxArray.push({ href: value.bigImageUrl, title: getTitleContent(value.id, value.name) });
             });
         }, ajaxErrorCallback);
 
