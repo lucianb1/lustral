@@ -18,11 +18,12 @@ parchetDetailsModule.controller('parchetDetailsController', ['$scope', '$routePa
         // $scope.presentationSlides = [];
         // $scope.thumbneilsList = [];
         // $scope.fancyBoxArray = [];
-        // $scope.fancyBoxSliderArray = [];
+        $scope.fancyBoxSliderArray = [];
+        $scope.fancyBoxSliderArray.push({ href: 'http://lustral.ro/images/parchet/34053/34053.jpg', title: '' });
         //
         // parchetDetailsService.getDetailsData($routeParams.id).then(function (response) {
         //     $scope.presentationSlides = response.data.images;
-        //     $scope.initSlider = true;
+            $scope.initSlider = true;
         //     $scope.name = response.data.name;
         //     $scope.thumbneilsList = response.data.items;
         //     angular.forEach($scope.presentationSlides, function (value, key) {

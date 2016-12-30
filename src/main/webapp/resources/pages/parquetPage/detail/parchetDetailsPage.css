@@ -1,0 +1,34 @@
+.parchet-characteristic {
+    border-bottom: 1px solid lightgrey;
+    width: 100%;
+    padding: 8px 0 !important;
+    color: #444442;
+}
+.parchet-characteristic-value {
+    font-weight: bold;
+}
+.parchet-characteristics-container {
+    padding-top: 20px !important;
+    padding-left: 50px !important;
+}
+.parchet-carousel-container {
+    padding-top: 20px !important;
+}
+.parchet-characteristic-price {
+    background-color: forestgreen;
+    text-align: center;
+    color: #ffffff;
+    /*margin-top: 15px;*/
+}
+.youtube-video-container {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    padding-top: 10px;
+}
+.youtube-video-parchet {
+    display: block;
+    margin: auto;
+    margin-top: 30px;
+    padding-bottom: 50px;
+}

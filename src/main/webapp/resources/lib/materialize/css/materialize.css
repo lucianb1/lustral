@@ -7404,10 +7404,12 @@ nav ul li.active {
 nav ul a {
   transition: background-color .3s;
   font-size: 1rem;
-  color: gray;
+  color: #717171;
+  font-weight: bold;
   display: block;
   padding: 0 20px;
   cursor: pointer;
+  text-decoration: underline;
 }
 
 nav ul a.btn, nav ul a.btn-large, nav ul a.btn-large, nav ul a.btn-flat, nav ul a.btn-floating {
