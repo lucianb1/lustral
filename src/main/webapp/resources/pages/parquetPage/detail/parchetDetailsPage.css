@@ -18,17 +18,18 @@
     background-color: forestgreen;
     text-align: center;
     color: #ffffff;
-    /*margin-top: 15px;*/
 }
 .youtube-video-container {
     width: 100%;
-    margin: auto;
+    margin: 50px auto;
     text-align: center;
-    padding-top: 10px;
 }
 .youtube-video-parchet {
     display: block;
     margin: auto;
-    margin-top: 30px;
+    margin-top: 40px;
     padding-bottom: 50px;
+}
+.parchet-details-container {
+    border-bottom: 1px solid #cfcfcf;
 }
