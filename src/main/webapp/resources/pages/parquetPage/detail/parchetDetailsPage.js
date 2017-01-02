@@ -13,25 +13,25 @@ parchetDetailsModule.service('parchetDetailsService', ['$http', function ($http)
 
 parchetDetailsModule.controller('parchetDetailsController', ['$scope', '$routeParams', 'parchetDetailsService',
     function ($scope, $routeParams, parchetDetailsService) {
-
-        console.log('sadas');
-        // $scope.presentationSlides = [];
-        // $scope.thumbneilsList = [];
-        // $scope.fancyBoxArray = [];
         $scope.fancyBoxSliderArray = [];
-        $scope.fancyBoxSliderArray.push({ href: 'http://lustral.ro/images/parchet/34053/34053.jpg', title: '' });
-        //
-        // parchetDetailsService.getDetailsData($routeParams.id).then(function (response) {
-        //     $scope.presentationSlides = response.data.images;
+        $scope.imagesArray = [];
+
+        parchetDetailsService.getDetailsData($routeParams.id).then(function (response) {
+            $scope.details = response.data;
             $scope.initSlider = true;
-        //     $scope.name = response.data.name;
-        //     $scope.thumbneilsList = response.data.items;
-        //     angular.forEach($scope.presentationSlides, function (value, key) {
-        //         $scope.fancyBoxSliderArray.push({ href: value, title: '' });
-        //     });
-        //     angular.forEach($scope.thumbneilsList, function (value, key) {
-        //         $scope.fancyBoxArray.push({ href: value.bigImgSrc, title: '' });
-        //     });
-        // }, ajaxErrorCallback)
+            $scope.fancyBoxSliderArray.push({ href: 'http://lustral.ro/images/parchet/34053/34053.jpg', title: '' });
+            $scope.imagesArray.push('http://lustral.ro/images/parchet/34053/34053.jpg');
+            $scope.fancyBoxSliderArray.push({ href: 'http://lustral.ro/images/parchet/34029/34029.jpg', title: '' });
+            $scope.imagesArray.push('http://lustral.ro/images/parchet/34029/34029.jpg');
+
+            // for (var i = 0; i <= 2; i++) {
+            //     var url = ''
+            //     $scope.fancyBoxSliderArray.push({ href: url, title: '' });
+            //     $scope.imagesArray.push(url);
+            // }
+            // angular.forEach($scope.presentationSlides, function (value, key) {
+            //     $scope.fancyBoxSliderArray.push({ href: value, title: '' });
+            // });
+        }, ajaxErrorCallback)
     }
 ]);

@@ -1,6 +1,7 @@
 package ro.lustral.service;
 
 import ro.lustral.model.parchet.Parchet;
+import ro.lustral.model.parchet.ParchetDetails;
 
 import java.util.List;
 
@@ -10,4 +11,6 @@ import java.util.List;
 public interface ParchetService {
 
     List<Parchet> getAll();
+
+    ParchetDetails getDetails(int id);
 }

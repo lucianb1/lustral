@@ -3,6 +3,7 @@ package ro.lustral.service.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ro.lustral.model.parchet.Parchet;
+import ro.lustral.model.parchet.ParchetDetails;
 import ro.lustral.repository.ParchetRepository;
 import ro.lustral.service.ParchetService;
 
@@ -20,5 +21,10 @@ public class ParchetServiceImpl implements ParchetService {
     @Override
     public List<Parchet> getAll() {
         return parchetRepository.getAll();
+    }
+
+    @Override
+    public ParchetDetails getDetails(int id) {
+        return parchetRepository.getParchetDetails(id);
     }
 }

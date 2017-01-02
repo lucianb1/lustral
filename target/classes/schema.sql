@@ -25,14 +25,18 @@ CREATE TABLE IF NOT EXISTS colectii_items (
 CREATE TABLE IF NOT EXISTS parchet (
     id SMALLINT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(20) NOT NULL,
+    description VARCHAR(30) NOT NULL,
     price float NOT NULL,
     old_price float,
-    in_stock BIT NOT NULL,
+    delivery VARCHAR(20) NOT NULL,
+    wood VARCHAR(20) NOT NULL,
     width TINYINT NOT NULL,
     class TINYINT NOT NULL,
-    images TINYINT NOT NULL DEFAULT 0,
-    --TODO PRINDERE
+    images TINYINT NOT NULL DEFAULT 1,
+    grip VARCHAR(20) NOT NULL,
+    size VARCHAR(20) NOT NULL,
     producer VARCHAR(15) NOT NULL,
+    material VARCHAR(10) NOT NULL,
     order_nr SMALLINT NOT NULL DEFAULT 0
 );
 

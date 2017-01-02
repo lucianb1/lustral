@@ -17,12 +17,14 @@
                         <div class="presentation-item" set-Height>
                             <a href="javascript:void(0)" class="image-container-before">
                                 <div class="transform">
-                                    <img class="image-presented" ng-src="{{thumbneil.smallImgSrc}}" alt="Faianta" />
+                                    <img class="image-presented" ng-src="{{thumbneil.smallImgSrc}}" alt="Faianta"/>
                                 </div>
                             </a>
-                            <a fancy-Box ng-click="_gaq.push(['_trackEvent', 'Gresie si Fianata - Item', 'click','{{thumbneil.id}}']); openFancybox(fancyBoxArray, $index);" class="image-container-after">
+                            <a fancy-Box
+                               ng-click="_gaq.push(['_trackEvent', 'Gresie si Fianata - Item', 'click','{{thumbneil.id}}']); openFancybox(fancyBoxArray, $index);"
+                               class="image-container-after">
                                 <div class="transform">
-                                    <img class="image-presented" ng-src="{{thumbneil.smallImgSrc}}" alt="Gresie" />
+                                    <img class="image-presented" ng-src="{{thumbneil.smallImgSrc}}" alt="Gresie"/>
                                 </div>
                             </a>
                         </div>

@@ -17,6 +17,10 @@ public enum ParchetTrafficClass {
         this.textValue = textValue;
     }
 
+    public String toString() {
+        return intValue + " / " + textValue;
+    }
+
     public int getIntValue() {
         return intValue;
     }

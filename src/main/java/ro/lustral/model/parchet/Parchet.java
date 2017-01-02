@@ -17,7 +17,6 @@ public class Parchet extends OrderedEntity {
     private ParchetTrafficClass trafficClass;
     private int width;
     private String imageUrl;
-
     private float price;
     private Float oldPrice;
     private boolean hasDiscount;
