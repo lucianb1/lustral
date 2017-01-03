@@ -5,10 +5,6 @@
     color: #444442;
 }
 
-.parchet-characteristic-value {
-    font-weight: bold;
-}
-
 .parchet-characteristics-container {
     padding-top: 20px !important;
     padding-left: 50px !important;
@@ -17,11 +13,17 @@
 .parchet-carousel-container {
     padding-top: 20px !important;
 }
+.parchet-tooltip {
+    cursor: pointer;
+    white-space: pre;
+}
+.material-tooltip { white-space: pre; }
 
 .parchet-characteristic-price {
     background-color: forestgreen;
     text-align: center;
     color: #ffffff;
+    font-size: 18px;
 }
 
 .youtube-video-container {
@@ -43,5 +45,11 @@
 .parchet-details-title {
     font-size: 24px;
     padding-bottom: 10px;
-    margin-left: 10px;
+    margin-left: 11.25px;
+    color: #5f5f5f;
+}
+.parchet-showroom-info {
+    font-size: 15px;
+    color: grey;
+    text-align: center;
 }

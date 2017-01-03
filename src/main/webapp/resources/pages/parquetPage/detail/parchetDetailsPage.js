@@ -24,6 +24,8 @@ parchetDetailsModule.controller('parchetDetailsController', ['$scope', '$routePa
             $scope.fancyBoxSliderArray.push({ href: 'http://lustral.ro/images/parchet/34029/34029.jpg', title: '' });
             $scope.imagesArray.push('http://lustral.ro/images/parchet/34029/34029.jpg');
 
+            $scope.trafficTooltip = 'Clasa 32, denumita si AC4 se preteaza la zone cu trafic intens precum ar fi saloane, magazine, etc..';
+            $scope.materialTooltip = 'HDF (High Density Fiberboard)';
             // for (var i = 0; i <= 2; i++) {
             //     var url = ''
             //     $scope.fancyBoxSliderArray.push({ href: url, title: '' });

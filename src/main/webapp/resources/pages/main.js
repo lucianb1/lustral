@@ -20,7 +20,8 @@ var mainApp = angular.module('lustralWebSite',
         'bathtubsModule',
         'mobilierModule',
         'mobDetailsModule',
-        'contactModule'
+        'contactModule',
+        'ui.materialize'
     ]);
 
 //add global directives
