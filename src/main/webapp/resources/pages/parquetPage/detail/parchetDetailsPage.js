@@ -24,8 +24,16 @@ parchetDetailsModule.controller('parchetDetailsController', ['$scope', '$routePa
             $scope.fancyBoxSliderArray.push({ href: 'http://lustral.ro/images/parchet/34029/34029.jpg', title: '' });
             $scope.imagesArray.push('http://lustral.ro/images/parchet/34029/34029.jpg');
 
-            $scope.trafficTooltip = 'Clasa 32, denumita si AC4 se preteaza la zone cu trafic intens precum ar fi saloane, magazine, etc..';
-            $scope.materialTooltip = 'HDF (High Density Fiberboard)';
+
+            var trafficClass = $scope.details.trafficClass;
+            if (trafficClass.includes('31')) {
+                $scope.trafficTooltip = 'Clasa 31 (echivalent AC3) se preteaza la zone comerciale cu trafic usor sau la zone rezidentiale cu trafic intens (holuri, sala de oaspeti).';
+            } else if (trafficClass.includes('32')) {
+                $scope.trafficTooltip = 'Clasa 32 (echivalent AC4) se preteaza la zone comerciale cu trafic mediu precum restaurante, birouri.';
+            } else if (trafficClass.includes('33')) {
+                $scope.trafficTooltip = 'Clasa 33 (echivalent AC5) se preteaza la zone cu trafic intens pentru zone comerciale, mall-uri, magazine.';
+            }
+            $scope.materialTooltip = 'HDF (High Density Fiberboard), material net superior MDF';
             // for (var i = 0; i <= 2; i++) {
             //     var url = ''
             //     $scope.fancyBoxSliderArray.push({ href: url, title: '' });

@@ -10,7 +10,9 @@ import ro.lustral.model.parchet.ParchetDetails;
 import ro.lustral.repository.rowmapper.ParchetDetailsRowMapper;
 import ro.lustral.repository.rowmapper.ParchetRowMapper;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by Luci on 27-Dec-16.
@@ -20,13 +22,40 @@ public class ParchetRepository {
 
     private static final ParchetRowMapper rowMapper = new ParchetRowMapper();
     private static final ParchetDetailsRowMapper detailsRowMapper = new ParchetDetailsRowMapper();
-
+    private static final Map<Integer, String> orderClauses;
+    static {
+        orderClauses = new HashMap<>();
+        orderClauses.put(1, "price ASC");
+        orderClauses.put(2, "price DESC");
+    }
     @Autowired
     private NamedParameterJdbcTemplate jdbcTemplate;
 
     public List<Parchet> getAll() {
         String sql = "SELECT * FROM parchet ORDER BY order_nr"; //TODO
         return jdbcTemplate.query(sql, rowMapper);
+    }
+
+    public List<Parchet> findParchet(List<String> producers, List<Integer> widths, List<Integer> classes, Integer sort) {
+        StringBuilder builder = new StringBuilder("SELECT * FROM parchet WHERE 1=1 ");
+        if (!producers.isEmpty()) {
+            builder.append("AND UPPER(producer) IN (:producers) ");
+        }
+        if (!widths.isEmpty()) {
+            builder.append("AND width IN (:widths)");
+        }
+        if (!classes.isEmpty()) {
+            builder.append("AND class IN (:classes)");
+        }
+
+        if (sort != null && orderClauses.get(sort) != null) {
+            builder.append(" ORDER BY " + orderClauses.get(sort));
+        }
+        MapSqlParameterSource params = new MapSqlParameterSource()
+                .addValue("producers", producers)
+                .addValue("widths", widths)
+                .addValue("classes", classes);
+        return jdbcTemplate.query(builder.toString(), params, rowMapper);
     }
 
     public ParchetDetails getParchetDetails(int id) {

@@ -159,7 +159,7 @@ public class ParchetDetails {
     }
 
     public String getCountry() {
-        return "Austria"; //TODO
+        return producer.getCountry();
     }
 
     public void setCountry(String country) {

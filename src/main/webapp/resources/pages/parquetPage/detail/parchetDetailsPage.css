@@ -17,13 +17,13 @@
     cursor: pointer;
     white-space: pre;
 }
-.material-tooltip { white-space: pre; }
 
 .parchet-characteristic-price {
     background-color: forestgreen;
     text-align: center;
     color: #ffffff;
-    font-size: 18px;
+    font-size: 16px;
+    margin-top: 10px;
 }
 
 .youtube-video-container {
@@ -52,4 +52,13 @@
     font-size: 15px;
     color: grey;
     text-align: center;
+}
+
+@media (max-width: 600px) {
+    .parchet-details-title {
+        font-size: 16px;
+    }
+    .youtube-video-parchet {
+        width: 100%;
+    }
 }

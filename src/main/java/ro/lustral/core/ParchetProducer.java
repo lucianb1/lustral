@@ -7,9 +7,20 @@ import java.util.Arrays;
  */
 public enum ParchetProducer {
 
-    KAINDL, EUROWOOD, EGGER;
+    KAINDL("Austria"), EUROWOOD("Austria"), EGGER("Germania");
+
+    private String country;
+
+
+    ParchetProducer(String country) {
+        this.country = country;
+    }
 
     public static ParchetProducer valueFrom(String value) {
         return Arrays.stream(ParchetProducer.values()).filter(item -> item.name().equalsIgnoreCase(value)).findAny().orElse( null);
+    }
+
+    public String getCountry() {
+        return country;
     }
 }

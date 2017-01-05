@@ -1,14 +1,13 @@
 package ro.lustral.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import ro.lustral.core.request.FindParchetRequest;
 import ro.lustral.model.parchet.Parchet;
 import ro.lustral.model.parchet.ParchetDetails;
 import ro.lustral.service.ParchetService;
 
+import javax.validation.Valid;
 import java.util.List;
 
 /**
@@ -20,9 +19,9 @@ public class ParchetController {
     @Autowired
     private ParchetService parchetService;
 
-    @RequestMapping(value = "/parchet", method = RequestMethod.GET)
-    public List<Parchet> getParchet() {
-        return parchetService.getAll();
+    @RequestMapping(value = "/parchet", method = RequestMethod.POST)
+    public List<Parchet> findParchet(@Valid @RequestBody FindParchetRequest request) {
+        return parchetService.findParchet(request);
     }
 
     @RequestMapping(value = "/parchet/detalii/{id}", method = RequestMethod.GET)

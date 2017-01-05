@@ -48,7 +48,7 @@
                 <span>Termen de livrare: </span> <span class="bold">{{details.delivery}}</span>
             </div>
             <div class="col s12 m12 l6 set-padding parchet-characteristic">
-                <span>Certificat: </span> <span class="bold">{{details.certificate}}</span>
+                <span>Garantie: </span> <span class="bold">{{details.warranty}} ani</span>
             </div>
             <div ng-if-start="details.producer == 'KAINDL'" class="col s12 m12 l12 set-padding parchet-characteristic bold">
                 <span>Alte caracteristici:</span>
@@ -75,10 +75,10 @@
         </div>
     </div>
     <div class="youtube-video-container">
-        <h5>Tutorial video pentru instalarea parchetului {{details.producer}}:</h5>
-        <iframe ng-if="details.producer == 'KAINDL'" class="youtube-video-parchet" width="560" height="400" src="https://www.youtube.com/embed/YTs6--BUxKw"
+        <h5>Tutorial video pentru montarea parchetului {{details.producer}}:</h5>
+        <iframe ng-if="details.producer != 'EGGER'" class="youtube-video-parchet" width="560" height="400" src="https://www.youtube.com/embed/YTs6--BUxKw"
                 frameborder="0" allowfullscreen></iframe>
-        <iframe ng-if="details.producer != 'KAINDL'" class="youtube-video-parchet" width="560" height="400" src="https://www.youtube.com/embed/TbREIYiRY7c"
+        <iframe ng-if="details.producer == 'EGGER'" class="youtube-video-parchet" width="560" height="400" src="https://www.youtube.com/embed/TbREIYiRY7c"
                 frameborder="0" allowfullscreen></iframe>
     </div>
 </div>

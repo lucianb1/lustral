@@ -55,7 +55,8 @@
 }
 
 html * {
-    font-family: 'Open Sans', sans-serif;;
+    font-family: Calibri, Trebuchet, sans-serif;
+    /*font-family: Arial, Helvetica, sans-serif;*/
 }
 
 /*make footer stick to bottom*/
@@ -527,6 +528,9 @@ nav.nav-small {
 @media (max-width: 1024px) {
     .modal.custom-modal-widht {
         width: 95% !important;
+    }
+    .main-View-Container {
+        width: 100%;
     }
 }
 
