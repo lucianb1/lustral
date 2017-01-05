@@ -24,7 +24,7 @@
 }
 
 .p-card-details {
-    background-color: grey;
+    background-color: #e6e8ed;
     width: 100%;
     height: 50px;
 }
@@ -39,15 +39,6 @@
     color: #795548;
     padding: 0 6px;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-}
-
-.card-image:hover {
-    cursor: zoom-in;
-}
-
-.image {
-    max-height: 100%;
-    max-width: 100%;
 }
 
 .card-container {
@@ -89,7 +80,7 @@
 .sort-label {
     float: right;
     margin-right: 10px;
-    padding: 0 12px;
+    padding: 0 16px;
     color: white;
     background-color: forestgreen;
 }
@@ -102,7 +93,7 @@
 
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1200px) {
     .sort-container {
         float: none;
         display: inline-block;
@@ -132,13 +123,18 @@
     display: block;
     width: 100%;
     height: auto;
+
 }
 
 .parchet-card-image-container {
+    overflow: hidden;
     position: relative;
+    max-width: 100%;
+    height: 250px; /*TODO this is the size of image*/
 }
 
 .parchet-card {
+    height: 300px; /*TODO this is the size of the image + description*/
 }
 
 .parchet-container {

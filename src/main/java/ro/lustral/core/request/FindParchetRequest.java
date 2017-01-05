@@ -1,5 +1,6 @@
 package ro.lustral.core.request;
 
+import javax.validation.constraints.NotNull;
 import java.util.List;
 
 /**
@@ -13,6 +14,11 @@ public class FindParchetRequest {
     private List<Integer> widths;
     private List<Integer> classes;
     private List<String> producers;
+
+    @NotNull
+    private Integer page;
+
+    private String name;
 
 
     public Integer getSort() {
@@ -43,7 +49,24 @@ public class FindParchetRequest {
         return classes;
     }
 
+
     public void setClasses(List<Integer> classes) {
         this.classes = classes;
+    }
+
+    public void setPage(Integer page) {
+        this.page = page;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Integer getPage() {
+        return page;
     }
 }

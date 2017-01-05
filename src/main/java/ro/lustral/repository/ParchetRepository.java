@@ -1,10 +1,12 @@
 package ro.lustral.repository;
 
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Repository;
+import ro.lustral.core.constants.ParchetConstants;
 import ro.lustral.model.parchet.Parchet;
 import ro.lustral.model.parchet.ParchetDetails;
 import ro.lustral.repository.rowmapper.ParchetDetailsRowMapper;
@@ -36,25 +38,33 @@ public class ParchetRepository {
         return jdbcTemplate.query(sql, rowMapper);
     }
 
-    public List<Parchet> findParchet(List<String> producers, List<Integer> widths, List<Integer> classes, Integer sort) {
+    public List<Parchet> findParchet(List<String> producers, List<Integer> widths, List<Integer> classes, Integer sort, Integer page, String code) {
         StringBuilder builder = new StringBuilder("SELECT * FROM parchet WHERE 1=1 ");
         if (!producers.isEmpty()) {
             builder.append("AND UPPER(producer) IN (:producers) ");
         }
         if (!widths.isEmpty()) {
-            builder.append("AND width IN (:widths)");
+            builder.append(" AND width IN (:widths)");
         }
         if (!classes.isEmpty()) {
-            builder.append("AND class IN (:classes)");
+            builder.append(" AND class IN (:classes)");
+        }
+        if (!StringUtils.isEmpty(code)) {
+            builder.append(" AND LOWER(name) LIKE :name");
         }
 
         if (sort != null && orderClauses.get(sort) != null) {
             builder.append(" ORDER BY " + orderClauses.get(sort));
         }
+        builder.append(" LIMIT :from, :limit");
+
         MapSqlParameterSource params = new MapSqlParameterSource()
                 .addValue("producers", producers)
                 .addValue("widths", widths)
-                .addValue("classes", classes);
+                .addValue("classes", classes)
+                .addValue("from", (page-1) * ParchetConstants.PAGE_SIZE)
+                .addValue("limit", ParchetConstants.PAGE_SIZE)
+                .addValue("name", "%" + code + "%");
         return jdbcTemplate.query(builder.toString(), params, rowMapper);
     }
 

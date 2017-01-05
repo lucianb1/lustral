@@ -76,8 +76,8 @@ public class Parchet extends OrderedEntity {
         return producer;
     }
 
-    public ParchetTrafficClass getTrafficClass() {
-        return trafficClass;
+    public String getTrafficClass() {
+        return trafficClass.toString();
     }
 
     public int getWidth() {

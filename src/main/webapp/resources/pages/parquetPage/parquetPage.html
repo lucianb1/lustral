@@ -7,26 +7,29 @@
             </div>
             <div class="filter-input">
                 <select class="" ng-options="value.id as value.value for value in producerOptions" ng-model="producerValues" material-select multiple watch
-                        ng-change="loadParchet(1000);">
+                        ng-change="updateProducerFilter(1000)">
                 </select>
             </div>
 
             <div class="filter-input">
                 <select class="" ng-options="item.id as item.value for item in widthOptions" ng-model="widthValues" material-select multiple
-                        ng-change="loadParchet(1000);">
+                        ng-change="updateWidthFilter(1000);">
                 </select>
             </div>
             <div class="filter-input">
                 <select class="" ng-options="item.id as item.value for item in classOptions" ng-model="classValues" material-select multiple
-                        ng-change="loadParchet(1000);">
+                        ng-change="updateClassFilter(1000);">
                 </select>
+            </div>
+            <div class="filter-input">
+                <input ng-model="codeValue" placeholder="Cod parchet" type="text" ng-change="updateNameFilter(1000);">
             </div>
         </div>
 
         <div class="sort-container">
             <div class="sort-input">
                 <select ng-options="item.id as item.value for item in sortOptions" class="browser-default" ng-model="sortValue" material-select
-                        ng-change="loadParchet(0);">
+                        ng-change="updateSort(0);">
                 </select>
             </div>
             <div class="sort-label">
@@ -35,55 +38,23 @@
         </div>
     </div>
 
-    <div class="row row-container">
-        <div class="col s12 m6 l3">
-            <div class="card parchet-card">
-                <div class="parchet-card-image-container">
-                    <img class="parchet-card-image"
-                         src="http://www.jqueryscript.net/images/Simplest-Responsive-jQuery-Image-Lightbox-Plugin-simple-lightbox.jpg">
-                    <div class="p-price">122 lei/mp</div>
-                </div>
-                <div class="p-card-details">
-                    Salut
-                </div>
+    <div ng-if="listIsEmpty">Ne pare rau, nici un rezultat nu a fost gasit</div>
 
-            </div>
-        </div>
-        <div class="col s12 m6 l3">
+    <div infinite-scroll="nextPage()" infinite-scroll-distance="1" class="row row-container">
+        <div class="col s12 m6 l3" ng-repeat="card in cardsList">
             <div class="card parchet-card">
-                <div class="parchet-card-image-container">
-                    <img class="parchet-card-image"
-                         src="http://www.jqueryscript.net/images/Simplest-Responsive-jQuery-Image-Lightbox-Plugin-simple-lightbox.jpg">
-                    <div class="p-price">122 lei/mp</div>
-                </div>
+                <loading-spinner loading="loading"></loading-spinner>
+                <a ng-href="{{'#/parchet/detalii/' + card.id}}">
+                    <div class="parchet-card-image-container">
+                        <img class="parchet-card-image grow"
+                             ng-src="{{card.imageUrl}}" alt="Parchet Lustral">
+                        <div class="p-price">{{card.price}} lei/mp</div>
+                    </div>
+                </a>
                 <div class="p-card-details">
-                    Salut
-                </div>
+                    <div>Parchet laminat Kaindl Stejar brun, {{card.width}}mm, {{card.trafficClass}}</div>
+                    <div>cod: {{card.name}}</div>
 
-            </div>
-        </div>
-        <div class="col s12 m6 l3">
-            <div class="card parchet-card">
-                <div class="parchet-card-image-container">
-                    <img class="parchet-card-image"
-                         src="http://www.jqueryscript.net/images/Simplest-Responsive-jQuery-Image-Lightbox-Plugin-simple-lightbox.jpg">
-                    <div class="p-price">122 lei/mp</div>
-                </div>
-                <div class="p-card-details">
-                    Salut
-                </div>
-
-            </div>
-        </div>
-        <div class="col s12 m6 l3">
-            <div class="card parchet-card">
-                <div class="parchet-card-image-container">
-                    <img class="parchet-card-image"
-                         src="http://www.jqueryscript.net/images/Simplest-Responsive-jQuery-Image-Lightbox-Plugin-simple-lightbox.jpg">
-                    <div class="p-price">122 lei/mp</div>
-                </div>
-                <div class="p-card-details">
-                    Salut
                 </div>
 
             </div>

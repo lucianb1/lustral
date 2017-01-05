@@ -26,7 +26,7 @@ public class ParchetServiceImpl implements ParchetService {
 
     @Override
     public List<Parchet> findParchet(FindParchetRequest request) {
-        return parchetRepository.findParchet(request.getProducers(), request.getWidths(), request.getClasses(), request.getSort());
+        return parchetRepository.findParchet(request.getProducers(), request.getWidths(), request.getClasses(), request.getSort(), request.getPage(), request.getName());
     }
 
     @Override

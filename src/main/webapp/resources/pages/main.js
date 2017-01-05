@@ -13,6 +13,7 @@ var mainApp = angular.module('lustralWebSite',
     [
         'ngRoute',
         'ngAnimate',
+        'infinite-scroll',
         'honeAndFaienceModule',
         'honeAndFaienceDetailModule',
         'parquetModule',
