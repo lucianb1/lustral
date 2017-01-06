@@ -2,17 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fa3c302e-6f09-49da-8ddf-8cf67246a2a4" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ro/lustral/core/constants/ParchetConstants.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/resources/lib/angular/ng-infinite-scroll.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ro/lustral/core/request/FindParchetRequest.java" afterPath="$PROJECT_DIR$/src/main/java/ro/lustral/core/request/FindParchetRequest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ro/lustral/model/parchet/Parchet.java" afterPath="$PROJECT_DIR$/src/main/java/ro/lustral/model/parchet/Parchet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ro/lustral/repository/ParchetRepository.java" afterPath="$PROJECT_DIR$/src/main/java/ro/lustral/repository/ParchetRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ro/lustral/service/impl/ParchetServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/ro/lustral/service/impl/ParchetServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/index.html" afterPath="$PROJECT_DIR$/src/main/webapp/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/lib/materialize/css/materialize.css" afterPath="$PROJECT_DIR$/src/main/webapp/resources/lib/materialize/css/materialize.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/pages/main.css" afterPath="$PROJECT_DIR$/src/main/webapp/resources/pages/main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/pages/main.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/pages/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/pages/parquetPage/parquetPage.css" afterPath="$PROJECT_DIR$/src/main/webapp/resources/pages/parquetPage/parquetPage.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/pages/parquetPage/parquetPage.html" afterPath="$PROJECT_DIR$/src/main/webapp/resources/pages/parquetPage/parquetPage.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/pages/parquetPage/parquetPageModule.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/pages/parquetPage/parquetPageModule.js" />
     </list>
@@ -36,8 +25,8 @@
             <file leaf-file-name="schema.sql" pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/src/main/resources/schema.sql">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="180">
-                    <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+                  <state relative-caret-position="-18">
+                    <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
                     <folding />
                   </state>
                 </provider>
@@ -54,8 +43,8 @@
       <file leaf-file-name="parquetPageModule.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/pages/parquetPage/parquetPageModule.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="486">
-              <caret line="111" column="9" lean-forward="false" selection-start-line="111" selection-start-column="9" selection-end-line="111" selection-end-column="9" />
+            <state relative-caret-position="324">
+              <caret line="105" column="13" lean-forward="false" selection-start-line="105" selection-start-column="13" selection-end-line="105" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -133,8 +122,8 @@
       <file leaf-file-name="parquetPage.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/pages/parquetPage/parquetPage.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="24" column="109" lean-forward="false" selection-start-line="24" selection-start-column="109" selection-end-line="24" selection-end-column="109" />
+            <state relative-caret-position="918">
+              <caret line="51" column="26" lean-forward="true" selection-start-line="51" selection-start-column="26" selection-end-line="51" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -171,9 +160,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>&lt;div class=&quot;col s12 m12 l6 set-padding pa</find>
-      <find>loading</find>
-      <find>nav ul a</find>
       <find>src</find>
       <find>getWarr</find>
       <find>certifi</find>
@@ -201,6 +187,9 @@
       <find>parchet-card</find>
       <find>parchet-card-image-container</find>
       <find>console</find>
+      <find>lastFilterUsed</find>
+      <find>listIsEmpty</find>
+      <find>allPages</find>
     </findStrings>
     <replaceStrings>
       <replace>CREATE TABLE IF NOT EXISTS</replace>
@@ -1259,14 +1248,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/schema.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/lib/imagesLoaded/imagesLoaded.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1360,8 +1341,8 @@
         <state relative-caret-position="252">
           <caret line="22" column="65" lean-forward="false" selection-start-line="22" selection-start-column="65" selection-end-line="22" selection-end-column="65" />
           <folding>
-            <element signature="e#770#771#0" expanded="true" />
-            <element signature="e#860#861#0" expanded="true" />
+            <element signature="e#770#771#0" expanded="false" />
+            <element signature="e#860#861#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1439,18 +1420,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/schema.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-18">
+          <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/pages/parquetPage/parquetPage.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="24" column="109" lean-forward="false" selection-start-line="24" selection-start-column="109" selection-end-line="24" selection-end-column="109" />
+        <state relative-caret-position="918">
+          <caret line="51" column="26" lean-forward="true" selection-start-line="51" selection-start-column="26" selection-end-line="51" selection-end-column="26" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/pages/parquetPage/parquetPageModule.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="111" column="9" lean-forward="false" selection-start-line="111" selection-start-column="9" selection-end-line="111" selection-end-column="9" />
+        <state relative-caret-position="324">
+          <caret line="105" column="13" lean-forward="false" selection-start-line="105" selection-start-column="13" selection-end-line="105" selection-end-column="13" />
           <folding />
         </state>
       </provider>

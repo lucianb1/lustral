@@ -40,7 +40,7 @@
 
     <div ng-if="listIsEmpty">Ne pare rau, nici un rezultat nu a fost gasit</div>
 
-    <div infinite-scroll="nextPage()" infinite-scroll-distance="1" class="row row-container">
+    <div infinite-scroll="nextPage()" infinite-scroll-disabled='!canLoadNextPage' infinite-scroll-immediate-check="false" infinite-scroll-distance="1" class="row row-container">
         <div class="col s12 m6 l3" ng-repeat="card in cardsList">
             <div class="card parchet-card">
                 <loading-spinner loading="loading"></loading-spinner>

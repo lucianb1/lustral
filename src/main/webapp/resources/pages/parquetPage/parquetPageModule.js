@@ -68,65 +68,78 @@ parquetModule.controller('parquetController', ['$scope', '$http',
             value: 'Eurowood'
         }];
         $scope.producerValues = [];
+        $scope.oldProducerValues = [];
         $scope.widthOptions = [{id: null, value: 'Grosime'}, {id: 8, value: '8 mm'}, {id: 10, value: '10 mm'}, {id: 11, value: '11 mm'}, {
             id: 12,
             value: '12 mm'
         }];
         $scope.codeValue = null;
         $scope.widthValues = [];
+        $scope.oldWidthValues = [];
         $scope.classOptions = [{id: null, value: 'Clasa trafic'}, {id: 31, value: 'Cl31'}, {id: 32, value: 'Cl32'}, {id: 33, value: 'Cl33'}];
         $scope.classValues = [];
+        $scope.oldClassValues = [];
         $scope.cardsList = [];
         $scope.fancyBoxArray = [];
 
         $scope.currentPage = 1;
-        $scope.allPagesDownloaded = false;
         $scope.listIsEmpty = false;
-        $scope.lastFilterUsed = null;
+        $scope.canLoadNextPage = true;
 
         this.time = null;
         var me = this;
 
         var getParchet = function () {
             return parquetService.getParquet($scope.sortValue, $scope.producerValues, $scope.widthValues, $scope.classValues, $scope.currentPage, $scope.codeValue);
-        }
+        };
 
         $scope.updateSort = function (timeout) {
             $scope.initializeParchet(timeout);
-        }
+        };
 
         $scope.updateProducerFilter = function (timeout) {
-            if ($scope.producerValues[0] != null) {
+            var oldVInList = $scope.oldProducerValues[0] === null;
+            var newVInList = $scope.producerValues[0] === null;
+            if (oldVInList == newVInList) { // it was existing in the both, or not at all
                 $scope.initializeParchet(timeout);
             }
-        }
+            $scope.oldProducerValues = $scope.producerValues;
+        };
 
         $scope.updateWidthFilter = function (timeout) {
-            if ($scope.widthValues[0] != null) {
+            var oldVInList = $scope.oldWidthValues[0] === null;
+            var newVInList = $scope.widthValues[0] === null;
+            if (oldVInList == newVInList) { // it was existing in the both, or not at all
                 $scope.initializeParchet(timeout);
             }
-        }
-
-        $scope.updateNameFilter = function (timeout) {
-            $scope.initializeParchet(timeout);
-        }
+            $scope.oldWidthValues = $scope.widthValues;
+        };
 
         $scope.updateClassFilter = function (timeout) {
-            if ($scope.classValues[0] != null) {
+            var oldVInList = $scope.oldClassValues[0] === null;
+            var newVInList = $scope.classValues[0] === null;
+            if (oldVInList == newVInList) { // it was existing in the both, or not at all
                 $scope.initializeParchet(timeout);
             }
+            $scope.oldClassValues = $scope.classValues;
         }
+        ;
+        $scope.updateNameFilter = function (timeout) {
+            $scope.initializeParchet(timeout);
+        };
+
 
         $scope.nextPage = function () {
-            if (!$scope.allPagesDownloaded) {
+            if ($scope.canLoadNextPage) {
+                $scope.canLoadNextPage = false;
+                $scope.currentPage++;
                 getParchet().then(function (response) {
-                    $scope.currentPage++;
                     var data = response.data;
-                    if (data.length == 0) {
-                        $scope.allPagesDownloaded = true;
+                    if (data.length < 25) { //TODO be aware of this hardcoded - page size
                         return;
                     } else {
                         $scope.cardsList = $scope.cardsList.concat(response.data);
+                        $scope.canLoadNextPage = true;
                     }
                 });
             }
