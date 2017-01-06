@@ -31,12 +31,12 @@ mainApp.directive('loadingSpinner', [function () {
     return {
         restrict: 'E', //E = element, A = attribute, C = class, M = comment
         templateUrl: '/resources/components/loading-template.html',
-        scope: { loading: "=" },
-        link: function ($scope, element) {
-            element.parent().find('img').imagesLoaded(function () {
-                // element.hide();
-            });
-        }
+        // scope: { loading: "=" },
+        // link: function ($scope, element) {
+        //     element.parent().find('img').imagesLoaded(function () {
+        //         // element.hide();
+        //     });
+        // }
     }
 }]);
 

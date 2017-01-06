@@ -5,7 +5,7 @@ var parquetOptions = new HeightOptions(1.7);
 var ajaxErrorCallback = function (error) {
     console.log('data:' + error.data + ' | status:' + error.status
         + ' | message' + error.statusText);
-}
+};
 
 parquetModule.directive('setParquetHeight', ['$rootScope',
     function ($rootScope) {
@@ -22,12 +22,12 @@ parquetModule.directive('setParquetHeight', ['$rootScope',
                 })
             }
         }
-    }])
+    }]);
 
 parquetModule.service('parquetService', ['$http', function ($http) {
     var notNull = function (item) {
         return item != null;
-    }
+    };
 
     var createJsonBody = function (sort, producers, widths, classes, page, code) {
         producers = producers.filter(notNull);
@@ -43,7 +43,7 @@ parquetModule.service('parquetService', ['$http', function ($http) {
             'name': code
         };
 
-    }
+    };
 
     return {
         getParquet: function (sort, producers, widths, classes, page, code) {
@@ -137,7 +137,7 @@ parquetModule.controller('parquetController', ['$scope', '$http',
                 getParchet().then(function (response) {
                     var data = response.data;
                     if (data.length < 25) { //TODO be aware of this hardcoded - page size
-                        return;
+
                     } else {
                         $scope.cardsList = $scope.cardsList.concat(response.data);
                         $scope.canLoadNextPage = true;
@@ -158,11 +158,7 @@ parquetModule.controller('parquetController', ['$scope', '$http',
                 $scope.currentPage = 1;
                 getParchet().then(function (response) {
                     $scope.cardsList = response.data;
-                    if (response.data.length == 0) {
-                        $scope.listIsEmpty = true;
-                    } else {
-                        $scope.listIsEmpty = false;
-                    }
+                    $scope.listIsEmpty = response.data.length == 0;
                     $scope.isPageReady = true;
                 }, ajaxErrorCallback);
                 me.time = null;
@@ -175,15 +171,27 @@ parquetModule.controller('parquetController', ['$scope', '$http',
 
     }]);
 
-parquetModule.directive('openModal', function () {
-    return {
-        restrict: 'A', // E = element, A = attribute, C = class, M = comment
-        link: function ($scope, element, attr) {
-            if (attr.openParchetModal) {
-                $scope[attr.openParchetModal] = function (data) {
-                    element.openModal();
-                }
-            }
-        }
-    }
+
+parquetModule.directive('backImg', function(){
+    return function(scope, element, attrs){
+        attrs.$observe('backImg', function(value) {
+            element.css({
+                'background-image': 'url(' + value +')',
+                'background-size' : 'cover'
+            });
+        });
+    };
 });
+
+// parquetModule.directive('openModal', function () {
+//     return {
+//         restrict: 'A', // E = element, A = attribute, C = class, M = comment
+//         link: function ($scope, element, attr) {
+//             if (attr.openParchetModal) {
+//                 $scope[attr.openParchetModal] = function (data) {
+//                     element.openModal();
+//                 }
+//             }
+//         }
+//     }
+// });

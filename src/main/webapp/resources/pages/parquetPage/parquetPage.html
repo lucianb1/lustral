@@ -46,8 +46,8 @@
             <div class="card parchet-card">
                 <a ng-href="{{'#/parchet/detalii/' + card.id}}">
                     <div class="parchet-card-image-container">
-                        <img class="parchet-card-image grow"
-                             ng-src="{{card.imageUrl}}" alt="Parchet Lustral">
+                        <div back-img="{{card.imageUrl}}" class="parchet-card-image grow"></div>
+                             <!--ng-src="{{card.imageUrl}}" alt="Parchet Lustral">-->
                         <div class="p-price">{{card.price}} lei/mp</div>
                     </div>
                 </a>

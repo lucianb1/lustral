@@ -30,6 +30,7 @@ public class ParchetRepository {
         orderClauses.put(1, "price ASC");
         orderClauses.put(2, "price DESC");
     }
+
     @Autowired
     private NamedParameterJdbcTemplate jdbcTemplate;
 
@@ -75,6 +76,26 @@ public class ParchetRepository {
         } catch (EmptyResultDataAccessException e) {
             throw new RuntimeException();
         }
+    }
+
+    public void saveParchet(String name, String description, float price, Float oldPrice, String delivery, String wood, int width, int trafficClass, int images, String grip, String size, String producer, String material, int orderNr) {
+        String sql = "INSERT INTO parchet(name, description, price, old_price, delivery, wood, width, class, images, grip, size, producer, material, order_nr) " +
+                "VALUES (:name, :description, :price, :oldPrice, :delivery, :wood, :width, :trafficClass, :images, :grip, :size, :producer, :material, :orderNr)";
+        MapSqlParameterSource params = new MapSqlParameterSource()
+                .addValue("name", name)
+                .addValue("description", description)
+                .addValue("price", price)
+                .addValue("oldPrice", oldPrice)
+                .addValue("delivery", delivery)
+                .addValue("wood", wood)
+                .addValue("width", width)
+                .addValue("trafficClass", trafficClass)
+                .addValue("images", images)
+                .addValue("grip", grip)
+                .addValue("producer", producer)
+                .addValue("material", material)
+                .addValue("orderNr", orderNr);
+        jdbcTemplate.update(sql, params);
     }
 
 }

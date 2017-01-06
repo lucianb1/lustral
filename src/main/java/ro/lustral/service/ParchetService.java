@@ -16,4 +16,6 @@ public interface ParchetService {
     List<Parchet> findParchet(FindParchetRequest request);
 
     ParchetDetails getDetails(int id);
+
+    void saveParchet(String name, String description, float price, Float oldPrice, String delivery, String woodt, int width, int trafficClass, int images, String grip, String size, String producer, String material, int orderNr);
 }
