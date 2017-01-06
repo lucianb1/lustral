@@ -85,6 +85,7 @@ parquetModule.controller('parquetController', ['$scope', '$http',
         $scope.currentPage = 1;
         $scope.listIsEmpty = false;
         $scope.canLoadNextPage = true;
+        $scope.isPageReady = false;
 
         this.time = null;
         var me = this;
@@ -153,6 +154,7 @@ parquetModule.controller('parquetController', ['$scope', '$http',
             }
             // salvez o noua referinta la urmatoru timeout ca sa ii pot da clear in caz ca mai dai click pe ceva in urmatoarele 2 secunde
             me.time = setTimeout(function () {
+                $scope.isPageReady = false;
                 $scope.currentPage = 1;
                 getParchet().then(function (response) {
                     $scope.cardsList = response.data;
@@ -161,8 +163,10 @@ parquetModule.controller('parquetController', ['$scope', '$http',
                     } else {
                         $scope.listIsEmpty = false;
                     }
+                    $scope.isPageReady = true;
                 }, ajaxErrorCallback);
                 me.time = null;
+
             }, delay);
 
         };

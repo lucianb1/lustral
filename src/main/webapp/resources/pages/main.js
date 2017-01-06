@@ -34,7 +34,7 @@ mainApp.directive('loadingSpinner', [function () {
         scope: { loading: "=" },
         link: function ($scope, element) {
             element.parent().find('img').imagesLoaded(function () {
-                element.hide();
+                // element.hide();
             });
         }
     }

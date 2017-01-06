@@ -130,11 +130,12 @@
     overflow: hidden;
     position: relative;
     max-width: 100%;
-    height: 250px; /*TODO this is the size of image*/
+    min-height: 100px;
+    /*height: 250px; !*TODO this is the size of image*!*/
 }
 
 .parchet-card {
-    height: 300px; /*TODO this is the size of the image + description*/
+    /*height: 300px; !*TODO this is the size of the image + description*!*/
 }
 
 .parchet-container {
@@ -143,4 +144,5 @@
     margin-left: auto;
     padding-left: 10px;
     padding-right: 10px;
+    position: relative;
 }
