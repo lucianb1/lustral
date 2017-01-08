@@ -25,7 +25,7 @@
 }
 
 .grow:hover {
-    transform: scale(1.2);
+    transform: scale(1.1);
 }
 
 .material-icons {
@@ -539,13 +539,25 @@ nav.nav-small {
     overflow-y: auto !important;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1124px) {
     .modal.custom-modal-widht {
         width: 95% !important;
     }
 
     .main-View-Container {
         width: 100%;
+    }
+}
+
+@media (max-width: 601px) {
+    .grow {
+        transition: none;
+    }
+    .grow:hover {
+        transform: none;
+    }
+    .row .col {
+        padding: 0;
     }
 }
 

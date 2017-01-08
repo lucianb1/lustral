@@ -17,5 +17,5 @@ public interface ParchetService {
 
     ParchetDetails getDetails(int id);
 
-    void saveParchet(String name, String description, float price, Float oldPrice, String delivery, String woodt, int width, int trafficClass, int images, String grip, String size, String producer, String material, int orderNr);
+    void saveParchet(String name, String description, float price, Float oldPrice, String delivery, String wood, Integer warranty, int width, int trafficClass, int images, String grip, String size, String producer, String material, int orderNr);
 }

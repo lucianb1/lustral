@@ -30,6 +30,7 @@ CREATE TABLE IF NOT EXISTS parchet (
     old_price float,
     delivery VARCHAR(20) NOT NULL,
     wood VARCHAR(20) NOT NULL,
+    warranty TINYINT,
     width TINYINT NOT NULL,
     class TINYINT NOT NULL,
     images TINYINT NOT NULL DEFAULT 1,

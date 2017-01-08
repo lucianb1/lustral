@@ -13,6 +13,7 @@ public class Parchet extends OrderedEntity {
 
     private int id;
     private String name;
+    private String description;
     private ParchetProducer producer;
     private ParchetTrafficClass trafficClass;
     private int width;
@@ -39,6 +40,23 @@ public class Parchet extends OrderedEntity {
     public Parchet setTrafficClass(ParchetTrafficClass trafficClass) {
         this.trafficClass = trafficClass;
         return this;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public Parchet setDescription(String description) {
+        this.description = description;
+        return this;
+    }
+
+    public boolean isHasDiscount() {
+        return hasDiscount;
+    }
+
+    public void setHasDiscount(boolean hasDiscount) {
+        this.hasDiscount = hasDiscount;
     }
 
     public Parchet setWidth(int width) {

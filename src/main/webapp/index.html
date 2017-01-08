@@ -89,7 +89,7 @@
                 </a>
                 <ul class="right hide-on-med-and-down">
                     <li><a ng-href="{{'#/gresie-faianta'}}" onClick="_gaq.push(['_trackEvent', 'Menu navigation', 'click', 'Gresie si faianta']);" class="dropdown-button-hover" data-activates="desktop-drop-down">Gresie si faianta</a></li>
-                    <li><a ng-href="{{'#/parchet'}}" onClick="_gaq.push(['_trackEvent', 'Menu navigation', 'click', 'Parchet laminat']);">Parchet</a></li>
+                    <li><a ng-href="{{'#/parchet'}}" onClick="_gaq.push(['_trackEvent', 'Menu navigation', 'click', 'Parchet laminat']);">Parchet laminat</a></li>
                     <li><a ng-href="{{'#/cazi-baie'}}" onClick="_gaq.push(['_trackEvent', 'Menu navigation', 'click', 'Cazi de baie']);">Cazi de baie</a></li>
                     <li><a ng-href="{{'#/mobilier'}}" onClick="_gaq.push(['_trackEvent', 'Menu navigation', 'click', 'Mobilier']);">Mobilier de baie</a></li>
                     <li><a ng-href="{{'#/contact'}}" onClick="_gaq.push(['_trackEvent', 'Menu navigation', 'click', 'Contact']);">Contact</a></li>
@@ -123,7 +123,7 @@
                 </li>
             </ul>
         </li>
-        <li><a ng-href="{{'#/parchet'}}" onClick="_gaq.push(['_trackEvent', 'Menu navigation', 'click', 'Mobile - Parchet']);">Parchet</a></li>
+        <li><a ng-href="{{'#/parchet'}}" onClick="_gaq.push(['_trackEvent', 'Menu navigation', 'click', 'Mobile - Parchet']);">Parchet laminat</a></li>
         <li><a ng-href="{{'#/cazi-baie'}}" onClick="_gaq.push(['_trackEvent', 'Menu navigation', 'click', 'Mobile - Cazi de baie']);">Cazi de baie</a></li>
         <li><a ng-href="{{'#/mobilier'}}" onClick="_gaq.push(['_trackEvent', 'Menu navigation', 'click', 'Mobile - Mobilier']);">Mobilier de baie</a></li>
         <li><a ng-href="{{'#/contact'}}" onClick="_gaq.push(['_trackEvent', 'Menu navigation', 'click', 'Mobile - Contact']);">Contact</a></li>
@@ -132,7 +132,7 @@
     <div class="main">
         <div class="layout">
             <div class="main-View-Container">
-                <div ng-view="mainView" id="mainView"></div>
+                <div ng-view="mainView"  autoscroll="true" id="mainView"></div>
             </div>
         </div>
     </div>

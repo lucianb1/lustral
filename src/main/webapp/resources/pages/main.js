@@ -169,6 +169,10 @@ mainApp.directive('googleMap', function () {
     }
 })
 
+mainApp.factory('parchetCache', ['$cacheFactory', function ($cacheFactory) {
+    return $cacheFactory('parchet', {'capacity': 1});
+}]);
+
 //application routing
 mainApp.config(['$httpProvider', '$routeProvider', function ($httpProvider, $routeProvider) {
     $routeProvider

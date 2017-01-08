@@ -78,9 +78,9 @@ public class ParchetRepository {
         }
     }
 
-    public void saveParchet(String name, String description, float price, Float oldPrice, String delivery, String wood, int width, int trafficClass, int images, String grip, String size, String producer, String material, int orderNr) {
-        String sql = "INSERT INTO parchet(name, description, price, old_price, delivery, wood, width, class, images, grip, size, producer, material, order_nr) " +
-                "VALUES (:name, :description, :price, :oldPrice, :delivery, :wood, :width, :trafficClass, :images, :grip, :size, :producer, :material, :orderNr)";
+    public void saveParchet(String name, String description, float price, Float oldPrice, String delivery, String wood, Integer warranty, int width, int trafficClass, int images, String grip, String size, String producer, String material, int orderNr) {
+        String sql = "INSERT INTO parchet(name, description, price, old_price, delivery, wood, warranty, width, class, images, grip, size, producer, material, order_nr) " +
+                "VALUES (:name, :description, :price, :oldPrice, :delivery, :wood, :warranty, :width, :trafficClass, :images, :grip, :size, :producer, :material, :orderNr)";
         MapSqlParameterSource params = new MapSqlParameterSource()
                 .addValue("name", name)
                 .addValue("description", description)
@@ -92,9 +92,11 @@ public class ParchetRepository {
                 .addValue("trafficClass", trafficClass)
                 .addValue("images", images)
                 .addValue("grip", grip)
+                .addValue("size", size)
                 .addValue("producer", producer)
                 .addValue("material", material)
-                .addValue("orderNr", orderNr);
+                .addValue("orderNr", orderNr)
+                .addValue("warranty", warranty);
         jdbcTemplate.update(sql, params);
     }
 

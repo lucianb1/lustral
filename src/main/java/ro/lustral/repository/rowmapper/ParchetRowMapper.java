@@ -20,11 +20,12 @@ public class ParchetRowMapper implements RowMapper<Parchet> {
         return new Parchet()
                 .setId(rs.getInt("id"))
                 .setName(name)
+                .setDescription(rs.getString("description"))
                 .setWidth(rs.getInt("width"))
                 .setOldPrice((Float) rs.getObject("old_price"))
                 .setPrice(rs.getFloat("price"))
                 .setProducer(ParchetProducer.valueFrom(rs.getString("producer")))
                 .setTrafficClass(ParchetTrafficClass.valueFrom(rs.getInt("class")))
-                .setImageUrl(ImageConstants.PARCHET_IMAGE_LOCATION + name + "/" + name + ".jpg");
+                .setImageUrl(ImageConstants.PARCHET_IMAGE_LOCATION + name + "/1.jpg");
     }
 }

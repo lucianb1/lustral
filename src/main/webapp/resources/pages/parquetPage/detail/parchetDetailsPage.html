@@ -1,4 +1,4 @@
-<div class="parchet-details-title">{{details.description}}</div>
+<div class="parchet-details-title">{{details.description}}, {{details.width}} mm, clasa {{details.trafficClass}}</div>
 <div class="details-background">
     <div class="row row-container parchet-details-container">
         <div class="col s12 m12 l6 set-padding parchet-carousel-container">
@@ -27,7 +27,7 @@
                 <span>Tara de origine: </span> <span class="bold">{{details.country}}</span>
             </div>
             <div class="col s12 m12 l6 set-padding parchet-characteristic">
-                <span>Clasa de trafic: </span> <span tooltipped data-position="bottom" data-delay="0" data-tooltip="{{trafficTooltip}}" class="bold parchet-tooltip">{{details.trafficClass + ' (?)'}}</span>
+                <span>Clasa de trafic: </span> <span tooltipped data-position="top" data-delay="0" data-tooltip="{{trafficTooltip}}" class="bold parchet-tooltip">{{details.trafficClass + ' (?)'}}</span>
             </div>
             <div class="col s12 m12 l6 set-padding parchet-characteristic">
                 <span>Imbinare: </span> <span class="bold">{{details.grip}}</span>
@@ -36,19 +36,19 @@
                 <span>Esenta: </span> <span class="bold">{{details.wood}}</span>
             </div>
             <div class="col s12 m12 l6 set-padding parchet-characteristic">
-                <span>Dimensiune placa: </span> <span class="bold">{{details.size}}</span>
+                <span>Dimensiune placa: </span> <span class="bold">{{details.size}} cm</span>
             </div>
             <div class="col s12 m12 l6 set-padding parchet-characteristic">
-                <span>Incalzire in pardosea: </span> <span class="bold">{{details.forHeat ? 'Da' : 'Nu'}}</span>
+                <span>Incalzire in pardosea: </span> <span class="bold">DA</span>
             </div>
             <div class="col s12 m12 l6 set-padding parchet-characteristic">
-                <span>Material suport: </span> <span tooltipped data-position="bottom" data-delay="0" data-tooltip="{{materialTooltip}}" class="bold parchet-tooltip">{{details.baseMaterial + ' (?)'}}</span>
+                <span>Material suport: </span> <span tooltipped data-position="top" data-delay="0" data-tooltip="{{materialTooltip}}" class="bold parchet-tooltip">{{details.baseMaterial + ' (?)'}}</span>
             </div>
             <div class="col s12 m12 l6 set-padding parchet-characteristic">
                 <span>Termen de livrare: </span> <span class="bold">{{details.delivery}}</span>
             </div>
             <div class="col s12 m12 l6 set-padding parchet-characteristic">
-                <span>Garantie: </span> <span class="bold">{{details.warranty}} ani</span>
+                <span>Garantie: </span> <span class="bold">{{details.warranty == null ? 'Pe viata' : details.warranty + ' ani'}}</span>
             </div>
             <div ng-if-start="details.producer == 'KAINDL'" class="col s12 m12 l12 set-padding parchet-characteristic bold">
                 <span>Alte caracteristici:</span>

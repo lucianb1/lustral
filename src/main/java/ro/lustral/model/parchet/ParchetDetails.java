@@ -3,6 +3,7 @@ package ro.lustral.model.parchet;
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import ro.lustral.core.ParchetProducer;
 import ro.lustral.core.ParchetTrafficClass;
+import ro.lustral.core.constants.ImageConstants;
 
 /**
  * Created by Luci on 29-Dec-16.
@@ -11,7 +12,7 @@ import ro.lustral.core.ParchetTrafficClass;
 public class ParchetDetails {
 
     private int id;
-    private int warranty;
+    private Integer warranty;
     private String name;
     private ParchetProducer producer;
     private ParchetTrafficClass trafficClass;
@@ -25,25 +26,29 @@ public class ParchetDetails {
     private Float oldPrice;
     private int orderNr;
     private String wood;
-    private String country;
     private int images;
     private String delivery;
     private String description;
     private boolean hasDiscount;
 
+
+    public String getBaseUrl() {
+        return ImageConstants.PARCHET_IMAGE_LOCATION + name + "/";
+    }
+
     public String getDescription() {
-        return String.format("Parchet laminat %s, %s", description, getProducer());
+        return String.format("Parchet laminat %s %s", getProducer(), description);
     }
 
     public void setDescription(String description) {
         this.description = description;
     }
 
-    public int getWarranty() {
-        return 10; //TODO
+    public Integer getWarranty() {
+        return warranty;
     }
 
-    public void setWarranty(int warranty) {
+    public void setWarranty(Integer warranty) {
         this.warranty = warranty;
     }
 
@@ -154,16 +159,8 @@ public class ParchetDetails {
         }
     }
 
-    public boolean getForHeat() {
-        return true; //TODO
-    }
-
     public String getCountry() {
         return producer.getCountry();
-    }
-
-    public void setCountry(String country) {
-        this.country = country;
     }
 
     public int getImages() {
