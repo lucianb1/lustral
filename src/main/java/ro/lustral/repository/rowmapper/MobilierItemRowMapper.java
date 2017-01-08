@@ -12,7 +12,13 @@ import java.sql.SQLException;
 public class MobilierItemRowMapper implements RowMapper<MobilierItem> {
 
     @Override
-    public MobilierItem mapRow(ResultSet resultSet, int i) throws SQLException {
-        return null;
+    public MobilierItem mapRow(ResultSet rs, int i) throws SQLException {
+        MobilierItem item = new MobilierItem();
+        item.setName(rs.getString("name"));
+        item.setCode(rs.getString("code"));
+        item.setPrice(rs.getFloat("price"));
+        item.setSize(rs.getString("size"));
+        item.setDescription(rs.getString("description"));
+        return item;
     }
 }

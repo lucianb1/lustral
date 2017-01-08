@@ -6,7 +6,7 @@ var ajaxErrorCallback = function (error) {
 mobDetailsModule.service('mobDetailsService', ['$http', function ($http) {
     return {
         getDetailView: function (id) {
-            return $http.get('/mobilier/details/' + id)
+            return $http.get('/mobilier/detalii/' + id)
         }
     }
 }])
@@ -19,11 +19,10 @@ mobDetailsModule.controller('mobDetailsController', ['$scope', '$routeParams', '
 
         mobDetailsService.getDetailView($routeParams.id).then(function (response) {
             $scope.initSlider = true;
-            var imagesCount = response.data.imagesCount;
-            var name = response.data.name;
-            $scope.collectionName = name;
+            $scope.details = response.data;
+            var imagesCount = $scope.details.imagesCount;
             for (var i = 1; i <= imagesCount; i++) {
-            	var url = '/images/mobilier/' + name.toLowerCase().replace(' ', '_') + '/' + i + '.jpg';
+            	var url = '/images/mobilier/' + $scope.details.name.toLowerCase() + '/' + i + '.jpg';
                 $scope.images.push(url);
             	$scope.fancyBoxArray.push({ href: url, title: '' });
               }

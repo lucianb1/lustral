@@ -173,6 +173,28 @@ mainApp.factory('parchetCache', ['$cacheFactory', function ($cacheFactory) {
     return $cacheFactory('parchet', {'capacity': 1});
 }]);
 
+mainApp.directive('backImg', function () {
+    return function (scope, element, attrs) {
+        attrs.$observe('backImg', function (value) {
+            element.css({
+                'background-image': 'url(' + value + ')',
+                // 'background-image': 'url(images/goodImg.jpg)',
+                'background-size': 'cover'
+            });
+        });
+    };
+});
+
+mainApp.directive('backColor', function () {
+    return function (scope, element, attrs) {
+        attrs.$observe('backColor', function (value) {
+            element.css({
+                'background-color': value
+            });
+        });
+    };
+});
+
 //application routing
 mainApp.config(['$httpProvider', '$routeProvider', function ($httpProvider, $routeProvider) {
     $routeProvider
@@ -229,7 +251,7 @@ mainApp.config(['$httpProvider', '$routeProvider', function ($httpProvider, $rou
             animation: 'slide'
         })
         .when('/mobilier/detalii/:id', {
-            templateUrl: baseTemplateUrl + 'mobDetailsPage/mobDetailsPage.html',
+            templateUrl: baseTemplateUrl + 'mobPage/detail/mobDetailsPage.html',
             controller: 'mobDetailsController',
             animation: 'slide'
         })

@@ -201,19 +201,6 @@ parquetModule.controller('parquetController', ['$scope', '$http',
 
     }]);
 
-
-parquetModule.directive('backImg', function () {
-    return function (scope, element, attrs) {
-        attrs.$observe('backImg', function (value) {
-            element.css({
-                'background-image': 'url(' + value + ')',
-                // 'background-image': 'url(images/goodImg.jpg)',
-                'background-size': 'cover'
-            });
-        });
-    };
-});
-
 // parquetModule.directive('openModal', function () {
 //     return {
 //         restrict: 'A', // E = element, A = attribute, C = class, M = comment

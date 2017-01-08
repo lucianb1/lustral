@@ -10,6 +10,8 @@ public class ImageConstants {
     public static final String COLECTII_IMAGE_LOCATION = "/images/colectii/";
     public static final String COLECTII_SMALL_IMAGE_LOCATION = "/images/small/colectii/";
 
+    public static final String MOBILIER_IMAGE_LOCATION = "/images/mobilier/";
+
 //    public static void main(String[] args) throws IOException {
 //        String location = "F:\\lustral_images\\lustral\\parchet";
 //        File baseDirectory = new File(location);

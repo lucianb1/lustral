@@ -13,6 +13,10 @@
     height: 450px;
 }
 
+.contact-form {
+    font-size: 17px;
+}
+
 .contact-image-location {
     width: 40%;
     position: absolute;

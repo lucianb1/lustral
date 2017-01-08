@@ -7597,7 +7597,7 @@ em {
 }
 
 strong {
-  font-weight: 500;
+  font-weight: bold;
 }
 
 small {
@@ -8092,7 +8092,7 @@ small {
 .btn, .btn-large {
   text-decoration: none;
   color: #fff;
-  background-color: #ffab91;
+  background-color: #4caf50;
   text-align: center;
   letter-spacing: .5px;
   transition: .2s ease-out;
@@ -8100,7 +8100,7 @@ small {
 }
 
 .btn:hover, .btn-large:hover {
-  background-color: #ffc4b3 !important;
+  background-color: #66bb6a !important;
 }
 
 .btn-floating {

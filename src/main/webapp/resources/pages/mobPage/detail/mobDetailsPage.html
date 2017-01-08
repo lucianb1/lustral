@@ -10,14 +10,14 @@
             </ul>
         </div>
     </div>
-    <div class="mob-collection-name">Colectia {{collectionName}}</div>
+    <div class="mob-collection-name">Colectia {{details.name}}</div>
     <div style="width: 100%; text-align: center;">
 	    <div class="mob-item" ng-repeat="item in items">
 	    	<div class="mob-image-container">
-	    		<img ng-src="{{item.url}}" class="mob-item-image">
+	    		<img ng-src="{{details.baseUrl + item.name + '.jpg'}}" class="mob-item-image">
     		</div>
     		<span class="abs mob-price">Pret: {{item.price}} lei</span>
-    		<span class="abs mob-title">{{item.details}}, {{item.code}}</span>
+    		<span class="abs mob-title">{{item.description}}, {{item.code}}</span>
     		<span class="abs mob-size">Dimensiune: {{item.size}}</span>
 
 	    </div>

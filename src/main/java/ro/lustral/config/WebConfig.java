@@ -1,8 +1,12 @@
 package ro.lustral.config;
 
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 /**
  * Created by Luci on 28-Dec-16.
@@ -22,10 +26,9 @@ public class WebConfig extends WebMvcConfigurerAdapter {
 //        registry.setOrder(Ordered.HIGHEST_PRECEDENCE);
     }
 
-//    @Override
-//    public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
-//        configurer.enable();
-//    }
-
+    @Bean(name = "jdbcExecutor")
+    public ExecutorService getJdbcExecutor() {
+        return Executors.newFixedThreadPool(5);
+    }
 
 }

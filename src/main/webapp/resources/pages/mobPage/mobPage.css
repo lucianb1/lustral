@@ -1,14 +1,22 @@
 .mob-card-actions {
-	text-align: center;
+	text-align: left;
 	padding: 8px;
 }
 
 .mob-card-name {
-	font-size: 12px;
+	font-size: 14px;
 	line-height: 16px;
 }
 
-.mob-card-price {
-	display: block;
-	margin-top: 5px;
+.mob-colors-container {
+	display: inline-block;
+}
+
+.mob-color {
+	height: 14px;
+	width: 14px;
+	border: 1px solid #777777;
+	margin-left: 5px;
+	display: inline-block;
+	float: left;
 }
