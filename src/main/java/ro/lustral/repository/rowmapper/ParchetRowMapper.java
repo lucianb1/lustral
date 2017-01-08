@@ -4,6 +4,7 @@ import org.springframework.jdbc.core.RowMapper;
 import ro.lustral.core.ParchetProducer;
 import ro.lustral.core.ParchetTrafficClass;
 import ro.lustral.core.constants.ImageConstants;
+import ro.lustral.core.constants.ParchetConstants;
 import ro.lustral.model.parchet.Parchet;
 
 import java.sql.ResultSet;
@@ -26,6 +27,6 @@ public class ParchetRowMapper implements RowMapper<Parchet> {
                 .setPrice(rs.getFloat("price"))
                 .setProducer(ParchetProducer.valueFrom(rs.getString("producer")))
                 .setTrafficClass(ParchetTrafficClass.valueFrom(rs.getInt("class")))
-                .setImageUrl(ImageConstants.PARCHET_IMAGE_LOCATION + name + "/1.jpg");
+                .setImageUrl(ImageConstants.PARCHET_IMAGE_LOCATION + name + ParchetConstants.MAIN_PAGE_NAME);
     }
 }

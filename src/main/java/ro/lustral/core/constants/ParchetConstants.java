@@ -5,6 +5,8 @@ package ro.lustral.core.constants;
  */
 public class ParchetConstants {
 
-    public static final int PAGE_SIZE = 25;
+    public static final int PAGE_SIZE = 20;
+
+    public static final String MAIN_PAGE_NAME = "/main.jpg";
 
 }

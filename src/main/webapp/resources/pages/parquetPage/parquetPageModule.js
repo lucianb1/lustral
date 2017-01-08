@@ -51,10 +51,7 @@ parquetModule.controller('parquetController', ['$scope', '$http',
         $scope.producerOptions = [{id: null, value: 'Producator'}, {id: 'KAINDL', value: 'Kaindl'}, {id: 'EGGER', value: 'Egger'}];
         $scope.producerValues = [];
         $scope.oldProducerValues = [];
-        $scope.widthOptions = [{id: null, value: 'Grosime'}, {id: 8, value: '8 mm'}, {id: 10, value: '10 mm'}, {id: 11, value: '11 mm'}, {
-            id: 12,
-            value: '12 mm'
-        }];
+        $scope.widthOptions = [{id: null, value: 'Grosime'}, {id: 8, value: '8 mm'}, {id: 10, value: '10 mm'}, {id: 11, value: '11 mm'}];
 
         $scope.codeValue = null;
         $scope.widthValues = [];
@@ -73,13 +70,13 @@ parquetModule.controller('parquetController', ['$scope', '$http',
         this.time = null;
         var me = this;
 
-        $(window).on('scroll', function() {
+        $(window).on('scroll', function () {
             if ($scope.okSaveScroll) { // false between $routeChangeStart and $routeChangeSuccess
                 $scope.scrollPos = $(window).scrollTop();
             }
         });
 
-        $scope.scrollClear = function(path) {
+        $scope.scrollClear = function (path) {
             $scope.scrollPos = 0;
         }
 
@@ -95,7 +92,7 @@ parquetModule.controller('parquetController', ['$scope', '$http',
                     'canLoadNextPage': $scope.canLoadNextPage,
                     'listIsEmpty': $scope.listIsEmpty,
                     'isPageReady': $scope.isPageReady,
-                    'scrollPos' : $scope.scrollPos
+                    'scrollPos': $scope.scrollPos
                 });
         }
 
@@ -145,12 +142,11 @@ parquetModule.controller('parquetController', ['$scope', '$http',
                 $scope.currentPage++;
                 getParchet().then(function (response) {
                     var data = response.data;
-                    if (data.length < 25) { //TODO be aware of this hardcoded - page size
-
-                    } else {
-                        $scope.cardsList = $scope.cardsList.concat(response.data);
+                    console.log(data.length);
+                    if (data.length == 20) { //TODO be aware of this hardcoded - page size
                         $scope.canLoadNextPage = true;
                     }
+                    $scope.cardsList = $scope.cardsList.concat(response.data);
                 });
             }
 
@@ -168,6 +164,9 @@ parquetModule.controller('parquetController', ['$scope', '$http',
                 getParchet().then(function (response) {
                     $scope.cardsList = response.data;
                     $scope.listIsEmpty = response.data.length == 0;
+                    if (response.data.length == 20) { //TODO be aware
+                        $scope.canLoadNextPage = true;
+                    }
                     $scope.isPageReady = true;
                 }, ajaxErrorCallback);
                 me.time = null;
@@ -181,8 +180,9 @@ parquetModule.controller('parquetController', ['$scope', '$http',
             $scope.initializeParchet(0);
         } else {
             for (var key in cachedScope) {
-               $scope[key] = cachedScope[key];
-            };
+                $scope[key] = cachedScope[key];
+            }
+            ;
         }
 
         $scope.$on('$locationChangeStart', function (event) {
@@ -192,8 +192,8 @@ parquetModule.controller('parquetController', ['$scope', '$http',
             }
         });
 
-        $scope.$on('$routeChangeSuccess', function() {
-            $timeout(function() { // wait for DOM, then restore scroll position
+        $scope.$on('$routeChangeSuccess', function () {
+            $timeout(function () { // wait for DOM, then restore scroll position
                 $(window).scrollTop($scope.scrollPos);
                 $scope.okSaveScroll = true;
             }); // no parameter, wait for DOM
