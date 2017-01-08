@@ -47,9 +47,12 @@ public class MobilierItem {
         this.price = price;
     }
 
-
     public void setSize(String size) {
         this.size = size;
+    }
+
+    public String getUrlName() {
+        return this.name.toLowerCase().replace(" ", "_");
     }
 
 }

@@ -45,4 +45,5 @@ public class MobilierDetailsJsonResponse {
     public void setItems(List<MobilierItem> items) {
         this.items = items;
     }
+
 }

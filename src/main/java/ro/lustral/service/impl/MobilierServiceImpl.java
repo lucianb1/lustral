@@ -43,7 +43,7 @@ public class MobilierServiceImpl implements MobilierService {
             response.setName(name);
             response.setImagesCount(collection.getImages());
             response.setItems(items);
-            response.setBaseUrl(ImageConstants.MOBILIER_IMAGE_LOCATION + name + "/items/");
+            response.setBaseUrl(ImageConstants.MOBILIER_IMAGE_LOCATION + name.toLowerCase().replaceAll(" ", "_"));
             return response;
         }).join();
     }

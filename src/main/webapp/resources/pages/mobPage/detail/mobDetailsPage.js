@@ -22,7 +22,7 @@ mobDetailsModule.controller('mobDetailsController', ['$scope', '$routeParams', '
             $scope.details = response.data;
             var imagesCount = $scope.details.imagesCount;
             for (var i = 1; i <= imagesCount; i++) {
-            	var url = '/images/mobilier/' + $scope.details.name.toLowerCase() + '/' + i + '.jpg';
+            	var url = $scope.details.baseUrl + '/' + i + '.jpg';
                 $scope.images.push(url);
             	$scope.fancyBoxArray.push({ href: url, title: '' });
               }
