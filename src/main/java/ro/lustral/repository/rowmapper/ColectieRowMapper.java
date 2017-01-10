@@ -2,7 +2,6 @@ package ro.lustral.repository.rowmapper;
 
 import org.springframework.jdbc.core.RowMapper;
 import ro.lustral.core.ColectieUnit;
-import ro.lustral.core.constants.ImageConstants;
 import ro.lustral.model.colectie.Colectie;
 
 import java.sql.ResultSet;
@@ -28,8 +27,6 @@ public class ColectieRowMapper implements RowMapper<Colectie> {
                 .setIsForExterior(rs.getBoolean("for_exterior"))
                 .setIsForLiving(rs.getBoolean("for_living"))
                 .setIsForKitchen(rs.getBoolean("for_kitchen"))
-                .setOrderNr(rs.getInt("order_nr"))
-                .setBigImageUrl(ImageConstants.COLECTII_IMAGE_LOCATION + name.toLowerCase().replaceAll(" ", "_") + "/a.jpg")
-                .setSmallImageUrl(ImageConstants.COLECTII_SMALL_IMAGE_LOCATION + name.toLowerCase().replaceAll(" ", "_") + "/a.jpg");
+                .setOrderNr(rs.getInt("order_nr"));
     }
 }

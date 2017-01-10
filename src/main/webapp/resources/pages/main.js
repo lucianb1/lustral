@@ -169,8 +169,8 @@ mainApp.directive('googleMap', function () {
     }
 })
 
-mainApp.factory('parchetCache', ['$cacheFactory', function ($cacheFactory) {
-    return $cacheFactory('parchet', {'capacity': 1});
+mainApp.factory('cacheService', ['$cacheFactory', function ($cacheFactory) {
+    return $cacheFactory('cacheService', {'capacity': 10});
 }]);
 
 mainApp.directive('backImg', function () {

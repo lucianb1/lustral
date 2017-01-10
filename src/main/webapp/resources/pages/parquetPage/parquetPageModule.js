@@ -45,7 +45,7 @@ parquetModule.service('parquetService', ['$http', function ($http) {
 }]);
 
 parquetModule.controller('parquetController', ['$scope', '$http',
-    'parquetService', 'parchetCache', '$timeout', function ($scope, $http, parquetService, parchetCache, $timeout) {
+    'parquetService', 'cacheService', '$timeout', function ($scope, $http, parquetService, cacheService, $timeout) {
         // $scope.sortOptions = [{id: null, value: 'Alege...'}, {id: 1, value: 'Pret crescator'}, {id: 2, value: 'Pret descrescator'}];
         $scope.sortValue = null;
         $scope.producerOptions = [{id: null, value: 'Producator'}, {id: 'KAINDL', value: 'Kaindl'}, {id: 'EGGER', value: 'Egger'}];
@@ -60,7 +60,6 @@ parquetModule.controller('parquetController', ['$scope', '$http',
         $scope.classValues = [];
         $scope.oldClassValues = [];
         $scope.cardsList = [];
-        $scope.fancyBoxArray = [];
         $scope.currentPage = 1;
         $scope.listIsEmpty = false;
         $scope.canLoadNextPage = true;
@@ -76,14 +75,12 @@ parquetModule.controller('parquetController', ['$scope', '$http',
             }
         });
 
-        $scope.scrollClear = function (path) {
-            $scope.scrollPos = 0;
-        }
+
 
         var updateCache = function () {
-            parchetCache.put('parchetContext',
+            cacheService.put('parchetCache',
                 {
-                    'currentPage': $scope.currentPage, 'fancyBoxArray': $scope.fancyBoxArray,
+                    'currentPage': $scope.currentPage,
                     'cardsList': $scope.cardsList, 'codeValue': $scope.codeValue,
                     'classValues': $scope.classValues, 'oldClassValues': $scope.oldClassValues,
                     'widthValues': $scope.widthValues, 'oldWidthValues': $scope.oldWidthValues,
@@ -94,7 +91,7 @@ parquetModule.controller('parquetController', ['$scope', '$http',
                     'isPageReady': $scope.isPageReady,
                     'scrollPos': $scope.scrollPos
                 });
-        }
+        };
 
         var getParchet = function () {
             return parquetService.getParquet($scope.sortValue, $scope.producerValues, $scope.widthValues, $scope.classValues, $scope.currentPage, $scope.codeValue);
@@ -174,7 +171,7 @@ parquetModule.controller('parquetController', ['$scope', '$http',
             }, delay);
 
         };
-        var cachedScope = parchetCache.get('parchetContext');
+        var cachedScope = cacheService.get('parchetCache');
 
         if (cachedScope == undefined) { // nothing in cache
             $scope.initializeParchet(0);
@@ -182,7 +179,6 @@ parquetModule.controller('parquetController', ['$scope', '$http',
             for (var key in cachedScope) {
                 $scope[key] = cachedScope[key];
             }
-            ;
         }
 
         $scope.$on('$locationChangeStart', function (event) {

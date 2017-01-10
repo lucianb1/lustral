@@ -53,16 +53,16 @@ public class MobilierCollectionRowMapper implements RowMapper<MobilierCollection
         colorsMap = new HashMap<>();
 
         colorsMap.put("ALB", "#ffffff");
-        colorsMap.put("ROSU", "#ffffff");
-        colorsMap.put("MARO_I", "#ffffff");
-        colorsMap.put("MARO_D", "#ffffff");
-        colorsMap.put("ALBASTRU_D", "#ffffff");
-        colorsMap.put("ALBASTRU_I", "#ffffff");
-        colorsMap.put("GRI", "#ffffff");
-        colorsMap.put("NEGRU", "#ffffff");
-        colorsMap.put("GALBEN", "#ffffff");
-        colorsMap.put("VERDE", "#ffffff");
-        colorsMap.put("MOV", "#ffffff");
-        colorsMap.put("ROZ", "#ffffff");
+        colorsMap.put("ROSU", "#B4393B");
+        colorsMap.put("MARO_I", "#482720");
+        colorsMap.put("MARO_D", "#754D2A");
+        colorsMap.put("ALBASTRU_D", "#739FB9");
+        colorsMap.put("ALBASTRU_I", "#083B5F");
+        colorsMap.put("GRI", "#ADACAC");
+        colorsMap.put("NEGRU", "#2D2C27");
+        colorsMap.put("GALBEN", "#DCA967");
+        colorsMap.put("VERDE", "#9EAC9F");
+        colorsMap.put("MOV", "#2A0F20");
+        colorsMap.put("ROZ", "#D8B0A0");
     }
 }

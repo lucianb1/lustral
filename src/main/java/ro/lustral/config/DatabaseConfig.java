@@ -23,4 +23,17 @@ public class DatabaseConfig extends HikariConfig {
 		return new NamedParameterJdbcTemplate(dataSource);
 	}
 
+//	public static void main(String[] args) throws IOException {
+//		File baseDirectory = new File("F:\\lustral_images\\lustral\\colectii");
+//		for (File folder : baseDirectory.listFiles()) {
+//			if (folder.isDirectory()) {
+//				File jpg = new File(folder.getAbsolutePath() + "/a.jpg");
+//				System.out.println(jpg.exists());
+//				File newFile = new File(folder.getAbsolutePath() + "/main.jpg");
+//				Files.copy(new FileInputStream(jpg), Paths.get(newFile.getAbsolutePath()));
+//			}
+//		}
+//	}
+
+
 }

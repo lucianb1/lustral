@@ -24,4 +24,8 @@ public class ColectieRepository {
         return jdbcTemplate.query(sql, rowMapper);
     }
 
+    public List<Colectie> findColectii() {
+        return null;
+    }
+
 }

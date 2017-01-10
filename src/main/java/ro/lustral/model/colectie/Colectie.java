@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import ro.lustral.core.ColectieUnit;
 import ro.lustral.model.OrderedEntity;
 
+import static ro.lustral.core.constants.ImageConstants.COLECTII_IMAGE_LOCATION;
+
 /**
  * Created by Luci on 27-Dec-16.
  */
@@ -23,8 +25,6 @@ public class Colectie extends OrderedEntity {
     private boolean isPorcelain;
     private ColectieUnit unit;
     private int images;
-    private String bigImageUrl;
-    private String smallImageUrl;
 
 
     public Colectie setId(int id) {
@@ -75,11 +75,6 @@ public class Colectie extends OrderedEntity {
         return this;
     }
 
-    public Colectie setSmallImageUrl(String smallImageUrl) {
-        this.smallImageUrl = smallImageUrl;
-        return this;
-    }
-
     public Colectie setUnit(ColectieUnit unit) {
         this.unit = unit;
         return this;
@@ -92,11 +87,6 @@ public class Colectie extends OrderedEntity {
 
     public Colectie setOrderNr(int orderNr) {
         this.orderNr = orderNr;
-        return this;
-    }
-
-    public Colectie setBigImageUrl(String bigImageUrl) {
-        this.bigImageUrl = bigImageUrl;
         return this;
     }
 
@@ -148,11 +138,7 @@ public class Colectie extends OrderedEntity {
         return images;
     }
 
-    public String getBigImageUrl() {
-        return bigImageUrl;
-    }
-
-    public String getSmallImageUrl() {
-        return smallImageUrl;
+    public String getImageUrl() {
+        return COLECTII_IMAGE_LOCATION + getName().toLowerCase().replaceAll(" ", "_") + "/main.jpg";
     }
 }

@@ -1,22 +1,23 @@
 .mob-card-actions {
-	text-align: left;
-	padding: 8px;
+    text-align: left;
+    padding: 8px;
+    height: 50px;
 }
 
 .mob-card-name {
-	font-size: 14px;
-	line-height: 16px;
+    font-size: 14px;
+    line-height: 16px;
 }
 
 .mob-colors-container {
-	display: inline-block;
+    display: inline-block;
 }
 
 .mob-color {
-	height: 14px;
-	width: 14px;
-	border: 1px solid #777777;
-	margin-left: 5px;
-	display: inline-block;
-	float: left;
+    height: 12px;
+    width: 12px;
+    border: 0.5px solid #777777;
+    margin-left: 5px;
+    display: inline-block;
+    float: left;
 }

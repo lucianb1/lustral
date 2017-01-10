@@ -22,7 +22,9 @@
     color: white;
     text-align: center;
     width: 110px;
+    transition: all 0.2s;
 }
+
 
 .p-card-details {
     margin: 4px 10px;

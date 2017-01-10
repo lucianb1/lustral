@@ -1,84 +1,75 @@
 var honeAndFaienceModule = angular.module("honeAndFaienceModule", []);
-var HeightOptions = function (heightProportion) {
-    this.heightProportion = heightProportion;
-    this.FIRST_ELEMENT_WIDTH = null;
-    this.element = null;
-}
-
-var honeAndFaienceOptions = new HeightOptions(1.65);
 
 var ajaxErrorCallback = function (error) {
     console.log('data:' + error.data + ' | status:' + error.status + ' | message' + error.statusText);
 }
 
-var setCardHeight = function(options) {
-    if (!options.FIRST_ELEMENT_WIDTH) {
-        options.FIRST_ELEMENT_WIDTH = options.element.parent().width();
-    }
-
-    if (options.FIRST_ELEMENT_WIDTH) {
-        if (Math.abs(options.FIRST_ELEMENT_WIDTH - options.element.parent().width()) > 10) {
-            options.FIRST_ELEMENT_WIDTH = options.element.parent().width();
-        }
-    }
-    var height = Math.floor(options.FIRST_ELEMENT_WIDTH / options.heightProportion);
-    if (!options.isWidthFixed) {
-        options.element.width(options.FIRST_ELEMENT_WIDTH);
-    }
-    options.element.height(height);
-};
-
-honeAndFaienceModule.directive('setHeightDimension', ['$rootScope', function ($rootScope) {
-    return {
-        restrict: 'A', //E = element, A = attribute, C = class, M = comment         
-        link: function ($scope, element, attrs) {
-            honeAndFaienceOptions.element = element;
-            setCardHeight(honeAndFaienceOptions);
-
-            $rootScope.$on('resize', function (e, eArgs) {
-                honeAndFaienceOptions.element = element;
-                setCardHeight(honeAndFaienceOptions);
-            })
-        }
-    }
-}])
-
 honeAndFaienceModule.service('honeAndFaienceService', ['$http', function ($http) {
     return {
-        getHoneAndFaience: function (collection) {
-            return $http.get('/gresie-faianta' + (collection ? '/' + collection : ''));
+        getHoneAndFaience: function () {
+            return $http.get('/gresie-faianta');
         }
     }
 }]);
 
-honeAndFaienceModule.controller('honeAndFaienceController', [
-    '$scope', '$routeParams', 'honeAndFaienceService',
-    function ($scope, $routeParams, honeAndFaienceService) {
+honeAndFaienceModule.controller('honeAndFaienceController', ['$scope', '$routeParams', 'honeAndFaienceService', 'cacheService', '$timeout',
+    function ($scope, $routeParams, honeAndFaienceService, cacheService, $timeout) {
         $scope.cardsList = [];
-        $scope.selectedCard = '';
-        $scope.showFullImage = false;
-        $scope.fancyBoxArray = [];
-        $scope.loading = true;
-        honeAndFaienceService.getHoneAndFaience($routeParams.collection).then(function (response) {
-            $scope.cardsList = response.data;
-            angular.forEach($scope.cardsList, function (value, key) {
-                $scope.fancyBoxArray.push({ href: value.bigImageUrl, title: getTitleContent(value.id, value.name) });
-            });
-        }, ajaxErrorCallback);
+        $scope.sortValue = null;
+        $scope.scrollPos = 0;
 
+        $(window).on('scroll', function () {
+            if ($scope.okSaveScroll) { // false between $routeChangeStart and $routeChangeSuccess
+                $scope.scrollPos = $(window).scrollTop();
+            }
+        });
 
-        $scope.show = function (image) {
-            $scope.selectedCard = image.bigImageSrc;
-            $scope.showFullImage = true;
+        var initializeGresie = function () {
+            honeAndFaienceService.getHoneAndFaience($routeParams.collection).then(function (response) {
+                $scope.cardsList = response.data;
+            }, ajaxErrorCallback);
         };
 
-        $scope.hide = function () {
-            $scope.showFullImage = !$scope.showFullImage;
-        };
+        var cachedScope = cacheService.get('gresieCache');
 
-        function getTitleContent(id, name) {
-            return "<a href=\"#/gresie-faianta/collection/" + id + "\" class=\"fancybox-btn-details\" onClick=\"_gaq.push(['_trackEvent', 'Gresie si faianta - detalii mic', 'click', '" + id + "']);\">Detalii</a>" +
-            		"<span class=\"g-name\">" + name + "</span>";
+        if (cachedScope == undefined) { // nothing in cache
+            initializeGresie();
+        } else {
+            for (var key in cachedScope) {
+                console.log(key);
+                $scope[key] = cachedScope[key];
+            }
         }
+
+
+        var updateCache = function () {
+            cacheService.put('gresieCache',
+                {
+                    'currentPage': $scope.currentPage,
+                    'cardsList': $scope.cardsList,
+                    'sortValue': $scope.sortValue,
+                    'canLoadNextPage': $scope.canLoadNextPage,
+                    'listIsEmpty': $scope.listIsEmpty,
+                    'isPageReady': $scope.isPageReady,
+                    'scrollPos': $scope.scrollPos
+                });
+        };
+
+
+        $scope.$on('$locationChangeStart', function (event) {
+            $scope.okSaveScroll = false;
+            if (!$scope.listIsEmpty) {
+                updateCache();
+            }
+        });
+
+        $scope.$on('$routeChangeSuccess', function () {
+            $timeout(function () { // wait for DOM, then restore scroll position
+                $(window).scrollTop($scope.scrollPos);
+                $scope.okSaveScroll = true;
+            }); // no parameter, wait for DOM
+        });
+
+
     }
 ]);
