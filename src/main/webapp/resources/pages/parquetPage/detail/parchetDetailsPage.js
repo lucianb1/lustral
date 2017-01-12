@@ -22,7 +22,7 @@ parchetDetailsModule.controller('parchetDetailsController', ['$scope', '$routePa
 
             for (var i = 1; i <= $scope.details.images; i++) {
                 $scope.fancyBoxSliderArray.push({href: $scope.details.baseUrl + i + '.jpg', title: ''});
-                $scope.imagesArray.push($scope.details.baseUrl + i + '.jpg');
+                $scope.imagesArray.push($scope.details.baseUrl + + i + '.jpg');
             }
 
             var trafficClass = $scope.details.trafficClass;

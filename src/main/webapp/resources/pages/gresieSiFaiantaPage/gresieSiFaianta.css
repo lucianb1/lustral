@@ -49,9 +49,9 @@
     left: 1.8%;
 }
 
-    .card-btn-details:hover {
-        background-color: #ffccbc;
-    }
+.card-btn-details:hover {
+    background-color: #ffccbc;
+}
 
 .g-name {
     position: absolute;
@@ -99,4 +99,23 @@
     margin-right: auto;
     max-height: 100%;
     max-width: 100%;
+}
+
+.gresie-filter-input {
+    float: left;
+    padding-left: 14px;
+    width: 180px;
+}
+
+.gresie-sort-container {
+    float: right;
+    margin-right: 10px;
+}
+
+@media (max-width: 1200px) {
+    .gresie-sort-container {
+        float: none;
+        display: inline-block;
+        margin-left: 14px;
+    }
 }

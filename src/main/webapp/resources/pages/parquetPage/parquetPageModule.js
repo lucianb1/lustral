@@ -139,7 +139,6 @@ parquetModule.controller('parquetController', ['$scope', '$http',
                 $scope.currentPage++;
                 getParchet().then(function (response) {
                     var data = response.data;
-                    console.log(data.length);
                     if (data.length == 20) { //TODO be aware of this hardcoded - page size
                         $scope.canLoadNextPage = true;
                     }

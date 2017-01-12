@@ -1,7 +1,6 @@
 package ro.lustral.repository.rowmapper;
 
 import org.springframework.jdbc.core.RowMapper;
-import ro.lustral.core.ColectieUnit;
 import ro.lustral.model.colectie.Colectie;
 
 import java.sql.ResultSet;
@@ -20,7 +19,7 @@ public class ColectieRowMapper implements RowMapper<Colectie> {
                 .setName(name)
                 .setPrice(rs.getFloat("price"))
                 .setOldPrice((Float) rs.getObject("old_price"))
-                .setUnit(ColectieUnit.valueFrom(rs.getString("unit")))
+                .setUnit(rs.getString("unit"))
                 .setImages(rs.getInt("images"))
                 .setIsPorcelain(rs.getBoolean("is_porcelain"))
                 .setIsForBath(rs.getBoolean("for_bath"))

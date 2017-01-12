@@ -12,7 +12,7 @@ var mobilierModule = angular.module('mobilierModule');
 var mainApp = angular.module('lustralWebSite',
     [
         'ngRoute',
-        'ngAnimate',
+        // 'ngAnimate',
         'infinite-scroll',
         'honeAndFaienceModule',
         'honeAndFaienceDetailModule',
@@ -30,13 +30,7 @@ var mainApp = angular.module('lustralWebSite',
 mainApp.directive('loadingSpinner', [function () {
     return {
         restrict: 'E', //E = element, A = attribute, C = class, M = comment
-        templateUrl: '/resources/components/loading-template.html',
-        // scope: { loading: "=" },
-        // link: function ($scope, element) {
-        //     element.parent().find('img').imagesLoaded(function () {
-        //         // element.hide();
-        //     });
-        // }
+        template: '\<div class=\"preloader-wrapper-container\">\n    <div class=\"vertical-center-in-display-table\">\n        <div class=\"preloader-wrapper big active\">\n            <div class=\"spinner-layer spinner-blue-only\">\n                <div class=\"circle-clipper left\">\n                    <div class=\"circle\"></div>\n                </div>\n                <div class=\"gap-patch\">\n                    <div class=\"circle\"></div>\n                </div>\n                <div class=\"circle-clipper right\">\n                    <div class=\"circle\"></div>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>'
     }
 }]);
 
@@ -55,12 +49,12 @@ mainApp.directive('detailView', [
     }
 ]);
 
-mainApp.directive('sideNavMenu', [function () {
-    return {
-        restrict: 'E', //E = element, A = attribute, C = class, M = comment
-        templateUrl: '/resources/components/side-nav-Menu.html',
-    }
-}]);
+// mainApp.directive('sideNavMenu', [function () {
+//     return {
+//         restrict: 'E', //E = element, A = attribute, C = class, M = comment
+//         templateUrl: '/resources/components/side-nav-Menu.html',
+//     }
+// }]);
 
 mainApp.directive('sideMenuBtn', [function () {
     return {
@@ -71,31 +65,31 @@ mainApp.directive('sideMenuBtn', [function () {
     }
 }]);
 
-mainApp.directive('resize', ['$rootScope', '$window', function ($rootScope, $window) {
-    return {
-        restrict: 'A', //E = element, A = attribute, C = class, M = comment
-        link: function ($scope, element, attrs) {
-            angular.element($window).bind('resize', function () {
-                $rootScope.$broadcast('resize');
-            })
-            var lastScrollTop = 0;
-            angular.element($window).bind('scroll', function (event) {
-                var st = $(this).scrollTop()
-                if (st > lastScrollTop) {
-                    $("#navigation-Menu").addClass('nav-small');
-                    $("#btn-collapse").addClass('btn-collapse-small');
-
-                }
-                else if(st === 0){
-                    $("#navigation-Menu").removeClass('nav-small');
-                    $("#btn-collapse").removeClass('btn-collapse-small');
-                }
-                lastScrollTop = st;
-            });
-
-        }
-    }
-}]);
+// mainApp.directive('resize', ['$rootScope', '$window', function ($rootScope, $window) {
+//     return {
+//         restrict: 'A', //E = element, A = attribute, C = class, M = comment
+//         link: function ($scope, element, attrs) {
+//             angular.element($window).bind('resize', function () {
+//                 $rootScope.$broadcast('resize');
+//             })
+//             var lastScrollTop = 0;
+//             angular.element($window).bind('scroll', function (event) {
+//                 var st = $(this).scrollTop()
+//                 if (st > lastScrollTop) {
+//                     $("#navigation-Menu").addClass('nav-small');
+//                     $("#btn-collapse").addClass('btn-collapse-small');
+//
+//                 }
+//                 else if(st === 0){
+//                     $("#navigation-Menu").removeClass('nav-small');
+//                     $("#btn-collapse").removeClass('btn-collapse-small');
+//                 }
+//                 lastScrollTop = st;
+//             });
+//
+//         }
+//     }
+// }]);
 
 mainApp.directive('fancyBox', ['$compile', function ($compile) {
     return {
@@ -170,7 +164,7 @@ mainApp.directive('googleMap', function () {
 })
 
 mainApp.factory('cacheService', ['$cacheFactory', function ($cacheFactory) {
-    return $cacheFactory('cacheService', {'capacity': 10});
+    return $cacheFactory('cacheService', {'capacity': 1});
 }]);
 
 mainApp.directive('backImg', function () {
@@ -203,24 +197,7 @@ mainApp.config(['$httpProvider', '$routeProvider', function ($httpProvider, $rou
             controller: 'honeAndFaienceController',
             animation: 'slide'
         })
-        .when('/gresie-faianta/:collection', {
-            templateUrl: baseTemplateUrl + 'gresieSiFaiantaPage/gresieSiFaianta.html',
-            controller: 'honeAndFaienceController',
-            animation: 'slide',
-            resolve: {
-                collection: function ($location, $route) {
-                    switch ($route.current.params.collection) {
-                        case 'bucatarie':
-                        case 'living':
-                        case 'exterior':
-                            break;
-                        default:
-                            $location.path('/gresie-faianta');
-                    };
-                }
-            }
-        })
-        .when('/gresie-faianta/collection/:id', {
+        .when('/gresie-faianta/detalii/:id', {
             templateUrl: baseTemplateUrl + 'gresieSiFaiantaDetailPage/gresieSiFaiantaDetailPage.html',
             controller: 'honeAndFaienceDetailController',
             animation: 'slide'

@@ -1,17 +1,49 @@
 <div class="row row-container">
-    <div class="col s12 m6 l4" ng-repeat="card in cardsList">
-        <!--<div class="card" set-Height-Dimension ng-attr-id="{{card.id}}">-->
-            <!--<div fancy-Box class="card-image" ng-click="_gaq.push(['_trackEvent', 'Gresie si faianta', 'click', '{{card.id}}']); openFancybox(fancyBoxArray, $index);">-->
-                <!--<img class="image" ng-src="{{card.smallImageUrl}}" alt="Gresie si Faianta">-->
-                <!--<span class="card-price-old" ng-if="card.hasDiscount">{{card.oldPrice}} lei/{{card.unit}}</span>-->
-            <!--</div>-->
-            <!--<div class="card-custom-action">-->
-                <!--<a ng-href="{{'#/gresie-faianta/collection/' + card.id}}" ng-click="_gaq.push(['_trackEvent', 'Gresie si faianta Details Button', 'click', '{{card.id}}']);" class="card-btn-details">Detalii</a>-->
-                <!--<span class="card-name">{{card.name}}</span>-->
-                <!--<span class="card-price" ng-class="{'red-text' : card.hasDiscount}">{{card.price}} lei/{{card.unit}}</span>-->
-            <!--</div>-->
-        <!--</div>-->
 
+    <div class="row filter-component">
+        <div class="filters-container">
+            <div class="filter-label green darken-1">
+                Filtreaza dupa:
+            </div>
+            <div class="gresie-filter-input">
+                <select class="" ng-options="value.id as value.value for value in materialOptions" ng-model="materialValues" material-select multiple watch
+                        ng-change="updateProducerFilter(600)">
+                </select>
+            </div>
+
+            <div class="gresie-filter-input">
+                <select class="" ng-options="item.id as item.value for item in designOptions" ng-model="designValues" material-select multiple
+                        ng-change="updateWidthFilter(600);">
+                </select>
+            </div>
+            <div class="gresie-filter-input">
+                <select class="" ng-options="item.id as item.value for item in roomOptions" ng-model="roomValues" material-select multiple
+                        ng-change="updateClassFilter(600);">
+
+                </select>
+            </div>
+            <div class="gresie-filter-input">
+                <input ng-model="nameValue" placeholder="Nume colectie..." type="text" ng-change="updateNameFilter(1000);">
+            </div>
+        </div>
+
+        <div class="gresie-sort-container">
+            <div class="sort-input">
+                <select class="browser-default" ng-model="sortValue" material-select ng-change="updateSort(0);">
+                    <option value="">Alege...</option>
+                    <option value="1">Pret crescator</option>
+                    <option value="2">Pret decrescator</option>
+                </select>
+            </div>
+            <div class="sort-label green darken-1">
+                Sorteaza dupa:
+            </div>
+        </div>
+    </div>
+    <loading-spinner id="spin" ng-show="!isPageReady" loading="loading"></loading-spinner>
+    <div ng-if="listIsEmpty">Ne pare rau, nici un rezultat nu a fost gasit</div>
+
+    <div class="col s12 m6 l4" ng-repeat="card in cardsList">
         <div class="card parchet-card">
             <a ng-href="{{'#/gresie-faianta/collection/' + card.id}}">
                 <div class="parchet-card-image-container">
@@ -25,7 +57,7 @@
                     <div class="p-card-description">{{card.producer}} {{card.description}}</div>
                     <div>{{card.width}} mm, cls. {{card.trafficClass}}</div>
                     <div>cod: {{card.name}}</div>
-                    <a ng-href="{{'#/parchet/detalii/' + card.id}}" class="p-card-info-btn waves-effect waves-light">
+                    <a ng-href="{{'#/gresie-faianta/detalii/' + card.id}}" class="p-card-info-btn waves-effect waves-light">
                         <span>Detalii &raquo;</span>
                     </a>
                 </div>

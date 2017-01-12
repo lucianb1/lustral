@@ -451,7 +451,9 @@ nav.nav-small {
 
 .presentation-item {
     position: relative;
-    width: 100%;
+    /*width: 100%;*/
+    width: 100px;
+    height: 100px;
     background-color: white;
     margin-bottom: 5.5px;
 }

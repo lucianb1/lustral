@@ -1,7 +1,6 @@
 package ro.lustral.model.colectie;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
-import ro.lustral.core.ColectieUnit;
 import ro.lustral.model.OrderedEntity;
 
 import static ro.lustral.core.constants.ImageConstants.COLECTII_IMAGE_LOCATION;
@@ -23,7 +22,7 @@ public class Colectie extends OrderedEntity {
     private boolean forBath;
     private boolean forExterior;
     private boolean isPorcelain;
-    private ColectieUnit unit;
+    private String unit;
     private int images;
 
 
@@ -72,11 +71,6 @@ public class Colectie extends OrderedEntity {
 
     public Colectie setIsPorcelain(boolean porcelain) {
         isPorcelain = porcelain;
-        return this;
-    }
-
-    public Colectie setUnit(ColectieUnit unit) {
-        this.unit = unit;
         return this;
     }
 
@@ -130,12 +124,17 @@ public class Colectie extends OrderedEntity {
         return isPorcelain;
     }
 
-    public String getUnit() {
-        return unit.name().toLowerCase();
-    }
-
     public int getImages() {
         return images;
+    }
+
+    public String getUnit() {
+        return unit;
+    }
+
+    public Colectie setUnit(String unit) {
+        this.unit = unit;
+        return this;
     }
 
     public String getImageUrl() {

@@ -1,8 +1,5 @@
 var bathtubsModule = angular.module("bathtubsModule", []);
 
-var bathtubsOption = new HeightOptions(1.7);
-var loangingBathtubeOption = new HeightOptions(1.47);
-
 var ajaxErrorCallback = function (error) {
     console.log('data:' + error.data + ' | status:' + error.status + ' | message' + error.statusText);
 }
@@ -19,23 +16,6 @@ bathtubsModule.directive('openModal', function () {
         }
     }
 });
-
-bathtubsModule.directive('setBathtubtHeight', [
-    '$rootScope', function ($rootScope) {
-        return {
-            restrict: 'A', //E = element, A = attribute, C = class, M = comment         
-            link: function ($scope, element, attrs) {
-                bathtubsOption.element = element;
-                setCardHeight(bathtubsOption);
-
-                $rootScope.$on('resize', function (e, eArgs) {
-                    bathtubsOption.element = element;
-                    setCardHeight(bathtubsOption);
-                })
-            }
-        };
-    }
-]);
 
 bathtubsModule.service('bathtubsService', ['$http', function ($http) {
     return {

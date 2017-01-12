@@ -8,17 +8,26 @@ CREATE TABLE IF NOT EXISTS colectii (
      for_living BIT NOT NULL,
      for_kitchen BIT NOT NULL,
      is_porcelain BIT NOT NULL,
+     is_rectificat BIT NOT NULL,
+     is_wood BIT NOT NULL,
+     is_stone BIT NOT NULL,
      unit VARCHAR(5) NOT NULL DEFAULT 'mp',
      images TINYINT NOT NULL DEFAULT 0,
      order_nr SMALLINT NOT NULL DEFAULT 0
 );
 
 CREATE TABLE IF NOT EXISTS colectii_items (
-    id TINYINT PRIMARY KEY AUTO_INCREMENT,
+    id SMALLINT PRIMARY KEY AUTO_INCREMENT,
     collection_id SMALLINT NOT NULL,
-    type TINYINT NOT NULL,
     is_porcelain BIT NOT NULL,
+    is_rectificat BIT NOT NULL,
+    is_matt BIT NOT NULL DEFAULT 0,
+    is_glossy BIT NOT NULL DEFAULT 0,
+    price FLOAT NOT NULL,
+    old_price FLOAT,
+    unit VARCHAR(5),
     size VARCHAR(20) NOT NULL,
+    description VARCHAR(20),
     order_nr SMALLINT NOT NULL DEFAULT 0
 );
 

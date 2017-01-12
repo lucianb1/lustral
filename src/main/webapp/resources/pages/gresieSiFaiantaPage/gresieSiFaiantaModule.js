@@ -16,6 +16,14 @@ honeAndFaienceModule.controller('honeAndFaienceController', ['$scope', '$routePa
     function ($scope, $routeParams, honeAndFaienceService, cacheService, $timeout) {
         $scope.cardsList = [];
         $scope.sortValue = null;
+        $scope.materialOptions = [{id: null, value: 'portelanata/rectificata'}, {id: 'p', value:'portelanata'}, {id:'r', value: 'rectificata'}];
+        $scope.materialValues = [];
+        $scope.designOptions = [{id: null, value: 'Gama de culori'}, {id: 1, value: 'Imitatii lemn'}, {id: 2, value: 'Imitatii piatra'}];
+        $scope.designValues = [];
+        $scope.roomOptions = [{id: null, value: 'Baie/Bucatarie/Living..'}, {id: 1, value: 'Baie'}, {id : 2, value: 'Bucatarie'}, {id: 2, value: 'Living'}, {id: 4, value: 'Exterior'}];
+        $scope.roomValues = [];
+        $scope.nameValue = null;
+        $scope.isPageReady = false;
         $scope.scrollPos = 0;
 
         $(window).on('scroll', function () {
@@ -27,6 +35,9 @@ honeAndFaienceModule.controller('honeAndFaienceController', ['$scope', '$routePa
         var initializeGresie = function () {
             honeAndFaienceService.getHoneAndFaience($routeParams.collection).then(function (response) {
                 $scope.cardsList = response.data;
+                $timeout(function() { // wait for the dom to be loaded
+                    $scope.isPageReady = true;
+                });
             }, ajaxErrorCallback);
         };
 
@@ -36,7 +47,6 @@ honeAndFaienceModule.controller('honeAndFaienceController', ['$scope', '$routePa
             initializeGresie();
         } else {
             for (var key in cachedScope) {
-                console.log(key);
                 $scope[key] = cachedScope[key];
             }
         }

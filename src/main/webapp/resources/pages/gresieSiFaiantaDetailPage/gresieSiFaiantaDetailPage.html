@@ -10,23 +10,21 @@
     </div>
     <div class="details-container">
         <div class="row">
-            <div class="collection-name">Colectia {{name}}</div>
+            <div class="collection-name">Colectia {{details.name}}</div>
             <div class="col s12 m6 l2 set-padding" ng-repeat="thumbneil in thumbneilsList">
                 <div class="row">
                     <div class="padding-item">
-                        <div class="presentation-item" set-Height>
+                        <div fancy-Box class="presentation-item" ng-click="openFancybox(fancyBoxItemsArray, $index);">
                             <a href="javascript:void(0)" class="image-container-before">
                                 <div class="transform">
-                                    <img class="image-presented" ng-src="{{thumbneil.smallImgSrc}}" alt="Faianta"/>
+                                    <img class="image-presented" ng-src="{{thumbneilImages[$index]}}" alt="Faianta"/>
                                 </div>
                             </a>
-                            <a fancy-Box
-                               ng-click="_gaq.push(['_trackEvent', 'Gresie si Fianata - Item', 'click','{{thumbneil.id}}']); openFancybox(fancyBoxArray, $index);"
-                               class="image-container-after">
-                                <div class="transform">
-                                    <img class="image-presented" ng-src="{{thumbneil.smallImgSrc}}" alt="Gresie"/>
-                                </div>
-                            </a>
+                            <!--<a fancy-Box -ngclick="openFancybox(fancyBoxArray, $index);" class="image-container-after">-->
+                                <!--<div class="transform">-->
+                                    <!--<img class="image-presented" ng-src="{{thumbneil.smallImgSrc}}" alt="Gresie"/>-->
+                                <!--</div>-->
+                            <!--</a>-->
                         </div>
                         <div class="presentation-description">
                             <span>{{thumbneil.description}}</span><br>

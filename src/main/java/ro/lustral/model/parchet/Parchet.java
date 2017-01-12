@@ -5,6 +5,9 @@ import ro.lustral.core.ParchetProducer;
 import ro.lustral.core.ParchetTrafficClass;
 import ro.lustral.model.OrderedEntity;
 
+import java.io.File;
+import java.io.IOException;
+
 /**
  * Created by Luci on 27-Dec-16.
  */
@@ -116,5 +119,19 @@ public class Parchet extends OrderedEntity {
 
     public boolean hasDiscount() {
         return hasDiscount;
+    }
+
+    public static void main(String[] args) throws IOException {
+        File file = new File("F:\\lustral_images\\lustral\\colectii");
+        for (File directory : file.listFiles()) {
+            for(int i=65;i<=90;i++) {
+                char var = (char) i;
+                File jpg = new File(directory.getAbsolutePath() + "/"+  var + ".jpg");
+                if (jpg.exists()) {
+                    File newFIle = new File(directory.getAbsolutePath() + "/" + (i - 64) + ".jpg");
+                    jpg.renameTo(newFIle);
+                }
+            }
+        }
     }
 }
