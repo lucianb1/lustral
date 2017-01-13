@@ -16,7 +16,7 @@ public class MobilierItemRowMapper implements RowMapper<MobilierItem> {
         MobilierItem item = new MobilierItem();
         item.setName(rs.getString("name"));
         item.setCode(rs.getString("code"));
-        item.setPrice(rs.getFloat("price"));
+        item.setPrice(rs.getFloat("price") * 1.6f); //TODO be aware
         item.setSize(rs.getString("size"));
         item.setDescription(rs.getString("description"));
         return item;

@@ -20,7 +20,7 @@ public class BathRepository {
     private NamedParameterJdbcTemplate jdbcTemplate;
 
     public List<Bath> getAllOrdered() {
-        String sql = "";
-        return null;
+        String sql = "SELECT * FROM cazi ORDER BY order_nr";
+        return jdbcTemplate.query(sql, rowMapper);
     }
 }

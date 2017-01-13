@@ -16,7 +16,8 @@ public class BathRowMapper implements RowMapper<Bath> {
         return new Bath()
                 .setId(rs.getInt("id"))
                 .setName(rs.getString("name"))
-                .setOrderNr(rs.getInt("order_nr"))
+                .setImages(rs.getInt("images"))
+                .setMultipleSizes(rs.getBoolean("multiple_sizes"))
                 .setPrice(rs.getFloat("price"))
                 .setSize(rs.getString("size"))
                 .setOldPrice((Float) rs.getObject("old_price"));

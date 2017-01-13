@@ -1,4 +1,3 @@
-
 /*.unselectable {
     user-select: none;
     -moz-user-select: none;
@@ -7,70 +6,43 @@
     -o-user-select: none;
 }*/
 
-.card .card-image {
-    height: 84%;
+.parchet-card-image {
     display: block;
-}
-
-.card .card-custom-action {
-    height: 45px;
-    line-height: inherit;
     width: 100%;
-    border: none;
-    position: relative;
-}
-
-.card-name-b {
-    position: absolute;
-    left: 6px;
-    top: 4px;
-    font-size: 15px;
-    text-align: center;
-}
-
-.card-price-b {
-    position: absolute;
-    bottom: 4px;
-    right: 4px;
-    font-size: 16px;
-    color: #795548;
-    padding: 0 6px;
-}
-
-.card-price-old-b {
-    position: absolute;
-    top: 2px;
-    text-decoration: line-through;
-    right: 4px;
-    font-size: 13px;
-    color: #795548;
-    padding: 0 6px;
-}
-
-.card-image:hover {
-    cursor: zoom-in;
-}
-
-.bath-card-dimension {
-    position: absolute;
-    bottom: 1px;
-    left: 6px;
-    font-size: 12px;
-    color: #795548;
-}
-
-.bath-image {
-    display: block !important;
-    width: auto !important;
-    height: 100% !important;
-    margin-left: auto;
-    margin-right: auto;
-    max-height: 100%;
-    max-width: 100%;
+    height: 320px;
 }
 
 .bath-info {
-    margin-left: 1%;
-    font-size: 13px;
+    padding-left: 34px;
+    font-size: 16px;
+    position: relative;
+    margin-bottom: 10px;
 }
 
+.bath-image {
+    cursor: pointer;
+}
+
+.bath-name {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.bath-card-details {
+    font-size: 14px;
+    padding: 6px 12px;
+    height: 60px;
+}
+
+.bath-info-icon {
+    position: absolute;
+    font-size: 22px;
+    left: 10px;
+}
+
+@media (max-width: 1200px) {
+    .bath-info {
+        font-size: 10px;
+        margin-bottom: 6px;
+    }
+}

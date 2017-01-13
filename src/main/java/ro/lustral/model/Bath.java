@@ -1,9 +1,13 @@
 package ro.lustral.model;
 
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import ro.lustral.core.constants.ImageConstants;
+
 /**
  * Created by Luci on 27-Dec-16.
  */
-public class Bath extends OrderedEntity {
+@JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.NONE, getterVisibility = JsonAutoDetect.Visibility.ANY)
+public class Bath {
 
     private int id;
     private float price;
@@ -11,6 +15,8 @@ public class Bath extends OrderedEntity {
     private String size;
     private Float oldPrice;
     private boolean hasDiscount;
+    private boolean multipleSizes;
+    private int images;
 
     public Bath setId(int id) {
         this.id = id;
@@ -41,8 +47,54 @@ public class Bath extends OrderedEntity {
         return this;
     }
 
-    public Bath setOrderNr(int orderNr) {
-        this.orderNr = orderNr;
+    public Bath setHasDiscount(boolean hasDiscount) {
+        this.hasDiscount = hasDiscount;
         return this;
+    }
+
+    public Bath setMultipleSizes(boolean multipleSizes) {
+        this.multipleSizes = multipleSizes;
+        return this;
+    }
+
+    public Bath setImages(int images) {
+        this.images = images;
+        return this;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public float getPrice() {
+        return price;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getSize() {
+        return size;
+    }
+
+    public Float getOldPrice() {
+        return oldPrice;
+    }
+
+    public boolean getHasDiscount() {
+        return hasDiscount;
+    }
+
+    public boolean getHasMultipleSizes() {
+        return multipleSizes;
+    }
+
+    public int getImages() {
+        return images;
+    }
+
+    public String getBaseUrl() {
+        return ImageConstants.BATH_IMAGE_LOCATION + name.toLowerCase() + "/";
     }
 }

@@ -56,7 +56,7 @@ CREATE TABLE IF NOT EXISTS cazi (
     size VARCHAR(20) NOT NULL,
     multiple_sizes BIT NOT NULL DEFAULT 0,
     price float NOT NULL,
-    old_price float NOT NULL,
+    old_price float,
     images TINYINT NOT NULL DEFAULT 0,
     order_nr TINYINT NOT NULL DEFAULT 0
 );

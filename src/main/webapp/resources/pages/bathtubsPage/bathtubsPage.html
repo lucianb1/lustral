@@ -8,7 +8,7 @@
                     <i class="material-icons">close</i>
                 </a>
             </div>
-        </div>       
+        </div>
         <table class="hidro">
             <tr>
                 <th>Denumire</th>
@@ -94,24 +94,38 @@
         </table>
     </div>
 </div>
-<div detail-view open-Detail-View="openDetailView"></div>
-<div class="row row-container">
-    <div class="col s12 m6 l4" ng-repeat="card in cardsList">
-        <div class="card" ng-attr-id="{{card.id}}">
-            <div class="card-image" set-Bathtubt-Height>
-                <loading-spinner loading="loading"></loading-spinner>
-                <img class="bath-image" ng-click="_gaq.push(['_trackEvent', 'Cazi de baie', 'click', '{{card.name}}']); showDetailView(card.id);" ng-src="{{card.smallImageSrc}}" alt="Cazi-de-baie-Lustral">
-            </div>
-            <div class="card-custom-action">
-                <span class="bath-card-dimension">Dimensiuni: {{card.size}}</span> <span class="card-name-b brown-text">{{card.name}}</span>
-                
-                <span class="card-price-old-b" ng-if="card.hasDiscount">{{card.oldPrice}} lei</span>  <span class="card-price-b"
-                                                                                                           ng-class="{'red-text' : card.hasDiscount}"><span ng-if="card.multipleSizes" style="font-size: 13px;margin-right: 3px;">de la </span>{{card.newPrice}} lei</span>
+<div class="page-container">
+    <div class="row row-container">
+        <!--<div class="col s12 m6 l4" ng-repeat="card in cardsList">-->
+        <!--<div class="card" ng-attr-id="{{card.id}}">-->
+        <!--<div class="card-image">-->
+        <!--<img class="bath-image" alt="Cazi-de-baie-Lustral">-->
+        <!--</div>-->
+        <!--<div class="card-custom-action">-->
+        <!--<span class="bath-card-dimension">Dimensiuni: {{card.size}}</span> <span class="card-name-b brown-text">{{card.name}}</span>-->
+        <!---->
+        <!--<span class="card-price-old-b" ng-if="card.hasDiscount">{{card.oldPrice}} lei</span>  <span class="card-price-b"-->
+        <!--ng-class="{'red-text' : card.hasDiscount}"><span ng-if="card.multipleSizes" style="font-size: 13px;margin-right: 3px;">de la </span>{{card.newPrice}} lei</span>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--</div>-->
+        <div class="bath-info"><i class="material-icons bath-info-icon">info</i>Cazile sunt fabricate in Romania si contin placa de lemn
+            pentru rezistenta. Preturile sunt cu TVA si includ cada, picioarele si masca frontala. Nu includ sifonul
+            si sistemul hidro. Preturi sisteme hidro <a href="javascript:void(0)" ng-click="openCustomModal();">aici</a>.
+        </div>
+        <div class="col s12 m6 l4" ng-repeat="card in cardsList">
+            <div class="card parchet-card">
+                <div fancy-Box ng-click="openFancybox(fancyBoxArray[$index], 0)" class="parchet-card-image-container bath-image">
+                    <div back-img="{{card.baseUrl + '1.jpg'}}" class="parchet-card-image grow">
+                    </div>
+                    <div class="p-price green">{{card.hasMultipleSizes ? 'de la' : ''}} {{card.price}} lei</div>
+                </div>
+                <div class="bath-card-details">
+                    <div><span class="bath-name">Cada {{card.name}}</span>, Dimensiuni: {{card.size}}</div>
+                    <div>Material: acril, Garantie: 10 ani</div>
+                </div>
             </div>
         </div>
+
     </div>
-</div>
-<div class="bath-info">
-    Nota: Pretul este cu TVA si include cada, suportul si masca frontala. Nu contine sifonul si sistemul hidro. Pentru a
-    vedea lista de preturi pentru sistemele hidro click <a href="javascript:void(0)" ng-click="openCustomModal(); _gaq.push(['_trackEvent', 'Cazi de baie', 'click', 'Hidro prices']); ">aici</a>.
 </div>
