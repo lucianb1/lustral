@@ -1,72 +1,73 @@
-<div class="row row-container">
+<div class="page-container">
+    <div class="row row-container">
 
-    <div class="row filter-component">
-        <div class="filters-container">
-            <div class="filter-label green darken-1">
-                Filtreaza dupa:
-            </div>
-            <div class="gresie-filter-input">
-                <select class="" ng-options="value.id as value.value for value in materialOptions" ng-model="materialValues" material-select multiple watch
-                        ng-change="updateProducerFilter(600)">
-                </select>
+        <div class="row filter-component">
+            <div class="filters-container">
+                <div class="filter-label green darken-1">
+                    Filtreaza dupa:
+                </div>
+                <div class="gresie-filter-input">
+                    <select class="" ng-options="value.id as value.value for value in materialOptions" ng-model="materialValues" material-select multiple watch
+                            ng-change="updateProducerFilter(600)">
+                    </select>
+                </div>
+
+                <div class="gresie-filter-input">
+                    <select class="" ng-options="item.id as item.value for item in designOptions" ng-model="designValues" material-select multiple
+                            ng-change="updateWidthFilter(600);">
+                    </select>
+                </div>
+                <div class="gresie-filter-input">
+                    <select class="" ng-options="item.id as item.value for item in roomOptions" ng-model="roomValues" material-select multiple
+                            ng-change="updateClassFilter(600);">
+
+                    </select>
+                </div>
+                <div class="gresie-filter-input">
+                    <input ng-model="nameValue" placeholder="Nume colectie..." type="text" ng-change="updateNameFilter(1000);">
+                </div>
             </div>
 
-            <div class="gresie-filter-input">
-                <select class="" ng-options="item.id as item.value for item in designOptions" ng-model="designValues" material-select multiple
-                        ng-change="updateWidthFilter(600);">
-                </select>
-            </div>
-            <div class="gresie-filter-input">
-                <select class="" ng-options="item.id as item.value for item in roomOptions" ng-model="roomValues" material-select multiple
-                        ng-change="updateClassFilter(600);">
-
-                </select>
-            </div>
-            <div class="gresie-filter-input">
-                <input ng-model="nameValue" placeholder="Nume colectie..." type="text" ng-change="updateNameFilter(1000);">
+            <div class="gresie-sort-container">
+                <div class="sort-input">
+                    <select class="browser-default" ng-model="sortValue" material-select ng-change="updateSort(0);">
+                        <option value="">Alege...</option>
+                        <option value="1">Pret crescator</option>
+                        <option value="2">Pret decrescator</option>
+                    </select>
+                </div>
+                <div class="sort-label green darken-1">
+                    Sorteaza dupa:
+                </div>
             </div>
         </div>
+        <loading-spinner id="spin" ng-show="!isPageReady" loading="loading"></loading-spinner>
+        <div ng-if="listIsEmpty">Ne pare rau, nici un rezultat nu a fost gasit</div>
 
-        <div class="gresie-sort-container">
-            <div class="sort-input">
-                <select class="browser-default" ng-model="sortValue" material-select ng-change="updateSort(0);">
-                    <option value="">Alege...</option>
-                    <option value="1">Pret crescator</option>
-                    <option value="2">Pret decrescator</option>
-                </select>
-            </div>
-            <div class="sort-label green darken-1">
-                Sorteaza dupa:
-            </div>
-        </div>
-    </div>
-    <loading-spinner id="spin" ng-show="!isPageReady" loading="loading"></loading-spinner>
-    <div ng-if="listIsEmpty">Ne pare rau, nici un rezultat nu a fost gasit</div>
-
-    <div class="col s12 m6 l4" ng-repeat="card in cardsList">
-        <div class="card parchet-card">
-            <a ng-href="{{'#/gresie-faianta/collection/' + card.id}}">
-                <div class="parchet-card-image-container">
-                    <div back-img="{{card.imageUrl}}" class="parchet-card-image grow">
+        <div class="col s12 m6 l4" ng-repeat="card in cardsList">
+            <div class="card parchet-card">
+                <a ng-href="{{'#/gresie-faianta/detalii/' + card.id}}">
+                    <div class="parchet-card-image-container">
+                        <div back-img="{{card.imageUrl}}" class="parchet-card-image grow">
+                        </div>
+                        <div class="p-price green">{{card.price}} lei/mp</div>
                     </div>
-                    <div class="p-price green">{{card.price}} lei/mp</div>
-                </div>
-            </a>
-            <div class="p-card-details-container">
-                <div class="p-card-details">
-                    <div class="p-card-description">{{card.producer}} {{card.description}}</div>
-                    <div>{{card.width}} mm, cls. {{card.trafficClass}}</div>
-                    <div>cod: {{card.name}}</div>
-                    <a ng-href="{{'#/gresie-faianta/detalii/' + card.id}}" class="p-card-info-btn waves-effect waves-light">
-                        <span>Detalii &raquo;</span>
-                    </a>
+                </a>
+                <div class="p-card-details-container">
+                    <div class="p-card-details">
+                        <div class="g-name">Colectia {{card.name}}</div>
+                        <a ng-href="{{'#/gresie-faianta/detalii/' + card.id}}" class="p-card-info-btn waves-effect waves-light">
+                            <span>Detalii &raquo;</span>
+                        </a>
+
+                        <div class="gresie-property"><i class="material-icons gresie-done-icon">done</i> Portelanata</div>
+                        <div class="gresie-property"><i class="material-icons gresie-done-icon">done</i> Rectificata</div>
+                    </div>
                 </div>
             </div>
+
         </div>
 
+
     </div>
-
-
-
-
 </div>

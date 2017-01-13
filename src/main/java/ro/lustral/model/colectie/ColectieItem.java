@@ -18,6 +18,7 @@ public class ColectieItem {
     private float price;
     private Float oldPrice;
     private boolean isPorcelain;
+    private boolean isRectificat;
     private boolean isMatt;
     private boolean isGlossy;
 
@@ -55,16 +56,20 @@ public class ColectieItem {
         return oldPrice;
     }
 
-    public boolean isPorcelain() {
+    public boolean getIsPorcelain() {
         return isPorcelain;
     }
 
-    public boolean isMatt() {
+    public boolean getIsMatt() {
         return isMatt;
     }
 
-    public boolean isGlossy() {
+    public boolean getIsGlossy() {
         return isGlossy;
+    }
+
+    public boolean getIsRectificat() {
+        return isRectificat;
     }
 
     public void setId(int id) {
@@ -99,15 +104,19 @@ public class ColectieItem {
         this.oldPrice = oldPrice;
     }
 
-    public void setPorcelain(boolean porcelain) {
+    public void setIsPorcelain(boolean porcelain) {
         isPorcelain = porcelain;
     }
 
-    public void setMatt(boolean matt) {
+    public void setIsMatt(boolean matt) {
         isMatt = matt;
     }
 
-    public void setGlossy(boolean glossy) {
+    public void setIsGlossy(boolean glossy) {
         isGlossy = glossy;
+    }
+
+    public void setIsRectificat(boolean rectificat) {
+        isRectificat = rectificat;
     }
 }

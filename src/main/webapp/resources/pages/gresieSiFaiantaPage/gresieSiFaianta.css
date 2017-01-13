@@ -54,10 +54,9 @@
 }
 
 .g-name {
-    position: absolute;
-    left: 180px;
-    bottom: 0;
-    font-size: 16px;
+    font-weight: bold;
+    font-size: 15px;
+    font-weight: bold;
 }
 
 .card-price {
@@ -118,4 +117,83 @@
         display: inline-block;
         margin-left: 14px;
     }
+}
+
+.gresie-property {
+    margin-left: 20px;
+}
+
+.gresie-done-icon {
+    font-size: 20px;
+    position: absolute;
+    left: 8px;
+}
+
+.g-item {
+    border: 1px solid #ccc;
+    width: 310px;
+    height: 300px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    display: inline-block;
+    position: relative;
+    color: #555;
+    font-size: 13px;
+    background-color: #ffffff;
+    font-size: 16px;
+}
+
+.g-item-price {
+    left: 0;
+    right: 0;
+    bottom: 65px;
+    font-weight: bold;
+}
+
+.g-item-details-container {
+    width: 100%;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.g-image-container {
+    width: 80%;
+    margin-top: 20px;
+    height: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+    position: relative;
+}
+
+.g-image-container:hover img {
+    box-shadow: 0px 2px 5px #3e3d3a;
+    transition: all 0.2s;
+}
+
+.g-item-image {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    transition: all 0.2s;
+}
+
+.g-zoom-in-icon {
+    position: absolute;
+    right: 4px;
+    bottom: 2px;
+    background-color: rgba(255, 255, 255, 0.7);
+    color: grey;
+}
+
+.g-image-wrapper {
+    display: table-cell;
+    vertical-align: middle;
+    padding: 0 20px;
+    height: 180px;
+    width: 270px
 }

@@ -8,31 +8,50 @@
             </ul>
         </div>
     </div>
-    <div class="details-container">
-        <div class="row">
-            <div class="collection-name">Colectia {{details.name}}</div>
-            <div class="col s12 m6 l2 set-padding" ng-repeat="thumbneil in thumbneilsList">
-                <div class="row">
-                    <div class="padding-item">
-                        <div fancy-Box class="presentation-item" ng-click="openFancybox(fancyBoxItemsArray, $index);">
-                            <a href="javascript:void(0)" class="image-container-before">
-                                <div class="transform">
-                                    <img class="image-presented" ng-src="{{thumbneilImages[$index]}}" alt="Faianta"/>
-                                </div>
-                            </a>
-                            <!--<a fancy-Box -ngclick="openFancybox(fancyBoxArray, $index);" class="image-container-after">-->
-                                <!--<div class="transform">-->
-                                    <!--<img class="image-presented" ng-src="{{thumbneil.smallImgSrc}}" alt="Gresie"/>-->
-                                <!--</div>-->
-                            <!--</a>-->
-                        </div>
-                        <div class="presentation-description">
-                            <span>{{thumbneil.description}}</span><br>
-                            <span>{{thumbneil.size}}</span>
-                        </div>
-                    </div>
+    <div class="mob-collection-name">Colectia {{details.name}}</div>
+    <div style="width: 100%; text-align: center;">
+        <div class="mob-item" ng-repeat="item in items">
+            <div class="g-image-container" fancy-Box ng-click="openFancybox(fancyBoxItemsArray, $index);">
+                <div class="g-image-wrapper">
+                    <img ng-src="{{itemsImages[$index]}}" class="g-item-image ">
                 </div>
+                <i class="material-icons g-zoom-in-icon">zoom_in</i>
+            </div>
+            <div class="g-item-details-container">
+                <div class="bold">Pret: {{item.price}} lei/{{item.unit}}</div>
+                <div class="">{{item.description}} <span
+                        class="bold">{{item.isPorcelain ? 'portelanata' : ''}} {{item.isRectificat ? 'rectificata' : ''}} </span></div>
+                <div class="">Placa <span class="bold">{{item.isMatt ? 'mata' : 'lucioasa'}}</span></div>
+                <div class="">Dimensiune: {{item.size}}</div>
             </div>
         </div>
     </div>
+
+    <!--<div class="details-container">-->
+    <!--<div class="row">-->
+    <!--<div class="collection-name">Colectia {{details.name}}</div>-->
+    <!--<div style="width: 100%; text-align: center">-->
+    <!--<div class="g-item" ng-repeat="thumbneil in thumbneilsList">-->
+    <!--<div class="mob-image-container">-->
+    <!--<div fancy-Box class="presentation-item" ng-click="openFancybox(fancyBoxItemsArray, $index);">-->
+    <!--<a href="javascript:void(0)" class="image-container-before">-->
+    <!--&lt;!&ndash;<div class="transform">&ndash;&gt;-->
+    <!--<img class="mob-item-image" ng-src="{{thumbneilImages[$index]}}" alt="Faianta"/>-->
+    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+    <!--</a>-->
+    <!--&lt;!&ndash;<a fancy-Box -ngclick="openFancybox(fancyBoxArray, $index);" class="image-container-after">&ndash;&gt;-->
+    <!--&lt;!&ndash;<div class="transform">&ndash;&gt;-->
+    <!--&lt;!&ndash;<img class="image-presented" ng-src="{{thumbneil.smallImgSrc}}" alt="Gresie"/>&ndash;&gt;-->
+    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+    <!--&lt;!&ndash;</a>&ndash;&gt;-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--<div class="presentation-description">-->
+    <!--<span>{{thumbneil.description}}</span><br>-->
+    <!--<span>{{thumbneil.size}}</span>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--</div>-->
 </div>

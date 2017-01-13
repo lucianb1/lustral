@@ -14,9 +14,10 @@ public class ColectieItemRowMapper implements RowMapper<ColectieItem> {
     @Override
     public ColectieItem mapRow(ResultSet rs, int i) throws SQLException {
         ColectieItem item = new ColectieItem();
-        item.setPorcelain(rs.getBoolean("is_porcelain"));
-        item.setMatt(rs.getBoolean("is_matt"));
-        item.setGlossy(rs.getBoolean("is_glossy"));
+        item.setIsPorcelain(rs.getBoolean("is_porcelain"));
+        item.setIsRectificat(rs.getBoolean("is_rectificat"));
+        item.setIsMatt(rs.getBoolean("is_matt"));
+        item.setIsGlossy(rs.getBoolean("is_glossy"));
         item.setPrice(rs.getFloat("price"));
         item.setOldPrice((Float) rs.getObject("old_price"));
         item.setUnit(rs.getString("unit"));

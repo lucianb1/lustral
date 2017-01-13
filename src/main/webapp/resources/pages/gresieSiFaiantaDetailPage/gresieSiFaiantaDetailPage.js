@@ -15,13 +15,15 @@ honeAndFaienceDetailModule.service('honeAndFaienceDetailService', ['$http', func
 honeAndFaienceDetailModule.controller('honeAndFaienceDetailController', ['$scope', '$routeParams', 'honeAndFaienceDetailService',
     function ($scope, $routeParams, honeAndFaienceDetailService) {
         $scope.presentationSlides = [];
-        $scope.thumbneilImages = [];
+        $scope.itemsImages = [];
         $scope.fancyBoxItemsArray = [];
         $scope.fancyBoxSliderArray = [];
+        $scope.items = [];
 
         honeAndFaienceDetailService.getDetailView($routeParams.id).then(function (response) {
             var details = response.data;
             $scope.details = details;
+            $scope.items = details.items;
             for (var i = 1; i <= details.images; i++) {
                 var url = details.baseUrl + i + '.jpg';
                 $scope.presentationSlides.push(url);
@@ -30,7 +32,7 @@ honeAndFaienceDetailModule.controller('honeAndFaienceDetailController', ['$scope
 
             for (var i = 1; i<= details.items.length; i++) {
                 var url = details.baseItemsUrl + i + '.jpg';
-                $scope.thumbneilImages.push(url);
+                $scope.itemsImages.push(url);
                 $scope.fancyBoxItemsArray.push({href: url, title: ''});
             }
 
