@@ -44,6 +44,5 @@ bathtubsModule.controller('bathtubsController', ['$scope', 'bathtubsService', fu
         console.log($scope.fancyBoxArray);
 
     }, ajaxErrorCallback);
-
 }]);
 

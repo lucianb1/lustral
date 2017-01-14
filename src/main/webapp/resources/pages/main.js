@@ -189,6 +189,32 @@ mainApp.directive('backColor', function () {
     };
 });
 
+mainApp.directive('resize', ['$rootScope', '$window', function ($rootScope, $window) {
+    return {
+        restrict: 'A', //E = element, A = attribute, C = class, M = comment
+        link: function ($scope, element, attrs) {
+            angular.element($window).bind('resize', function () {
+                $rootScope.$broadcast('resize');
+            })
+            var lastScrollTop = 0;
+            angular.element($window).bind('scroll', function (event) {
+                var st = $(this).scrollTop()
+                if (st > lastScrollTop) {
+                    $("#navigation-Menu").addClass('nav-small');
+                    $("#btn-collapse").addClass('btn-collapse-small');
+
+                }
+                else if(st === 0){
+                    $("#navigation-Menu").removeClass('nav-small');
+                    $("#btn-collapse").removeClass('btn-collapse-small');
+                }
+                lastScrollTop = st;
+            });
+
+        }
+    }
+}]);
+
 //application routing
 mainApp.config(['$httpProvider', '$routeProvider', function ($httpProvider, $routeProvider) {
     $routeProvider

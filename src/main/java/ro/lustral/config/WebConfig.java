@@ -23,7 +23,7 @@ public class WebConfig extends WebMvcConfigurerAdapter {
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/images/**").addResourceLocations(ImageConstants.BASE_LOCATION);
+        registry.addResourceHandler("/images/**").addResourceLocations(ImageConstants.BASE_LOCATION).setCachePeriod(1000);
 //        registry.setOrder(Ordered.HIGHEST_PRECEDENCE);
     }
 

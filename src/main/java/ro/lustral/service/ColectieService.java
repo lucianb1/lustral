@@ -1,5 +1,6 @@
 package ro.lustral.service;
 
+import ro.lustral.core.request.FindGresieRequest;
 import ro.lustral.model.colectie.Colectie;
 import ro.lustral.model.colectie.ColectieDetailsJsonResponse;
 
@@ -13,4 +14,6 @@ public interface ColectieService {
     List<Colectie> getAll();
 
     ColectieDetailsJsonResponse getDetails(int id);
+
+    List<Colectie> findColectii(FindGresieRequest request);
 }

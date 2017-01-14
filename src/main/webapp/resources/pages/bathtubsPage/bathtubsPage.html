@@ -96,19 +96,7 @@
 </div>
 <div class="page-container">
     <div class="row row-container">
-        <!--<div class="col s12 m6 l4" ng-repeat="card in cardsList">-->
-        <!--<div class="card" ng-attr-id="{{card.id}}">-->
-        <!--<div class="card-image">-->
-        <!--<img class="bath-image" alt="Cazi-de-baie-Lustral">-->
-        <!--</div>-->
-        <!--<div class="card-custom-action">-->
-        <!--<span class="bath-card-dimension">Dimensiuni: {{card.size}}</span> <span class="card-name-b brown-text">{{card.name}}</span>-->
-        <!---->
-        <!--<span class="card-price-old-b" ng-if="card.hasDiscount">{{card.oldPrice}} lei</span>  <span class="card-price-b"-->
-        <!--ng-class="{'red-text' : card.hasDiscount}"><span ng-if="card.multipleSizes" style="font-size: 13px;margin-right: 3px;">de la </span>{{card.newPrice}} lei</span>-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--</div>-->
+        <loading-spinner id="spin" ng-show="!isPageLoaded" loading="loading"></loading-spinner>
         <div class="bath-info"><i class="material-icons bath-info-icon">info</i>Cazile sunt fabricate in Romania si contin placa de lemn
             pentru rezistenta. Preturile sunt cu TVA si includ cada, picioarele si masca frontala. Nu includ sifonul
             si sistemul hidro. Preturi sisteme hidro <a href="javascript:void(0)" ng-click="openCustomModal();">aici</a>.

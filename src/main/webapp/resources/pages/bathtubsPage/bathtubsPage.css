@@ -40,7 +40,7 @@
     left: 10px;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 650px) {
     .bath-info {
         font-size: 10px;
         margin-bottom: 6px;

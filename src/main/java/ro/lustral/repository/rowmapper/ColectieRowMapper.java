@@ -22,6 +22,7 @@ public class ColectieRowMapper implements RowMapper<Colectie> {
                 .setUnit(rs.getString("unit"))
                 .setImages(rs.getInt("images"))
                 .setIsPorcelain(rs.getBoolean("is_porcelain"))
+                .setIsRectificat(rs.getBoolean("is_rectificat"))
                 .setIsForBath(rs.getBoolean("for_bath"))
                 .setIsForExterior(rs.getBoolean("for_exterior"))
                 .setIsForLiving(rs.getBoolean("for_living"))

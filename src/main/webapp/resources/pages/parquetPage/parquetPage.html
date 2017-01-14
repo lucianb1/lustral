@@ -1,4 +1,3 @@
-<!-- link rel="stylesheet" href="/resources/pages/parquetPage/parquetPage.css"-->
 <div class="page-container">
     <div class="row filter-component">
         <div class="filters-container">
@@ -44,7 +43,7 @@
     <loading-spinner id="spin" ng-show="!isPageReady" loading="loading"></loading-spinner>
     <div ng-if="listIsEmpty">Ne pare rau, nici un rezultat nu a fost gasit</div>
 
-    <div infinite-scroll="nextPage()" infinite-scroll-disabled='!canLoadNextPage' infinite-scroll-immediate-check="false" infinite-scroll-distance="1"
+    <div ng-show="isPageReady" infinite-scroll="nextPage()" infinite-scroll-disabled='!canLoadNextPage' infinite-scroll-immediate-check="false" infinite-scroll-distance="1"
          class="row row-container">
         <div class="col s12 m6 l3" ng-repeat="card in cardsList">
             <div class="card parchet-card">

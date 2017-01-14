@@ -3,6 +3,7 @@ package ro.lustral.service.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ro.lustral.core.constants.ImageConstants;
+import ro.lustral.core.request.FindGresieRequest;
 import ro.lustral.model.colectie.Colectie;
 import ro.lustral.model.colectie.ColectieDetailsJsonResponse;
 import ro.lustral.model.colectie.ColectieItem;
@@ -39,6 +40,11 @@ public class ColectieServiceImpl implements ColectieService {
         response.setBaseUrl(baseUrl);
         response.setBaseItemsUrl(baseUrl + "items/");
         return response;
+    }
+
+    @Override
+    public List<Colectie> findColectii(FindGresieRequest request) {
+        return repository.findColectii(request);
     }
 
 }

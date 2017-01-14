@@ -6,7 +6,7 @@ import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Repository;
-import ro.lustral.core.constants.ParchetConstants;
+import ro.lustral.core.constants.PaginationConstants;
 import ro.lustral.model.parchet.Parchet;
 import ro.lustral.model.parchet.ParchetDetails;
 import ro.lustral.repository.rowmapper.ParchetDetailsRowMapper;
@@ -25,6 +25,7 @@ public class ParchetRepository {
     private static final ParchetRowMapper rowMapper = new ParchetRowMapper();
     private static final ParchetDetailsRowMapper detailsRowMapper = new ParchetDetailsRowMapper();
     private static final Map<Integer, String> orderClauses;
+
     static {
         orderClauses = new HashMap<>();
         orderClauses.put(1, "price ASC");
@@ -53,18 +54,16 @@ public class ParchetRepository {
         if (!StringUtils.isEmpty(code)) {
             builder.append(" AND LOWER(name) LIKE :name");
         }
-
-        if (sort != null && orderClauses.get(sort) != null) {
-            builder.append(" ORDER BY " + orderClauses.get(sort));
-        }
+        String orderClause = orderClauses.get(sort) != null ? orderClauses.get(sort) : "order_nr ASC";
+        builder.append(" ORDER BY " + orderClause);
         builder.append(" LIMIT :from, :limit");
 
         MapSqlParameterSource params = new MapSqlParameterSource()
                 .addValue("producers", producers)
                 .addValue("widths", widths)
                 .addValue("classes", classes)
-                .addValue("from", (page-1) * ParchetConstants.PAGE_SIZE)
-                .addValue("limit", ParchetConstants.PAGE_SIZE)
+                .addValue("from", (page - 1) * PaginationConstants.GRESIE_PAGE_SIZE)
+                .addValue("limit", PaginationConstants.GRESIE_PAGE_SIZE)
                 .addValue("name", "%" + code + "%");
         return jdbcTemplate.query(builder.toString(), params, rowMapper);
     }

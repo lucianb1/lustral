@@ -22,6 +22,7 @@ public class Colectie extends OrderedEntity {
     private boolean forBath;
     private boolean forExterior;
     private boolean isPorcelain;
+    private boolean isRectificat;
     private String unit;
     private int images;
 
@@ -84,6 +85,11 @@ public class Colectie extends OrderedEntity {
         return this;
     }
 
+    public Colectie setIsRectificat(boolean rectificat) {
+        isRectificat = rectificat;
+        return this;
+    }
+
     public int getId() {
         return id;
     }
@@ -100,27 +106,31 @@ public class Colectie extends OrderedEntity {
         return oldPrice;
     }
 
-    public boolean isHasDiscount() {
+    public boolean getIsHasDiscount() {
         return hasDiscount;
     }
 
-    public boolean isForKitchen() {
+    public boolean getIsForKitchen() {
         return forKitchen;
     }
 
-    public boolean isForLiving() {
+    public boolean getIsForLiving() {
         return forLiving;
     }
 
-    public boolean isForBath() {
+    public boolean getIsForBath() {
         return forBath;
     }
 
-    public boolean isForExterior() {
+    public boolean getIsForExterior() {
         return forExterior;
     }
 
-    public boolean isPorcelain() {
+    public boolean getIsRectificat() {
+        return isRectificat;
+    }
+
+    public boolean getIsPorcelain() {
         return isPorcelain;
     }
 

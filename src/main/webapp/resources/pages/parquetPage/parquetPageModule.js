@@ -37,15 +37,13 @@ parquetModule.service('parquetService', ['$http', function ($http) {
                 data: createJsonBody(sort, producers, widths, classes, page, code),
                 method: 'POST'
             })
-                .error(function (data, status, headers, config) {
-                    console.log('error:' + status);
-                });
+                .error(ajaxErrorCallback);
         }
     }
 }]);
 
 parquetModule.controller('parquetController', ['$scope', '$http',
-    'parquetService', 'cacheService', '$timeout', function ($scope, $http, parquetService, cacheService, $timeout) {
+    'parquetService', 'cacheService', '$timeout', '$q', function ($scope, $http, parquetService, cacheService, $timeout, $q) {
         // $scope.sortOptions = [{id: null, value: 'Alege...'}, {id: 1, value: 'Pret crescator'}, {id: 2, value: 'Pret descrescator'}];
         $scope.sortValue = null;
         $scope.producerOptions = [{id: null, value: 'Producator'}, {id: 'KAINDL', value: 'Kaindl'}, {id: 'EGGER', value: 'Egger'}];
@@ -126,8 +124,7 @@ parquetModule.controller('parquetController', ['$scope', '$http',
                 $scope.initializeParchet(timeout);
             }
             $scope.oldClassValues = $scope.classValues;
-        }
-        ;
+        };
         $scope.updateNameFilter = function (timeout) {
             $scope.initializeParchet(timeout);
         };
@@ -148,7 +145,7 @@ parquetModule.controller('parquetController', ['$scope', '$http',
 
         };
 
-        $scope.initializeParchet = function (delay) {
+        $scope.initializeParchet = function (delay, delayOnCards) {
             // daca load parchet e programata sa execute functia din timeout atunci oprim executia functiei din timeout
             if (me.time) {
                 clearTimeout(me.time);
@@ -157,23 +154,32 @@ parquetModule.controller('parquetController', ['$scope', '$http',
             me.time = setTimeout(function () {
                 $scope.isPageReady = false;
                 $scope.currentPage = 1;
-                getParchet().then(function (response) {
+
+                if (delayOnCards == null) {
+                    delayOnCards = 200;
+                }
+
+                var getParchetFuture = getParchet();
+                var timeoutFuture = $timeout(function () {
+                }, delayOnCards);
+
+                $q.all([timeoutFuture, getParchetFuture]).then(function(data) {
+                    var response = data[1];
                     $scope.cardsList = response.data;
                     $scope.listIsEmpty = response.data.length == 0;
                     if (response.data.length == 20) { //TODO be aware
                         $scope.canLoadNextPage = true;
                     }
                     $scope.isPageReady = true;
-                }, ajaxErrorCallback);
+                });
                 me.time = null;
 
             }, delay);
-
         };
         var cachedScope = cacheService.get('parchetCache');
 
         if (cachedScope == undefined) { // nothing in cache
-            $scope.initializeParchet(0);
+            $scope.initializeParchet(0, 0);
         } else {
             for (var key in cachedScope) {
                 $scope[key] = cachedScope[key];
