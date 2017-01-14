@@ -96,8 +96,8 @@
 
 .filter-input {
     float: left;
-    padding-left: 20px;
-    width: 156px;
+    margin-left: 15px;
+    width: 150px;
 }
 
 .filter-inputs-container {
@@ -115,7 +115,7 @@
 
 .sort-label {
     float: right;
-    margin-right: 10px;
+    margin-left: 14px;
     text-align: center;
     width: 120px;
     color: white;
@@ -124,19 +124,13 @@
 
 .sort-input {
     float: right;
+    margin-left: 12px;
 }
 
 .filter-item {
 
 }
 
-@media (max-width: 1200px) {
-    .sort-container {
-        float: none;
-        display: inline-block;
-        margin-left: 14px;
-    }
-}
 
 @media (max-width: 601px) {
     .card .card-p-custom-action {

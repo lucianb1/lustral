@@ -8238,6 +8238,7 @@ button.btn-floating {
   position: absolute;
   z-index: 999;
   will-change: width, height;
+  padding-bottom: 5px;
 }
 
 .dropdown-content li {
@@ -8270,7 +8271,7 @@ button.btn-floating {
   color: gray;
   display: block;
   line-height: 18px;
-  padding: 12px 14px;
+  padding: 10px 4px 6px;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -9195,7 +9196,7 @@ form p:last-child {
 
 [type="checkbox"] + label {
   position: relative;
-  padding-left: 35px;
+  padding-left: 30px;
   cursor: pointer;
   display: inline-block;
   height: 25px;
@@ -9454,7 +9455,8 @@ input[type=checkbox]:not(:disabled) ~ .lever:active:after {
   line-height: 20px;
   width: 100%;
   font-size: 1rem;
-  margin: 0 0 15px 0;
+  /*margin: 0 0 15px 0;*/
+  margin: 0 0 6px 0;
   padding: 0;
   display: block;
 }

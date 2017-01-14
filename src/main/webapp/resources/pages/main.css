@@ -286,11 +286,16 @@ nav.nav-small {
 }
 
 .fancybox-title.fancybox-title-inside-wrap {
-    line-height: inherit;
-    width: 100%;
-    border: none;
-    position: relative;
-    margin-top: 5px;
+    /*line-height: inherit;*/
+    /*width: 100%;*/
+    /*border: none;*/
+    /*position: relative;*/
+    /*margin-top: 5px;*/
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.6);
+    top: 15px;
+    font-size: 20px;
+    padding: 5px 10px;
 }
 
 .fancybox-btn-details {
@@ -309,16 +314,6 @@ nav.nav-small {
 .fancybox-inner {
     max-height: 87vh;
     max-width: 93.4vw;
-}
-
-@media (max-width: 900px) {
-    .fancybox-skin {
-        max-width: 90vw;
-    }
-
-    .fancybox-inner {
-        max-width: 82.4vw;
-    }
 }
 
 .contact-btn-size {
@@ -376,47 +371,6 @@ nav.nav-small {
     width: 100%;
     position: relative;
     height: 450px;
-}
-
-@media (max-width: 800px) {
-    .slider-container {
-        margin-bottom: 20px;
-        width: 100%;
-        position: relative;
-        height: 263px;
-    }
-
-    .slider {
-        position: relative;
-        height: 240px !important;
-        width: 100%;
-    }
-
-    .slider .slides {
-        height: 203px !important;
-    }
-
-    .slider .slides li {
-        display: -webkit-box;
-        display: -webkit-flex;
-        display: -moz-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-flex-align: center;
-        -ms-flex-align: center;
-        -webkit-align-items: center;
-        align-items: center;
-    }
-
-    .slider .slides li img {
-        display: block;
-        height: auto;
-        width: 100%;
-        background-size: cover;
-        background-position: center;
-        margin-left: auto;
-        margin-right: auto;
-    }
 }
 
 .slider .slides.no-background {
@@ -551,17 +505,6 @@ nav.nav-small {
     }
 }
 
-@media (max-width: 601px) {
-    .grow {
-        transition: none;
-    }
-    .grow:hover {
-        transform: none;
-    }
-    .row .col {
-        padding: 0;
-    }
-}
 
 .modal.custom-modal-widht .modal-content .modal-header {
     text-align: center;
@@ -587,4 +530,7 @@ nav.nav-small {
     padding-left: 10px;
     padding-right: 10px;
     position: relative;
+}
+.fancybox-title {
+
 }

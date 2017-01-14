@@ -20,7 +20,7 @@ public class ContactServiceImpl implements ContactService {
 
     @Override
     public void receiveNewMessage(String email, String message) {
-        repository.saveMessage(email, message);
         mailService.sendMailForNewMessage(email, message);
+        repository.saveMessage(email, message);
     }
 }

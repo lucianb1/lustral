@@ -136,7 +136,7 @@ parquetModule.controller('parquetController', ['$scope', '$http',
                 $scope.currentPage++;
                 getParchet().then(function (response) {
                     var data = response.data;
-                    if (data.length == 20) { //TODO be aware of this hardcoded - page size
+                    if (data.length == 30) { //TODO be aware of this hardcoded - page size
                         $scope.canLoadNextPage = true;
                     }
                     $scope.cardsList = $scope.cardsList.concat(response.data);
@@ -167,7 +167,7 @@ parquetModule.controller('parquetController', ['$scope', '$http',
                     var response = data[1];
                     $scope.cardsList = response.data;
                     $scope.listIsEmpty = response.data.length == 0;
-                    if (response.data.length == 20) { //TODO be aware
+                    if (response.data.length == 30) { //TODO be aware
                         $scope.canLoadNextPage = true;
                     }
                     $scope.isPageReady = true;

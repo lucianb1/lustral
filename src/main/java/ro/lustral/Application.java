@@ -25,8 +25,17 @@ public class Application extends SpringBootServletInitializer{
         SpringApplication.run(Application.class, args);
     }
 
-    @Bean(name = "asyncExecutor")
+    @Bean(name = "emailExecutor")
     public TaskExecutor getAsyncTaskExecutor() {
+        ThreadPoolTaskExecutor taskExecutor = new ThreadPoolTaskExecutor();
+        taskExecutor.setMaxPoolSize(1);
+        taskExecutor.setCorePoolSize(1);
+        taskExecutor.setThreadNamePrefix("mailSenderExecutor-");
+        return taskExecutor;
+    }
+
+    @Bean(name = "analyticsExecutor")
+    public TaskExecutor getAnalyticsPool() {
         ThreadPoolTaskExecutor taskExecutor = new ThreadPoolTaskExecutor();
         taskExecutor.setMaxPoolSize(1);
         taskExecutor.setCorePoolSize(1);

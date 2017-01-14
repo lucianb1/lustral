@@ -107,11 +107,11 @@ textarea:focus {
     outline: none;
 }
 
-.contact-outer-container {
-    width: 100%;
-    position: relative;
-    /*padding-left: 10%;*/
-}
+/*.contact-outer-container {*/
+    /*width: 100%;*/
+    /*position: relative;*/
+    /*!*padding-left: 10%;*!*/
+/*}*/
 
 /*only for safari*/
 .form-contact .right .btn.waves-effect.waves-light {

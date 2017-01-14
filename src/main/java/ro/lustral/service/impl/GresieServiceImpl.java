@@ -1,5 +1,6 @@
 package ro.lustral.service.impl;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ro.lustral.core.constants.ImageConstants;
@@ -8,7 +9,7 @@ import ro.lustral.model.colectie.Colectie;
 import ro.lustral.model.colectie.ColectieDetailsJsonResponse;
 import ro.lustral.model.colectie.ColectieItem;
 import ro.lustral.repository.ColectieRepository;
-import ro.lustral.service.ColectieService;
+import ro.lustral.service.GresieService;
 
 import java.util.List;
 
@@ -16,7 +17,9 @@ import java.util.List;
  * Created by Luci on 27-Dec-16.
  */
 @Service
-public class ColectieServiceImpl implements ColectieService {
+public class GresieServiceImpl implements GresieService {
+
+    private static final Logger LOG = Logger.getLogger(GresieService.class);
 
     @Autowired
     private ColectieRepository repository;
@@ -44,6 +47,7 @@ public class ColectieServiceImpl implements ColectieService {
 
     @Override
     public List<Colectie> findColectii(FindGresieRequest request) {
+        LOG.info("Find gresie filter: " + request.toString());
         return repository.findColectii(request);
     }
 

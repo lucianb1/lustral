@@ -14,12 +14,13 @@ import java.util.List;
 @Service
 public class BathServiceImpl implements BathService {
 
+
     @Autowired
     private BathRepository bathRepository;
 
     @Override
     public List<Bath> getAll() {
-        return  bathRepository.getAllOrdered();
+        return bathRepository.getAllOrdered();
     }
 
 }

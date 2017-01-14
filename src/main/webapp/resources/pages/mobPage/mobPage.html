@@ -1,32 +1,33 @@
 <!-- link rel="stylesheet" href="/resources/pages/mobPage/mobPage.css"-->
-
-<div class="row parchet-container">
-    <div class="col s12 m6 l3" ng-repeat="card in cardsList">
-        <div class="card parchet-card">
-            <a ng-href="{{'#/mobilier/detalii/' + card.id}}">
-                <div class="parchet-card-image-container">
+<div class="page-container">
+    <div class="row row-container">
+        <div class="col s12 m6 l3" ng-repeat="card in cardsList">
+            <div class="card parchet-card">
+                <a ng-href="{{'#/mobilier/detalii/' + card.id}}">
                     <div class="parchet-card-image-container">
-                        <div back-img="{{card.imageUrl}}" class="parchet-card-image grow">
+                        <div class="parchet-card-image-container">
+                            <div back-img="{{card.imageUrl}}" class="mob-card-image grow">
+                            </div>
+                        </div>
+                        <div class="p-price green" ng-href="{{'#/mobilier/detalii/' + card.id}}">
+                            Vezi preturi
                         </div>
                     </div>
-                    <div class="p-price green" ng-href="{{'#/mobilier/detalii/' + card.id}}">
-                        Vezi preturi
+                </a>
+                <div class="mob-card-actions">
+                    <div class="mob-card-name">Mobilier colectia {{card.name}}</div>
+
+                    <div style="display: block">
+                        <span style="float: left">Culori disponibile:</span>
+                        <div style="margin-top:5px; float:left">
+                            <div class="mob-color" ng-repeat="color in card.colors" back-color="{{color}}"></div>
+
+                        </div>
                     </div>
                 </div>
-            </a>
-            <div class="mob-card-actions">
-                <div class="mob-card-name">Mobilier colectia {{card.name}}</div>
 
-                <div style="display: block">
-                    <span style="float: left">Culori disponibile:</span>
-                    <div style="margin-top:5px; float:left">
-                        <div class="mob-color" ng-repeat="color in card.colors" back-color="{{color}}"></div>
-
-                    </div>
-                </div>
             </div>
-
         </div>
-    </div>
 
+    </div>
 </div>

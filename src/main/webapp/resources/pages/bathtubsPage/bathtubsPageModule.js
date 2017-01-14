@@ -37,7 +37,7 @@ bathtubsModule.controller('bathtubsController', ['$scope', 'bathtubsService', fu
         angular.forEach($scope.cardsList, function(card) {
             var fancyArray = [];
             for (var i = 1; i <= card.images; i++) {
-                fancyArray.push({href: card.baseUrl + i + '.jpg', title: ''});
+                fancyArray.push({href: card.baseUrl + i + '.jpg', title: 'Cada ' + card.name});
             }
             $scope.fancyBoxArray.push(fancyArray);
         });

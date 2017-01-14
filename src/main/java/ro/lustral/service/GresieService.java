@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * Created by Luci on 27-Dec-16.
  */
-public interface ColectieService {
+public interface GresieService {
 
     List<Colectie> getAll();
 

@@ -9,10 +9,13 @@ public class FindGresieRequest {
 
     private String name;
 
+    @NotNull
     private MaterialFilter materialFilter;
 
+    @NotNull
     private RoomFilter roomFilter;
 
+    @NotNull
     private DesignFilter designFilter;
 
     private Integer sort;
@@ -56,6 +59,18 @@ public class FindGresieRequest {
         return designFilter;
     }
 
+    public String toString() {
+        return new StringBuilder("{")
+                .append("page: " + page)
+                .append(", sort: " + sort)
+                .append(", name: " + name)
+                .append(", roomFilter: " + roomFilter.toString())
+                .append(", materialFilter: " + materialFilter.toString())
+                .append(", designFilter: " + designFilter.toString())
+                .append("}")
+                .toString();
+    }
+
     public class MaterialFilter {
 
         private boolean isPorcelain;
@@ -82,6 +97,12 @@ public class FindGresieRequest {
 
         public boolean isSet() {
             return isSet;
+        }
+        public String toString() {
+            StringBuilder builder = new StringBuilder("{");
+            builder.append("isSet: " + isSet());
+            builder.append("}");
+            return builder.toString();
         }
     }
 
@@ -110,6 +131,13 @@ public class FindGresieRequest {
 
         public boolean isSet() {
             return isSet;
+        }
+
+        public String toString() {
+            StringBuilder builder = new StringBuilder("{");
+            builder.append("isSet: " + isSet());
+            builder.append("}");
+            return builder.toString();
         }
     }
 
@@ -159,6 +187,13 @@ public class FindGresieRequest {
 
         public boolean isSet() {
             return isSet;
+        }
+
+        public String toString() {
+            StringBuilder builder = new StringBuilder("{");
+            builder.append("isSet: " + isSet());
+            builder.append("}");
+            return builder.toString();
         }
     }
 }

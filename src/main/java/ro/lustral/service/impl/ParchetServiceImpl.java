@@ -1,5 +1,6 @@
 package ro.lustral.service.impl;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ro.lustral.core.request.FindParchetRequest;
@@ -16,6 +17,8 @@ import java.util.List;
 @Service
 public class ParchetServiceImpl implements ParchetService {
 
+    private static final Logger LOG = Logger.getLogger(ParchetService.class);
+
     @Autowired
     private ParchetRepository parchetRepository;
 
@@ -26,6 +29,7 @@ public class ParchetServiceImpl implements ParchetService {
 
     @Override
     public List<Parchet> findParchet(FindParchetRequest request) {
+        LOG.info("Parchet filter: " + request.toString());
         return parchetRepository.findParchet(request.getProducers(), request.getWidths(), request.getClasses(), request.getSort(), request.getPage(), request.getName());
     }
 
