@@ -1,5 +1,7 @@
 package ro.lustral.core.request;
 
+import org.springframework.util.CollectionUtils;
+
 import javax.validation.constraints.NotNull;
 import java.util.List;
 
@@ -49,7 +51,6 @@ public class FindParchetRequest {
         return classes;
     }
 
-
     public void setClasses(List<Integer> classes) {
         this.classes = classes;
     }
@@ -68,5 +69,20 @@ public class FindParchetRequest {
 
     public Integer getPage() {
         return page;
+    }
+
+    public boolean isDefault() {
+        return name == null && sort == null && CollectionUtils.isEmpty(widths) && CollectionUtils.isEmpty(classes) && CollectionUtils.isEmpty(producers);
+    }
+
+    public String toString() {
+        return new StringBuilder("{")
+                .append(" page: " + page)
+                .append(", code: " + name)
+                .append(", sort: " + sort)
+                .append(", producers: " + producers)
+                .append(", widths: " + widths)
+                .append(", classes: " + classes)
+                .toString();
     }
 }

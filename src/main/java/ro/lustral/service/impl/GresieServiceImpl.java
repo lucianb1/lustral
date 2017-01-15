@@ -8,7 +8,7 @@ import ro.lustral.core.request.FindGresieRequest;
 import ro.lustral.model.colectie.Colectie;
 import ro.lustral.model.colectie.ColectieDetailsJsonResponse;
 import ro.lustral.model.colectie.ColectieItem;
-import ro.lustral.repository.ColectieRepository;
+import ro.lustral.repository.GresieRepository;
 import ro.lustral.service.GresieService;
 
 import java.util.List;
@@ -22,12 +22,12 @@ public class GresieServiceImpl implements GresieService {
     private static final Logger LOG = Logger.getLogger(GresieService.class);
 
     @Autowired
-    private ColectieRepository repository;
+    private GresieRepository repository;
 
-    @Override
-    public List<Colectie> getAll() {
-        return repository.getAll();
-    }
+//    @Override
+//    public List<Colectie> getAll() {
+//        return repository.getAll();
+//    }
 
     @Override
     public ColectieDetailsJsonResponse getDetails(int id) {
@@ -47,7 +47,6 @@ public class GresieServiceImpl implements GresieService {
 
     @Override
     public List<Colectie> findColectii(FindGresieRequest request) {
-        LOG.info("Find gresie filter: " + request.toString());
         return repository.findColectii(request);
     }
 

@@ -2,6 +2,7 @@ package ro.lustral.service.impl;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import ro.lustral.core.request.FindParchetRequest;
 import ro.lustral.model.parchet.Parchet;
@@ -27,14 +28,18 @@ public class ParchetServiceImpl implements ParchetService {
         return parchetRepository.getAll();
     }
 
+    @Cacheable(value = "parchet", condition = "#request.isDefault()", key = "#request.page")
     @Override
     public List<Parchet> findParchet(FindParchetRequest request) {
-        LOG.info("Parchet filter: " + request.toString());
+        LOG.info("findParchet() method was called with filter: " + request.toString());
         return parchetRepository.findParchet(request.getProducers(), request.getWidths(), request.getClasses(), request.getSort(), request.getPage(), request.getName());
     }
 
+
     @Override
+    @Cacheable("parchet-details")
     public ParchetDetails getDetails(int id) {
+        LOG.info("getDetails() method was called");
         return parchetRepository.getParchetDetails(id);
     }
 

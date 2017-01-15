@@ -11,7 +11,7 @@ import java.util.List;
  */
 public interface GresieService {
 
-    List<Colectie> getAll();
+//    List<Colectie> getAll();
 
     ColectieDetailsJsonResponse getDetails(int id);
 

@@ -36,7 +36,7 @@ public class ParchetRepository {
     private NamedParameterJdbcTemplate jdbcTemplate;
 
     public List<Parchet> getAll() {
-        String sql = "SELECT * FROM parchet ORDER BY order_nr"; //TODO
+        String sql = "SELECT * FROM parchet ORDER BY order_nr";
         return jdbcTemplate.query(sql, rowMapper);
     }
 

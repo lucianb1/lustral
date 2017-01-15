@@ -44,19 +44,11 @@ parquetModule.service('parquetService', ['$http', function ($http) {
 
 parquetModule.controller('parquetController', ['$scope', '$http',
     'parquetService', 'cacheService', '$timeout', '$q', function ($scope, $http, parquetService, cacheService, $timeout, $q) {
-        // $scope.sortOptions = [{id: null, value: 'Alege...'}, {id: 1, value: 'Pret crescator'}, {id: 2, value: 'Pret descrescator'}];
         $scope.sortValue = null;
-        $scope.producerOptions = [{id: null, value: 'Producator'}, {id: 'KAINDL', value: 'Kaindl'}, {id: 'EGGER', value: 'Egger'}];
         $scope.producerValues = [];
-        $scope.oldProducerValues = [];
-        $scope.widthOptions = [{id: null, value: 'Grosime'}, {id: 8, value: '8 mm'}, {id: 10, value: '10 mm'}, {id: 11, value: '11 mm'}];
-
         $scope.codeValue = null;
         $scope.widthValues = [];
-        $scope.oldWidthValues = [];
-        $scope.classOptions = [{id: null, value: 'Clasa trafic'}, {id: 31, value: 'Cl31'}, {id: 32, value: 'Cl32'}, {id: 33, value: 'Cl33'}];
         $scope.classValues = [];
-        $scope.oldClassValues = [];
         $scope.cardsList = [];
         $scope.currentPage = 1;
         $scope.listIsEmpty = false;
@@ -80,9 +72,9 @@ parquetModule.controller('parquetController', ['$scope', '$http',
                 {
                     'currentPage': $scope.currentPage,
                     'cardsList': $scope.cardsList, 'codeValue': $scope.codeValue,
-                    'classValues': $scope.classValues, 'oldClassValues': $scope.oldClassValues,
-                    'widthValues': $scope.widthValues, 'oldWidthValues': $scope.oldWidthValues,
-                    'producerValues': $scope.producerValues, 'oldProducerValues': $scope.oldProducerValues,
+                    'classValues': $scope.classValues,
+                    'widthValues': $scope.widthValues,
+                    'producerValues': $scope.producerValues,
                     'sortValue': $scope.sortValue,
                     'canLoadNextPage': $scope.canLoadNextPage,
                     'listIsEmpty': $scope.listIsEmpty,
@@ -99,35 +91,20 @@ parquetModule.controller('parquetController', ['$scope', '$http',
             $scope.initializeParchet(timeout);
         };
 
-        $scope.updateProducerFilter = function (timeout) {
-            var oldVInList = $scope.oldProducerValues[0] === null;
-            var newVInList = $scope.producerValues[0] === null;
-            if (oldVInList == newVInList) { // it was existing in the both, or not at all
-                $scope.initializeParchet(timeout);
-            }
-            $scope.oldProducerValues = $scope.producerValues;
-        };
-
-        $scope.updateWidthFilter = function (timeout) {
-            var oldVInList = $scope.oldWidthValues[0] === null;
-            var newVInList = $scope.widthValues[0] === null;
-            if (oldVInList == newVInList) { // it was existing in the both, or not at all
-                $scope.initializeParchet(timeout);
-            }
-            $scope.oldWidthValues = $scope.widthValues;
-        };
-
-        $scope.updateClassFilter = function (timeout) {
-            var oldVInList = $scope.oldClassValues[0] === null;
-            var newVInList = $scope.classValues[0] === null;
-            if (oldVInList == newVInList) { // it was existing in the both, or not at all
-                $scope.initializeParchet(timeout);
-            }
-            $scope.oldClassValues = $scope.classValues;
-        };
-        $scope.updateNameFilter = function (timeout) {
+        $scope.updateFilter = function (timeout) {
             $scope.initializeParchet(timeout);
         };
+
+        // $scope.updateProducerFilter = function (timeout) {
+            // var oldVInList = $scope.oldProducerValues[0] === null;
+            // var newVInList = $scope.producerValues[0] === null;
+            // if (oldVInList == newVInList) { // it was existing in the both, or not at all
+            //     $scope.initializeParchet(timeout);
+            // }
+            // $scope.oldProducerValues = $scope.producerValues;
+            // $scope.initializeParchet(timeout);
+        // };
+
 
 
         $scope.nextPage = function () {

@@ -1,29 +1,35 @@
 <div class="page-container">
     <div class="row filter-component">
         <div class="filters-container">
-            <!--TODO hardcodeaza drpdowns, fa background, remove grow pe mobile-->
             <div class="filter-label green darken-1">
                 Filtreaza dupa:
             </div>
             <div class="filter-input">
-                <select class="" ng-options="value.id as value.value for value in producerOptions" ng-model="producerValues" material-select multiple watch
-                        ng-change="updateProducerFilter(600)">
+                <select class="" ng-model="producerValues" material-select multiple watch ng-change="updateFilter(300)">
+                    <option disabled selected value>Producator</option>
+                    <option value="kaindl">KAINDL</option>
+                    <option value="egger">EGGER</option>
                 </select>
             </div>
 
             <div class="filter-input">
-                <select class="" ng-options="item.id as item.value for item in widthOptions" ng-model="widthValues" material-select multiple
-                        ng-change="updateWidthFilter(600);">
+                <select class="" ng-model="widthValues" material-select multiple ng-change="updateFilter(300);">
+                    <option disabled selected value>Grosime</option>
+                    <option value="8">8 mm</option>
+                    <option value="10">10 mm</option>
+                    <option value="11">11 mm</option>
                 </select>
             </div>
             <div class="filter-input">
-                <select class="" ng-options="item.id as item.value for item in classOptions" ng-model="classValues" material-select multiple
-                        ng-change="updateClassFilter(600);">
-
+                <select class="" ng-model="classValues" material-select multiple ng-change="updateFilter(300);">
+                    <option disabled selected value>Clasa trafic</option>
+                    <option value="31">31 / AC3</option>
+                    <option value="32">32 / AC4</option>
+                    <option value="33">33 / AC5</option>
                 </select>
             </div>
             <div class="filter-input">
-                <input ng-model="codeValue" placeholder="Cod parchet" type="text" ng-change="updateNameFilter(1000);">
+                <input ng-model="codeValue" placeholder="Cod parchet..." type="text" ng-change="updateFilter(1000);">
             </div>
         </div>
 
@@ -43,11 +49,12 @@
     <loading-spinner id="spin" ng-show="!isPageReady" loading="loading"></loading-spinner>
     <div ng-if="listIsEmpty">Ne pare rau, nici un rezultat nu a fost gasit</div>
 
-    <div ng-show="isPageReady" infinite-scroll="nextPage()" infinite-scroll-disabled='!canLoadNextPage' infinite-scroll-immediate-check="false" infinite-scroll-distance="1"
+    <div ng-show="isPageReady" infinite-scroll="nextPage()" infinite-scroll-disabled='!canLoadNextPage' infinite-scroll-immediate-check="false"
+         infinite-scroll-distance="1"
          class="row row-container">
         <div class="col s12 m6 l3" ng-repeat="card in cardsList">
             <div class="card parchet-card">
-                <a ng-href="{{'#/parchet/detalii/' + card.id}}">
+                <a ng-href="{{'#/parchet/detalii/' + card.id}}" title="Vezi detalii">
                     <div class="parchet-card-image-container">
                         <div back-img="{{card.imageUrl}}" class="parchet-card-image grow">
                         </div>
@@ -59,7 +66,7 @@
                         <div class="p-card-description">{{card.producer}} {{card.description}}</div>
                         <div>{{card.width}} mm, cls. {{card.trafficClass}}</div>
                         <div>cod: {{card.name}}</div>
-                        <a ng-href="{{'#/parchet/detalii/' + card.id}}" class="p-card-info-btn waves-effect waves-light">
+                        <a ng-href="{{'#/parchet/detalii/' + card.id}}" class="p-card-info-btn waves-effect waves-light" title="Vezi detalii">
                             <span>Detalii &raquo;</span>
                         </a>
                     </div>

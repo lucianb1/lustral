@@ -531,6 +531,35 @@ nav.nav-small {
     padding-right: 10px;
     position: relative;
 }
-.fancybox-title {
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    #565656;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:    #565656;
+    opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color:    #565656;
+    opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color:    #565656;
+}
 
+.sort-label {
+    float: right;
+    text-align: center;
+    width: 110px;
+    color: white;
+    background-color: forestgreen;
+}
+
+.sort-input {
+    float: right;
+    margin-left: 12px;
+}
+
+.sort-container {
+    float: right;
+    margin: 0;
 }

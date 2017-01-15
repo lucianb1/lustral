@@ -47,24 +47,9 @@ honeAndFaienceModule.controller('honeAndFaienceController', ['$scope', '$routePa
     function ($scope, $routeParams, gresieService, cacheService, $timeout, $q) {
         $scope.cardsList = [];
         $scope.sortValue = null;
-        $scope.materialOptions = [{id: null, value: 'Portelanata/rectificata'}, {id: 'isPorcelain', value: 'Portelanata'}, {
-            id: 'isRectificat',
-            value: 'Rectificata'
-        }];
         $scope.materialValues = [];
-        $scope.oldMaterialValues = [];
-        $scope.designOptions = [{id: null, value: 'Gama de culori'}, {id: 'isWood', value: 'Imitatii lemn'}, {
-            id: 'isStone',
-            value: 'Imitatii piatra'
-        }, {id: 'something', value: 'Alb-gri'}];
         $scope.designValues = [];
-        $scope.oldDesignValues = [];
-        $scope.roomOptions = [{id: null, value: 'Baie/Bucatarie/Living..'}, {id: 'forBathroom', value: 'Baie'}, {
-            id: 'forKitchen',
-            value: 'Bucatarie'
-        }, {id: 'forLiving', value: 'Living'}, {id: 'forExterior', value: 'Exterior'}];
         $scope.roomValues = [];
-        $scope.oldRoomValues = [];
         $scope.nameValue = null;
         $scope.listIsEmpty = false;
         $scope.canLoadNextPage = true;
@@ -152,11 +137,8 @@ honeAndFaienceModule.controller('honeAndFaienceController', ['$scope', '$routePa
                     'isPageReady': $scope.isPageReady,
                     'scrollPos': $scope.scrollPos,
                     'materialValues': $scope.materialValues,
-                    'oldMaterialValues': $scope.oldMaterialValues,
                     'designValues': $scope.designValues,
-                    'oldDesignValues': $scope.oldDesignValues,
                     'roomValues': $scope.roomValues,
-                    'oldRoomValues': $scope.oldRoomValues,
                     'nameValue': $scope.nameValue
                 });
         };
@@ -176,7 +158,8 @@ honeAndFaienceModule.controller('honeAndFaienceController', ['$scope', '$routePa
             }); // no parameter, wait for DOM
         });
 
-        $scope.updateNameFilter = function (timeout) {
+
+        $scope.updateFilter = function (timeout) {
             $scope.initializeGresie(timeout);
         };
 
@@ -184,32 +167,6 @@ honeAndFaienceModule.controller('honeAndFaienceController', ['$scope', '$routePa
             $scope.initializeGresie(timeout);
         };
 
-        $scope.updateDesignFilter = function (timeout) {
-            var oldVInList = $scope.oldDesignValues[0] === null;
-            var newVInList = $scope.designValues[0] === null;
-            if (oldVInList == newVInList) { // it was existing in the both, or not at all
-                $scope.initializeGresie(timeout);
-            }
-            $scope.oldDesignValues = $scope.designValues;
-        };
-
-        $scope.updateRoomFilter = function (timeout) {
-            var oldVInList = $scope.oldRoomValues[0] === null;
-            var newVInList = $scope.roomValues[0] === null;
-            if (oldVInList == newVInList) { // it was existing in the both, or not at all
-                $scope.initializeGresie(timeout);
-            }
-            $scope.oldClassValues = $scope.classValues;
-        };
-
-        $scope.updateMaterialFilter = function (timeout) {
-            var oldVInList = $scope.oldMaterialValues[0] === null;
-            var newVInList = $scope.materialValues[0] === null;
-            if (oldVInList == newVInList) { // it was existing in the both, or not at all
-                $scope.initializeGresie(timeout);
-            }
-            $scope.oldClassValues = $scope.classValues;
-        };
 
     }
 ]);

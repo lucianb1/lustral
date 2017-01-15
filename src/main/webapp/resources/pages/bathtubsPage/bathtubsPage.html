@@ -102,7 +102,7 @@
         </div>
         <div class="col s12 m6 l4" ng-repeat="card in cardsList">
             <div class="card parchet-card">
-                <div fancy-Box ng-click="openFancybox(fancyBoxArray[$index], 0)" class="parchet-card-image-container bath-image">
+                <div fancy-Box ng-click="openFancybox(fancyBoxArray[$index], 0)" class="parchet-card-image-container bath-image" title="Vezi poze">
                     <div back-img="{{card.baseUrl + '1.jpg'}}" class="bath-card-image grow">
                     </div>
                     <div class="p-price green">{{card.hasMultipleSizes ? 'de la' : ''}} {{card.price}} lei</div>

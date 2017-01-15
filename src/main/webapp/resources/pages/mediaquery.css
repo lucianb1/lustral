@@ -1,3 +1,35 @@
+@media (max-width: 1250px) {
+    .long-input {
+        width: inherit;
+    }
+}
+
+@media (max-width: 1200px) {
+    .sort-container {
+        float: none;
+        display: inline-block;
+        margin-left: 14px;
+    }
+
+    .gresie-sort-container {
+        float: none;
+        display: inline-block;
+        margin-left: 14px;
+    }
+
+
+}
+
+@media (max-width: 900px) {
+    .fancybox-skin {
+        max-width: 90vw;
+    }
+
+    .fancybox-inner {
+        max-width: 82.4vw;
+    }
+}
+
 @media (max-width: 800px) {
     .slider-container {
         margin-bottom: 20px;
@@ -65,38 +97,23 @@
     .grow:hover {
         transform: none;
     }
-}
 
-@media (max-width: 600px) {
-    .row .col {
-        padding: 0;
-    }
-}
-
-@media (max-width: 900px) {
-    .fancybox-skin {
-        max-width: 90vw;
-    }
-
-    .fancybox-inner {
-        max-width: 82.4vw;
-    }
-}
-
-@media (max-width: 1200px) {
-    .sort-container {
-        float: none;
-        display: inline-block;
-        /*margin-left: 14px;*/
+    long-input {
+        width: inherit;
     }
 }
 
 @media (max-width: 601px) {
 
+    .row .col {
+        padding: 0;
+    }
+
     .gresie-filter-input {
-        width: 50%;
+        width: 49%;
         padding-left: 0;
         padding-right: 4px;
+        margin-right: 2px;
     }
 
     .filter-input {
@@ -105,22 +122,42 @@
         padding-left: 0;
         padding-right: 10px;
     }
-
+    .sort-container {
+        float: none;
+        display: inline-block;
+        margin: 0;
+    }
     .filter-label {
         margin-left: 0;
         padding-left: 0;
         padding-right: 10px;
+        float: none;
+        margin-bottom: 6px;
     }
     .sort-label {
         margin-left: 0;
         padding-left: 0;
         padding-right: 10px;
+        margin-bottom: 6px;
     }
 
-    /*.gresie-sort-container .sort-container {*/
-        /*margin: 0;*/
-        /*padding-left: 0;*/
-        /*padding-right: 10px;*/
-    /*}*/
+    .parchet-details-title {
+        font-size: 16px;
+    }
+    .youtube-video-parchet {
+        width: 100%;
+    }
 
+    .card .card-p-custom-action {
+        font-size: 1.8vw;
+    }
+
+    .gresie-sort-container {
+        margin: 0;
+    }
+
+    /*.filter-label {*/
+        /*float: none;*/
+        /*margin-bottom: 6px;*/
+    /*}*/
 }

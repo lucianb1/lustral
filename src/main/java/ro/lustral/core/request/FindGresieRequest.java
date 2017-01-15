@@ -59,6 +59,10 @@ public class FindGresieRequest {
         return designFilter;
     }
 
+    public boolean isDefault() {
+        return name == null && sort == null && !materialFilter.isSet() && !designFilter.isSet() && !roomFilter.isSet();
+    }
+
     public String toString() {
         return new StringBuilder("{")
                 .append("page: " + page)
@@ -196,4 +200,5 @@ public class FindGresieRequest {
             return builder.toString();
         }
     }
+
 }

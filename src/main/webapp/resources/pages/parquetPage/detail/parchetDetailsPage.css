@@ -53,12 +53,3 @@
     color: grey;
     text-align: center;
 }
-
-@media (max-width: 600px) {
-    .parchet-details-title {
-        font-size: 16px;
-    }
-    .youtube-video-parchet {
-        width: 100%;
-    }
-}

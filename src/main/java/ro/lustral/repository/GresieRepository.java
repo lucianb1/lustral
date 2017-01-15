@@ -1,7 +1,9 @@
 package ro.lustral.repository;
 
 import org.apache.commons.lang3.StringUtils;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Repository;
@@ -20,7 +22,9 @@ import java.util.Map;
  * Created by Luci on 27-Dec-16.
  */
 @Repository
-public class ColectieRepository {
+public class GresieRepository {
+
+    private static final Logger LOG = Logger.getLogger(GresieRepository.class);
 
     private static final ColectieRowMapper rowMapper = new ColectieRowMapper();
     private static final ColectieItemRowMapper itemRowMapper = new ColectieItemRowMapper();
@@ -35,18 +39,22 @@ public class ColectieRepository {
     @Autowired
     private NamedParameterJdbcTemplate jdbcTemplate;
 
-    public List<Colectie> getAll() {
-        String sql = "SELECT * FROM colectii ORDER BY order_nr";
-        return jdbcTemplate.query(sql, rowMapper);
-    }
+//    public List<Colectie> getAll() {
+//        String sql = "SELECT * FROM colectii ORDER BY order_nr";
+//        return jdbcTemplate.query(sql, rowMapper);
+//    }
 
+    @Cacheable("gresie-items")
     public List<ColectieItem> getItems(int id) {
+        LOG.info("getItems() method was called");
         String sql = "SELECT i.*, c.images, c.name as collection_name FROM colectii_items i INNER JOIN colectii c ON collection_id = :id AND c.id = i.collection_id ORDER BY i.order_nr ASC";
         MapSqlParameterSource params = new MapSqlParameterSource().addValue("id", id);
         return jdbcTemplate.query(sql, params, itemRowMapper);
     }
 
+    @Cacheable(value = "gresie", condition = "#request.isDefault()", key = "#request.page")
     public List<Colectie> findColectii(FindGresieRequest request) {
+        LOG.info("findColectii() method was called with filter: " + request.toString());
         StringBuilder builder = new StringBuilder("SELECT * FROM colectii WHERE 1 = 1 ");
         if (!StringUtils.isBlank(request.getName())) {
             builder.append(" AND name like :name ");

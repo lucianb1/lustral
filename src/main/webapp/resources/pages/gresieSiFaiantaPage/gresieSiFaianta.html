@@ -4,25 +4,31 @@
             <div class="filter-label green darken-1">
                 Filtreaza dupa:
             </div>
-            <div class="gresie-filter-input">
-                <select class="" ng-options="value.id as value.value for value in materialOptions" ng-model="materialValues" material-select multiple watch
-                        ng-change="updateMaterialFilter(600)">
-                </select>
-            </div>
-
-            <div class="gresie-filter-input">
-                <select class="" ng-options="item.id as item.value for item in designOptions" ng-model="designValues" material-select multiple
-                        ng-change="updateDesignFilter(600);">
-                </select>
-            </div>
-            <div class="gresie-filter-input">
-                <select class="" ng-options="item.id as item.value for item in roomOptions" ng-model="roomValues" material-select multiple
-                        ng-change="updateRoomFilter(600);">
-
+            <div class="gresie-filter-input long-input">
+                <select class="" ng-model="roomValues" material-select multiple ng-change="updateFilter(300);">
+                    <option disabled selected value>Baie/Bucatarie/Living/Exterior</option>
+                    <option value="forBath">Baie</option>
+                    <option value="forKitchen">Bucatarie</option>
+                    <option value="forLiving">Living</option>
+                    <option value="forExterior">Exterior</option>
                 </select>
             </div>
             <div class="gresie-filter-input">
-                <input ng-model="nameValue" placeholder="Nume colectie..." type="text" ng-change="updateNameFilter(1000);">
+                <select class="" ng-model="designValues" material-select multiple ng-change="updateFilter(300);">
+                    <option disabled selected value>Gama de culori</option>
+                    <option value="wood">Imitatii de lemn</option>
+                    <option value="stone">Imitatii de piatra</option>
+                </select>
+            </div>
+            <div class="gresie-filter-input">
+                <select class="" ng-model="materialValues" material-select multiple watch ng-change="updateFilter(300)">
+                    <option disabled selected value>Portelanata/rectificata</option>
+                    <option value="isPorcelain">Portelanata</option>
+                    <option value="isRectificat">Rectificata</option>
+                </select>
+            </div>
+            <div class="gresie-filter-input">
+                <input ng-model="nameValue" placeholder="Nume colectie..." type="text" ng-change="updateFilter(1000);">
             </div>
         </div>
 
@@ -42,11 +48,12 @@
     <loading-spinner id="spin" ng-show="!isPageReady" loading="loading"></loading-spinner>
     <div ng-if="listIsEmpty">Ne pare rau, nici un rezultat nu a fost gasit</div>
 
-    <div ng-show="isPageReady" class="row row-container" infinite-scroll="nextPage()" infinite-scroll-disabled='!canLoadNextPage' infinite-scroll-immediate-check="false"
+    <div ng-show="isPageReady" class="row row-container" infinite-scroll="nextPage()" infinite-scroll-disabled='!canLoadNextPage'
+         infinite-scroll-immediate-check="false"
          infinite-scroll-distance="1">
         <div class="col s12 m6 l4" ng-repeat="card in cardsList">
             <div class="card parchet-card">
-                <a ng-href="{{'#/gresie-faianta/detalii/' + card.id}}">
+                <a ng-href="{{'#/gresie-faianta/detalii/' + card.id}}" title="Vezi detalii">
                     <div class="parchet-card-image-container">
                         <div back-img="{{card.imageUrl}}" class="gresie-card-image grow">
                         </div>
@@ -56,7 +63,7 @@
                 <div class="p-card-details-container">
                     <div class="p-card-details">
                         <div class="g-name">Colectia {{card.name}}</div>
-                        <a ng-href="{{'#/gresie-faianta/detalii/' + card.id}}" class="g-card-details-btn waves-effect waves-light">
+                        <a ng-href="{{'#/gresie-faianta/detalii/' + card.id}}" class="g-card-details-btn waves-effect waves-light" title="Vezi detalii">
                             <span>Detalii &raquo;</span>
                         </a>
 

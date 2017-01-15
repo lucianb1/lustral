@@ -90,10 +90,6 @@
     float: left;
 }
 
-.sort-container {
-    float: right;
-}
-
 .filter-input {
     float: left;
     margin-left: 15px;
@@ -107,40 +103,9 @@
 .filter-label {
     float: left;
     margin-left: 14px;
-    width: 120px;
+    width: 110px;
     text-align: center;
     color: white;
-    background-color: forestgreen;
-}
-
-.sort-label {
-    float: right;
-    margin-left: 14px;
-    text-align: center;
-    width: 120px;
-    color: white;
-    background-color: forestgreen;
-}
-
-.sort-input {
-    float: right;
-    margin-left: 12px;
-}
-
-.filter-item {
-
-}
-
-
-@media (max-width: 601px) {
-    .card .card-p-custom-action {
-        font-size: 1.8vw;
-    }
-
-    .filter-label {
-        float: none;
-        margin-bottom: 6px;
-    }
 }
 
 @media (min-width: 601px) and (max-width: 993px) {
