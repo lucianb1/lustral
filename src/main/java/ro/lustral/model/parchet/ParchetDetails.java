@@ -187,7 +187,7 @@ public class ParchetDetails {
         this.wood = wood;
     }
 
-    public boolean hasDiscount() {
+    public boolean getHasDiscount() {
         return hasDiscount;
     }
 }

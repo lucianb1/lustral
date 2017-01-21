@@ -32,6 +32,7 @@ public class ParchetDetailsRowMapper implements RowMapper<ParchetDetails> {
 //        details.setCaracteristics(rs.getString("caracteristics")); // TODO
         details.setDelivery(rs.getString("delivery"));
         details.setImages(rs.getInt("images"));
+        details.setWarranty(rs.getInt("warranty"));
         details.setOrderNr(rs.getInt("order_nr"));
         return details;
     }

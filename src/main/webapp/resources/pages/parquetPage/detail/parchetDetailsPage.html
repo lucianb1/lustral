@@ -64,7 +64,7 @@
             <div ng-if-end class="col s12 m12 l6 set-padding parchet-characteristic">
                 <span>Rezistent la lumină şi decolorare </span>
             </div>
-            <div class="col s12 m12 l12 set-padding parchet-characteristic parchet-characteristic-price">
+            <div class="col s12 m12 l12 set-padding parchet-characteristic parchet-characteristic-price" ng-class="!details.hasDiscount ? 'green' : 'discount-color'">
                 <span>Pret: {{details.price}} lei/mp</span>
             </div>
             <div class="col s12 m12 l12 set-padding parchet-showroom-info">

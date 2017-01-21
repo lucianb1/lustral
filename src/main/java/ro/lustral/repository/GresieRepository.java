@@ -103,6 +103,12 @@ public class GresieRepository {
             if (designFilter.isWood()) {
                 designQuery += " OR is_wood = 1";
             }
+            if (designFilter.isFlowers()) {
+                designQuery += " OR is_flowers = 1";
+            }
+            if (designFilter.isPatchwork()) {
+                designQuery += " OR is_patchwork = 1";
+            }
             designQuery += ") ";
             builder.append(designQuery);
         }

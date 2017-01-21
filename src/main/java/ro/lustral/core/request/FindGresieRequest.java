@@ -114,6 +114,8 @@ public class FindGresieRequest {
         private boolean isSet;
         private boolean wood;
         private boolean stone;
+        private boolean isFlowers;
+        private boolean isPatchwork;
 
         public boolean isWood() {
             return wood;
@@ -121,6 +123,24 @@ public class FindGresieRequest {
 
         public void setWood(boolean wood) {
             this.wood = wood;
+            isSet = true;
+        }
+
+        public boolean isFlowers() {
+            return isFlowers;
+        }
+
+        public void setFlowers(boolean flowers) {
+            isFlowers = flowers;
+            isSet = true;
+        }
+
+        public boolean isPatchwork() {
+            return isPatchwork;
+        }
+
+        public void setPatchwork(boolean patchwork) {
+            isPatchwork = patchwork;
             isSet = true;
         }
 

@@ -1,15 +1,11 @@
 package ro.lustral.config;
 
-import net.coobird.thumbnailator.Thumbnails;
-import net.coobird.thumbnailator.name.Rename;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import ro.lustral.core.constants.ImageConstants;
 
-import java.io.File;
-import java.io.IOException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -35,9 +31,10 @@ public class WebConfig extends WebMvcConfigurerAdapter {
     public ExecutorService getJdbcExecutor() {
         return Executors.newFixedThreadPool(5);
     }
-
+}
+//
 //    public static void main(String[] args) throws IOException {
-//        File file = new File("F:\\lustral_images\\lustral\\parchet");
+//        File file = new File("F:\\lustral_images\\lustral\\colectii");
 //        for (File folder : file.listFiles()) {
 //            if (folder.isDirectory()) {
 //                for (File image : folder.listFiles()) {
@@ -56,7 +53,7 @@ public class WebConfig extends WebMvcConfigurerAdapter {
 //
 //        }
 //    }
-//
+////
 //    private static void minimizeImage(File file) throws IOException {
 //        int max = 0;
 //        BufferedImage imageBuff = null;
@@ -75,16 +72,16 @@ public class WebConfig extends WebMvcConfigurerAdapter {
 //            System.out.println(file.getAbsolutePath());
 ////            throw new RuntimeException();
 //        }
-//
-//
+
+
 //    }
 
-    public static void main(String[] args) throws IOException {
-        for (int i = 0; i < 200; i++) {
-            File file = new File("F:\\lustral_images\\gresii_noi/a.jpg");
-            Thumbnails.of(file).size(1000, 1000).outputFormat("jpg").toFiles(Rename.NO_CHANGE);
-        }
-    }
+//    public static void main(String[] args) throws IOException {
+//        for (int i = 0; i < 200; i++) {
+//            File file = new File("F:\\lustral_images\\gresii_noi/a.jpg");
+//            Thumbnails.of(file).size(1000, 1000).outputFormat("jpg").toFiles(Rename.NO_CHANGE);
+//        }
+//    }
 
 
-}
+//}

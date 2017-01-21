@@ -21,6 +21,7 @@ public class Parchet {
     private Float oldPrice;
     private boolean hasDiscount;
     private int orderNr;
+    private Integer warranty;
 
     public Parchet setId(int id) {
         this.id = id;

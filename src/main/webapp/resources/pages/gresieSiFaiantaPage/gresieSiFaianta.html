@@ -15,9 +15,11 @@
             </div>
             <div class="gresie-filter-input">
                 <select class="" ng-model="designValues" material-select multiple ng-change="updateFilter(300);">
-                    <option disabled selected value>Gama de culori</option>
+                    <option disabled selected value>Design</option>
                     <option value="wood">Imitatii de lemn</option>
                     <option value="stone">Imitatii de piatra</option>
+                    <option value="patchwork">Patchwork</option>
+                    <option value="flowers">Decoruri florale</option>
                 </select>
             </div>
             <div class="gresie-filter-input">
@@ -58,7 +60,7 @@
                         <div back-img="{{card.imageUrl}}" class="gresie-card-image grow">
                         </div>
                         <div></div>
-                        <div class="card-price" ng-class="!card.hasDiscount ? 'green' : 'discount-color'">{{card.price}} lei/mp</div>
+                        <div class="card-price" ng-class="!card.hasDiscount ? 'green' : 'discount-color'">{{card.price}} lei/{{card.unit}}</div>
                         <div ng-if="card.hasDiscount" class="old-price" >{{card.oldPrice}} lei/mp</div>
                         <div ng-if="card.hasDiscount" class="discount-flag"><span class="discount-flag-text">Reducere</span></div>
                     </div>

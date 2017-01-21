@@ -1,11 +1,3 @@
-/*.unselectable {
-    user-select: none;
-    -moz-user-select: none;
-    -khtml-user-select: none;
-    -webkit-user-select: none;
-    -o-user-select: none;
-}*/
-
 .bath-card-image {
     display: block;
     width: 100%;
@@ -38,11 +30,4 @@
     position: absolute;
     font-size: 22px;
     left: 10px;
-}
-
-@media (max-width: 650px) {
-    .bath-info {
-        font-size: 10px;
-        margin-bottom: 6px;
-    }
 }
