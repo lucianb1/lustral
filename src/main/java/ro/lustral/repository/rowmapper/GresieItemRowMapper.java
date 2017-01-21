@@ -1,7 +1,7 @@
 package ro.lustral.repository.rowmapper;
 
 import org.springframework.jdbc.core.RowMapper;
-import ro.lustral.model.colectie.ColectieItem;
+import ro.lustral.model.colectie.GresieItem;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -9,11 +9,11 @@ import java.sql.SQLException;
 /**
  * Created by Luci on 11-Jan-17.
  */
-public class ColectieItemRowMapper implements RowMapper<ColectieItem> {
+public class GresieItemRowMapper implements RowMapper<GresieItem> {
 
     @Override
-    public ColectieItem mapRow(ResultSet rs, int i) throws SQLException {
-        ColectieItem item = new ColectieItem();
+    public GresieItem mapRow(ResultSet rs, int i) throws SQLException {
+        GresieItem item = new GresieItem();
         item.setIsPorcelain(rs.getBoolean("is_porcelain"));
         item.setIsRectificat(rs.getBoolean("is_rectificat"));
         item.setIsMatt(rs.getBoolean("is_matt"));

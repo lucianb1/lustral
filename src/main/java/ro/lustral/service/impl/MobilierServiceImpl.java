@@ -1,7 +1,9 @@
 package ro.lustral.service.impl;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import ro.lustral.core.constants.ImageConstants;
 import ro.lustral.core.response.MobilierDetailsJsonResponse;
@@ -20,6 +22,8 @@ import java.util.concurrent.ExecutorService;
 @Service
 public class MobilierServiceImpl implements MobilierService {
 
+    private static final Logger LOG = Logger.getLogger(MobilierRepository.class);
+
     @Autowired
     private MobilierRepository mobilierRepository;
 
@@ -27,13 +31,17 @@ public class MobilierServiceImpl implements MobilierService {
     @Autowired
     private ExecutorService executorService;
 
+    @Cacheable("mobilier")
     @Override
     public List<MobilierCollection> getCollections() {
+        LOG.info("getAll() method called");
         return mobilierRepository.getAll();
     }
 
+    @Cacheable("mobilier-details")
     @Override
     public MobilierDetailsJsonResponse getDetails(int collectionID) {
+        LOG.info("getDetails() method called");
         CompletableFuture<MobilierCollection> collectionFuture = CompletableFuture.supplyAsync(() -> mobilierRepository.getCollection(collectionID), executorService);
         CompletableFuture<List<MobilierItem>> itemsFuture = CompletableFuture.supplyAsync(() -> mobilierRepository.getCollectionItems(collectionID), executorService);
 

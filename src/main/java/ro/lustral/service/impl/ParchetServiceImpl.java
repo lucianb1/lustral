@@ -47,4 +47,5 @@ public class ParchetServiceImpl implements ParchetService {
     public void saveParchet(String name, String description, float price, Float oldPrice, String delivery, String wood, Integer warranty, int width, int trafficClass, int images, String grip, String size, String producer, String material, int orderNr) {
         parchetRepository.saveParchet(name, description, price, oldPrice, delivery, wood, warranty, width, trafficClass, images, grip, size, producer, material, orderNr);
     }
+
 }

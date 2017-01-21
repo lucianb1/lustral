@@ -9,7 +9,7 @@ import java.sql.SQLException;
 /**
  * Created by Luci on 27-Dec-16.
  */
-public class ColectieRowMapper implements RowMapper<Colectie> {
+public class GresieRowMapper implements RowMapper<Colectie> {
 
     @Override
     public Colectie mapRow(ResultSet rs, int i) throws SQLException {
@@ -26,7 +26,6 @@ public class ColectieRowMapper implements RowMapper<Colectie> {
                 .setIsForBath(rs.getBoolean("for_bath"))
                 .setIsForExterior(rs.getBoolean("for_exterior"))
                 .setIsForLiving(rs.getBoolean("for_living"))
-                .setIsForKitchen(rs.getBoolean("for_kitchen"))
-                .setOrderNr(rs.getInt("order_nr"));
+                .setIsForKitchen(rs.getBoolean("for_kitchen"));
     }
 }

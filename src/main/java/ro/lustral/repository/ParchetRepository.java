@@ -12,9 +12,7 @@ import ro.lustral.model.parchet.ParchetDetails;
 import ro.lustral.repository.rowmapper.ParchetDetailsRowMapper;
 import ro.lustral.repository.rowmapper.ParchetRowMapper;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by Luci on 27-Dec-16.

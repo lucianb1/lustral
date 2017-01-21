@@ -7,7 +7,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
  * Created by Luci on 27-Dec-16.
  */
 @JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.NONE, getterVisibility = JsonAutoDetect.Visibility.ANY)
-public class ColectieItem {
+public class GresieItem {
 
     private int id;
     private String colectieName; // for speed

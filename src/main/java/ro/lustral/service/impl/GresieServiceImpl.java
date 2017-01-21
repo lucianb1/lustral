@@ -7,7 +7,7 @@ import ro.lustral.core.constants.ImageConstants;
 import ro.lustral.core.request.FindGresieRequest;
 import ro.lustral.model.colectie.Colectie;
 import ro.lustral.model.colectie.ColectieDetailsJsonResponse;
-import ro.lustral.model.colectie.ColectieItem;
+import ro.lustral.model.colectie.GresieItem;
 import ro.lustral.repository.GresieRepository;
 import ro.lustral.service.GresieService;
 
@@ -32,7 +32,7 @@ public class GresieServiceImpl implements GresieService {
     @Override
     public ColectieDetailsJsonResponse getDetails(int id) {
         ColectieDetailsJsonResponse response = new ColectieDetailsJsonResponse();
-        List<ColectieItem> items = repository.getItems(id);
+        List<GresieItem> items = repository.getItems(id);
         response.setItems(items);
         if (!items.isEmpty()) {
             response.setImages(items.get(0).getImages());

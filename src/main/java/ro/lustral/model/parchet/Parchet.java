@@ -3,13 +3,12 @@ package ro.lustral.model.parchet;
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import ro.lustral.core.ParchetProducer;
 import ro.lustral.core.ParchetTrafficClass;
-import ro.lustral.model.OrderedEntity;
 
 /**
  * Created by Luci on 27-Dec-16.
  */
 @JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.NONE, getterVisibility = JsonAutoDetect.Visibility.ANY)
-public class Parchet extends OrderedEntity {
+public class Parchet {
 
     private int id;
     private String name;
@@ -21,6 +20,7 @@ public class Parchet extends OrderedEntity {
     private float price;
     private Float oldPrice;
     private boolean hasDiscount;
+    private int orderNr;
 
     public Parchet setId(int id) {
         this.id = id;
@@ -51,7 +51,7 @@ public class Parchet extends OrderedEntity {
         return this;
     }
 
-    public boolean isHasDiscount() {
+    public boolean getHasDiscount() {
         return hasDiscount;
     }
 
@@ -80,6 +80,15 @@ public class Parchet extends OrderedEntity {
     public Parchet setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
         return this;
+    }
+
+    public Parchet setOrderNr(int orderNr) {
+        this.orderNr = orderNr;
+        return this;
+    }
+
+    public int getOrderNr() {
+        return orderNr;
     }
 
     public int getId() {

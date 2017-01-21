@@ -12,7 +12,7 @@ public class ColectieDetailsJsonResponse {
     private int images;
     private String baseUrl;
     private String baseItemsUrl;
-    private List<ColectieItem> items = new ArrayList<>();
+    private List<GresieItem> items = new ArrayList<>();
 
     public String getName() {
         return name;
@@ -30,11 +30,11 @@ public class ColectieDetailsJsonResponse {
         this.images = images;
     }
 
-    public List<ColectieItem> getItems() {
+    public List<GresieItem> getItems() {
         return items;
     }
 
-    public void setItems(List<ColectieItem> items) {
+    public void setItems(List<GresieItem> items) {
         this.items = items;
     }
 

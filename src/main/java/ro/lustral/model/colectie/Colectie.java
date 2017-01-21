@@ -1,7 +1,6 @@
 package ro.lustral.model.colectie;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
-import ro.lustral.model.OrderedEntity;
 
 import static ro.lustral.core.constants.ImageConstants.COLECTII_IMAGE_LOCATION;
 
@@ -9,7 +8,7 @@ import static ro.lustral.core.constants.ImageConstants.COLECTII_IMAGE_LOCATION;
  * Created by Luci on 27-Dec-16.
  */
 @JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.NONE, getterVisibility = JsonAutoDetect.Visibility.ANY)
-public class Colectie extends OrderedEntity {
+public class Colectie {
 
     private int id;
     private String name;
@@ -80,11 +79,6 @@ public class Colectie extends OrderedEntity {
         return this;
     }
 
-    public Colectie setOrderNr(int orderNr) {
-        this.orderNr = orderNr;
-        return this;
-    }
-
     public Colectie setIsRectificat(boolean rectificat) {
         isRectificat = rectificat;
         return this;
@@ -106,7 +100,7 @@ public class Colectie extends OrderedEntity {
         return oldPrice;
     }
 
-    public boolean getIsHasDiscount() {
+    public boolean getHasDiscount() {
         return hasDiscount;
     }
 

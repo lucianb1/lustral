@@ -1,6 +1,10 @@
 @media (max-width: 1250px) {
-    .long-input {
-        width: inherit;
+    .modal.custom-modal-widht {
+        width: 95% !important;
+    }
+
+    .main-View-Container {
+        width: 100%;
     }
 }
 
@@ -17,7 +21,6 @@
         margin-left: 14px;
     }
 
-
 }
 
 @media (max-width: 900px) {
@@ -28,6 +31,10 @@
     .fancybox-inner {
         max-width: 82.4vw;
     }
+
+    .delivery-view {
+        display: none;
+    }
 }
 
 @media (max-width: 800px) {
@@ -36,6 +43,10 @@
         width: 100%;
         position: relative;
         height: 263px;
+    }
+
+    .long-input {
+        width: inherit;
     }
 
     .slider {

@@ -27,6 +27,7 @@ public class ParchetRowMapper implements RowMapper<Parchet> {
                 .setPrice(rs.getFloat("price"))
                 .setProducer(ParchetProducer.valueFrom(rs.getString("producer")))
                 .setTrafficClass(ParchetTrafficClass.valueFrom(rs.getInt("class")))
+                .setOrderNr(rs.getInt("order_nr"))
                 .setImageUrl(ImageConstants.PARCHET_IMAGE_LOCATION + name + PaginationConstants.PARCHET_MAIN_PAGE_NAME);
     }
 }

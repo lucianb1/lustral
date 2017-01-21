@@ -263,3 +263,27 @@ mainApp.config(['$httpProvider', '$routeProvider', function ($httpProvider, $rou
         });
 
 }]);
+
+mainApp.directive('deliveryInfo', ['$timeout',
+    function ($timeout) {
+        return {
+            restrict: 'A', //E = element, A = attribute, C = class, M = comment
+            link: function ($scope, element, attr) {
+                $timeout(function () {
+                    $scope.showDelivery = true;
+                }, 5000);
+                $scope.hideDelivery = function() {
+                    $scope.showDelivery = false;
+                    var deliveryContainer = angular.element('#delivery');
+                    deliveryContainer.removeClass("long-animation");
+                    $timeout(function () {
+                        deliveryContainer.css('display', 'none');
+
+                    }, 300);
+
+                }
+
+            }
+        }
+    }
+]);

@@ -6,7 +6,6 @@ import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
-import org.thymeleaf.spring4.SpringTemplateEngine;
 import ro.lustral.service.MailService;
 
 import javax.mail.MessagingException;
@@ -24,9 +23,6 @@ public class MailServiceImpl implements MailService {
 
     @Autowired
     private JavaMailSender mailSender;
-
-    @Autowired
-    private SpringTemplateEngine templateEngine;
 
     @Async("analyticsExecutor")
     @Override

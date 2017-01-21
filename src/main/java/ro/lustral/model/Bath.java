@@ -26,7 +26,7 @@ public class Bath {
     public Bath setOldPrice(Float oldPrice) {
         this.oldPrice = oldPrice;
         if (oldPrice != null) {
-            this.hasDiscount = hasDiscount;
+            this.hasDiscount = true;
         }
         return this;
     }
@@ -44,11 +44,6 @@ public class Bath {
 
     public Bath setSize(String size) {
         this.size = size;
-        return this;
-    }
-
-    public Bath setHasDiscount(boolean hasDiscount) {
-        this.hasDiscount = hasDiscount;
         return this;
     }
 

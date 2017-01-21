@@ -63,8 +63,8 @@
 }
 
 html * {
-    font-family: Calibri, Trebuchet, sans-serif;
-    /*font-family: Arial, Helvetica, sans-serif;*/
+    /*font-family: Calibri, Trebuchet, sans-serif;*/
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 /*make footer stick to bottom*/
@@ -495,17 +495,6 @@ nav.nav-small {
     overflow-y: auto !important;
 }
 
-@media (max-width: 1124px) {
-    .modal.custom-modal-widht {
-        width: 95% !important;
-    }
-
-    .main-View-Container {
-        width: 100%;
-    }
-}
-
-
 .modal.custom-modal-widht .modal-content .modal-header {
     text-align: center;
     margin-top: 5px
@@ -531,19 +520,23 @@ nav.nav-small {
     padding-right: 10px;
     position: relative;
 }
+
 ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
-    color:    #565656;
+    color: #565656;
 }
+
 :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-    color:    #565656;
-    opacity:  1;
+    color: #565656;
+    opacity: 1;
 }
+
 ::-moz-placeholder { /* Mozilla Firefox 19+ */
-    color:    #565656;
-    opacity:  1;
+    color: #565656;
+    opacity: 1;
 }
+
 :-ms-input-placeholder { /* Internet Explorer 10-11 */
-    color:    #565656;
+    color: #565656;
 }
 
 .sort-label {
@@ -562,4 +555,102 @@ nav.nav-small {
 .sort-container {
     float: right;
     margin: 0;
+}
+
+.delivery-container {
+    background-image: url('/resources/png/car.png');
+    /*bottom: 0;*/
+    /*right: 0;*/
+    width: 300px;
+    height: 40px;
+    color: white;
+    z-index: 1;
+}
+
+.exit-btn-container {
+    width: 24px;
+    height: 24px;
+    color: white;
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    cursor: pointer;
+    transition: all 0.2s;
+    /*border: 0.25px solid white;*/
+}
+
+.exit-btn-container:hover {
+    background-color: grey;
+
+}
+
+.exit-btn-component {
+    width: 18px;
+    background-color: white;
+    height: 2px;
+    position: absolute;
+    top: 10px;
+    left: 2px;
+}
+
+.delivery-view {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    transition: all 0.3s linear;
+}
+
+.long-animation {
+    transition: right .6s linear;
+}
+
+.delivery-hide {
+    right: -300px;
+}
+
+.old-price {
+    position: absolute;
+    right: 0;
+    text-align: center;
+    bottom: 24px;
+    font-size: 13px;
+    width: 75px;
+    text-decoration: line-through;
+    background-color: grey;
+}
+
+.card-price {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    font-size: 15px;
+    text-align: center;
+    width: 110px;
+    /*transition: all 0.2s;*/
+    padding: 1px 0;
+}
+
+
+.discount-flag {
+    top: 0;
+    right: 0;
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background: url('/resources/png/discountFlag.png');
+
+}
+
+.discount-flag-text {
+    position: absolute;
+    top: 20px;
+    left: 16px;
+    font-size: 16px;
+    -ms-transform: rotate(45deg); /* IE 9 */
+    -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+    transform: rotate(45deg);
+}
+.discount-color {
+    background-color: #e53935;
 }

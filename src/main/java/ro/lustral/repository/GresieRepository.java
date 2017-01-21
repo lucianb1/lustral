@@ -10,9 +10,9 @@ import org.springframework.stereotype.Repository;
 import ro.lustral.core.constants.PaginationConstants;
 import ro.lustral.core.request.FindGresieRequest;
 import ro.lustral.model.colectie.Colectie;
-import ro.lustral.model.colectie.ColectieItem;
-import ro.lustral.repository.rowmapper.ColectieItemRowMapper;
-import ro.lustral.repository.rowmapper.ColectieRowMapper;
+import ro.lustral.model.colectie.GresieItem;
+import ro.lustral.repository.rowmapper.GresieItemRowMapper;
+import ro.lustral.repository.rowmapper.GresieRowMapper;
 
 import java.util.HashMap;
 import java.util.List;
@@ -26,8 +26,8 @@ public class GresieRepository {
 
     private static final Logger LOG = Logger.getLogger(GresieRepository.class);
 
-    private static final ColectieRowMapper rowMapper = new ColectieRowMapper();
-    private static final ColectieItemRowMapper itemRowMapper = new ColectieItemRowMapper();
+    private static final GresieRowMapper rowMapper = new GresieRowMapper();
+    private static final GresieItemRowMapper itemRowMapper = new GresieItemRowMapper();
     private static final Map<Integer, String> orderClauses;
 
     static {
@@ -45,7 +45,7 @@ public class GresieRepository {
 //    }
 
     @Cacheable("gresie-items")
-    public List<ColectieItem> getItems(int id) {
+    public List<GresieItem> getItems(int id) {
         LOG.info("getItems() method was called");
         String sql = "SELECT i.*, c.images, c.name as collection_name FROM colectii_items i INNER JOIN colectii c ON collection_id = :id AND c.id = i.collection_id ORDER BY i.order_nr ASC";
         MapSqlParameterSource params = new MapSqlParameterSource().addValue("id", id);
