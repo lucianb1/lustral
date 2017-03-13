@@ -80,6 +80,7 @@ CREATE TABLE IF NOT EXISTS mobilier_items (
     code VARCHAR(15) NOT NULL,
     description VARCHAR(50) NOT NULL,
     price FLOAT NOT NULL,
+    custom_price FLOAT,
     discount FLOAT,
     size VARCHAR(30) NOT NULL,
     name VARCHAR(20) NOT NULL,

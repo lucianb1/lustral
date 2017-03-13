@@ -105,8 +105,8 @@
                 <div fancy-Box ng-click="openFancybox(fancyBoxArray[$index], 0)" class="parchet-card-image-container bath-image" title="Vezi poze">
                     <div back-img="{{card.baseUrl + 'main.jpg'}}" class="bath-card-image grow">
                     </div>
-                    <div class="card-price" ng-class="!card.hasDiscount ? 'green' : 'discount-color'">{{card.hasMultipleSizes ? 'de la' : ''}} {{card.price}} lei/mp</div>
-                    <div ng-if="card.hasDiscount" class="old-price" >{{card.oldPrice}} lei/mp</div>
+                    <div class="card-price" ng-class="!card.hasDiscount ? 'green' : 'discount-color'">{{card.hasMultipleSizes ? 'de la' : ''}} {{card.price}} lei</div>
+                    <div ng-if="card.hasDiscount" class="old-price" >{{card.oldPrice}} lei</div>
                     <div ng-if="card.hasDiscount" class="discount-flag"><span class="discount-flag-text">Reducere</span></div>
                 </div>
                 <div class="bath-card-details">

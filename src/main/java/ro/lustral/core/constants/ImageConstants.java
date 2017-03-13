@@ -10,7 +10,9 @@ public class ImageConstants {
     public static final String COLECTII_IMAGE_LOCATION = "/images/colectii/";
     public static final String COLECTII_SMALL_IMAGE_LOCATION = "/images/small/colectii/";
     public static final String BATH_IMAGE_LOCATION = "/images/cazi/";
-    public static final String BASE_LOCATION = "file:F:/lustral_images/lustral/";
+
+        public static final String BASE_LOCATION = "file:F:/lustral_images/lustral/";
+//    public static final String BASE_LOCATION = "file:/home/new/lustral/";
 
     public static final String MOBILIER_IMAGE_LOCATION = "/images/mobilier/";
 

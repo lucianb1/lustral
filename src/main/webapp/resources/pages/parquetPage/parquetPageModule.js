@@ -1,4 +1,4 @@
-var parquetModule = angular.module("parquetModule", []);
+var parquetModule = angular.module('parquetModule', []);
 
 var ajaxErrorCallback = function (error) {
     console.log('data:' + error.data + ' | status:' + error.status

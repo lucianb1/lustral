@@ -20,6 +20,9 @@
         display: inline-block;
         margin-left: 14px;
     }
+    .page-info {
+        display: none;
+    }
 
 }
 

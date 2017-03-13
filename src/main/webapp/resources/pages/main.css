@@ -654,3 +654,13 @@ nav.nav-small {
 .discount-color {
     background-color: #e53935;
 }
+
+.page-info {
+    width:350px;
+    background-color: red;
+    top: 65px;
+    position: absolute;
+    color: white;
+    right: 0;
+    font-weight: bold;
+}
